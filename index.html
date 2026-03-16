@@ -1,0 +1,3128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>Gestão de Ferramentas | COENG</title>
+
+    <meta
+      name="description"
+      content="Sistema corporativo avançado para gestão de ferramentas, colaboradores e manutenções com sincronização em tempo real da COENG."
+    />
+    <meta
+      name="keywords"
+      content="gestão de ferramentas, controle de patrimônio, inventário, COENG, sistema corporativo, ferramentas, manutenção"
+    />
+    <meta name="author" content="COENG" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://gestao-de-ferramentas.vercel.app/"
+    />
+    <meta property="og:title" content="Gestão de Ferramentas | COENG" />
+    <meta
+      property="og:description"
+      content="Sistema corporativo avançado para gestão de ferramentas, colaboradores e manutenções com sincronização em tempo real."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop"
+    />
+    <meta property="og:site_name" content="COENG" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://gestao-de-ferramentas.vercel.app/"
+    />
+    <meta name="twitter:title" content="Gestão de Ferramentas | COENG" />
+    <meta
+      name="twitter:description"
+      content="Sistema corporativo avançado para gestão de ferramentas, colaboradores e manutenções com sincronização em tempo real."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop"
+    />
+
+    <link rel="canonical" href="https://gestao-de-ferramentas.vercel.app/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQuNyA2LjNhMSAxIDAgMCAwIDAgMS40bDEuNiAxLjZhMSAxIDAgMCAwIDEuNCAwbDMuMTA2LTMuMTA1Yy4zMi0uMzIyLjg2My0uMjIuOTgzLjIxOGE2IDYgMCAwIDEtOC4yNTkgNy4wNTdsLTcuOTEgNy45MWExIDEgMCAwIDEtMi45OTktM2w3LjkxLTcuOTFhNiA2IDAgMCAxIDcuMDU3LTguMjU5Yy40MzguMTIuNTQuNjYyLjIxOS45ODR6Ii8+PC9zdmc+"
+      type="image/svg+xml"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiMyNTYzZWIiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzI1NjNlYiIgc3Ryb2tlPSJub25lIiAvPjxwYXRoIGQ9Ik0xNC43IDYuM2ExIDEgMCAwIDAgMCAxLjRsMS42IDEuNmExIDEgMCAwIDAgMS40IDBsMy4xMDYtMy4xMDVjLjMyLS4zMjIuODYzLS4yMi45ODMuMjE4YTYgNiAwIDAgMS04LjI1OSA3LjA1N2wtNy45MSA3LjkxYTEgMSAwIDAgMS0yLjk5OS0zbDcuOTEtNy45MWE2IDYgMCAwIDEgNy4wNTctOC4yNTljLjQzOC4xMi41NC42NjIuMjE5Ljk4NHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIvPjwvc3ZnPg=="
+    />
+
+    <link id="manifest-link" rel="manifest" href="" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              brand: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                900: "#1e3a8a",
+              },
+            },
+            animation: {
+              "fade-in": "fadeIn 0.3s ease-out",
+              "slide-up": "slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+              "ping-slow": "ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite",
+            },
+            keyframes: {
+              fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+      .hidden-tab {
+        display: none !important;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      #toast-container {
+        z-index: 9999;
+        pointer-events: none;
+      }
+      .toast-item {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(120%);
+        opacity: 0;
+        pointer-events: auto;
+        backdrop-filter: blur(10px);
+      }
+      .toast-item.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      /* Correção do leitor de código de barras para o celular */
+      #reader video {
+        border-radius: 1rem;
+        object-fit: contain; /* Ajusta para exibir a lente inteira sem zoom artificial */
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body class="flex h-screen text-slate-800 overflow-hidden antialiased">
+    <div id="login-screen" class="fixed inset-0 z-50 flex bg-white">
+      <div
+        class="hidden lg:flex w-1/2 bg-slate-900 relative overflow-hidden flex-col justify-between p-12 xl:p-16"
+      >
+        <div
+          class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-25 mix-blend-overlay"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"
+        ></div>
+
+        <div class="relative z-10 flex items-center gap-3">
+          <div
+            class="p-2.5 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/30"
+          >
+            <i data-lucide="wrench" class="w-7 h-7 text-white"></i>
+          </div>
+          <div>
+            <span
+              class="font-bold text-2xl text-white tracking-tight block leading-none mb-1"
+              >Gestão de Ferramentas</span
+            >
+            <span
+              class="text-brand-500 text-sm font-bold tracking-widest uppercase"
+              >COENG</span
+            >
+          </div>
+        </div>
+
+        <div class="relative z-10 text-white mb-10 animate-fade-in">
+          <h2 class="text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+            Controle total do<br />seu patrimônio.
+          </h2>
+          <p class="text-slate-300 text-lg xl:text-xl max-w-md leading-relaxed">
+            Sistema corporativo avançado para gestão de ferramentas,
+            colaboradores e manutenções com sincronização em tempo real.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="w-full lg:w-1/2 flex flex-col items-center justify-center p-8 sm:p-12 relative bg-slate-50"
+      >
+        <div
+          class="w-full max-w-md bg-white p-8 sm:p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 animate-slide-up"
+        >
+          <div class="lg:hidden flex items-center gap-3 mb-10 justify-center">
+            <div
+              class="p-2.5 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/30"
+            >
+              <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
+            </div>
+            <div class="text-left">
+              <span
+                class="font-bold text-xl text-slate-900 tracking-tight block leading-none mb-1"
+                >Gestão de Ferramentas</span
+              >
+              <span
+                class="text-brand-600 text-xs font-bold tracking-widest uppercase"
+                >COENG</span
+              >
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">
+            Bem-vindo de volta
+          </h2>
+          <p class="text-slate-500 mb-8 font-medium">
+            Insira suas credenciais para acessar o painel.
+          </p>
+
+          <form id="login-form" class="space-y-5">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-1.5"
+                >E-mail</label
+              >
+              <div class="relative group">
+                <i
+                  data-lucide="mail"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-600 transition-colors"
+                ></i>
+                <input
+                  type="email"
+                  id="login-email"
+                  required
+                  placeholder="admin@coeng.com.br"
+                  class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 outline-none transition-all text-slate-700 font-medium placeholder:text-slate-400"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="block text-sm font-bold text-slate-700"
+                  >Senha</label
+                >
+                <a
+                  href="#"
+                  id="btn-forgot-password"
+                  class="text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors"
+                  >Esqueceu a senha?</a
+                >
+              </div>
+              <div class="relative group">
+                <i
+                  data-lucide="lock"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-brand-600 transition-colors"
+                ></i>
+                <input
+                  type="password"
+                  id="login-password"
+                  required
+                  placeholder="••••••••"
+                  class="w-full pl-12 pr-12 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 outline-none transition-all text-slate-700 font-medium placeholder:text-slate-400"
+                />
+                <button
+                  type="button"
+                  id="toggle-password"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 focus:outline-none p-1 rounded-md transition-colors"
+                  title="Mostrar/Esconder Senha"
+                >
+                  <i data-lucide="eye" id="eye-icon" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              id="btn-login"
+              class="w-full py-4 mt-4 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all flex justify-center items-center text-lg"
+            >
+              <span id="login-text">Entrar</span>
+            </button>
+          </form>
+
+          <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+            <div
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-50 rounded-full border border-emerald-100"
+            >
+              <i
+                data-lucide="shield-check"
+                class="w-4 h-4 text-emerald-600"
+              ></i>
+              <span
+                class="text-xs font-bold text-emerald-800 uppercase tracking-wide"
+                >Acesso Exclusivo e Seguro</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-app" class="hidden flex h-screen w-full">
+      <aside
+        class="w-20 lg:w-[350px] bg-slate-900 border-r border-slate-800 flex flex-col transition-all duration-300 z-30 shadow-2xl shadow-slate-900/50 relative"
+      >
+        <div
+          class="h-20 flex items-center justify-center lg:justify-start lg:px-8 border-b border-slate-800/80 bg-slate-900/50 backdrop-blur"
+        >
+          <div
+            class="p-2 bg-brand-600 rounded-lg shadow-lg shadow-brand-600/30"
+          >
+            <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
+          </div>
+          <div class="hidden lg:block ml-4">
+            <span
+              class="font-bold text-lg text-white tracking-tight leading-none block mb-0.5"
+              >Gestão de Ferramentas</span
+            >
+            <span
+              class="text-brand-500 text-xs font-bold tracking-widest uppercase"
+              >COENG</span
+            >
+          </div>
+        </div>
+
+        <nav class="flex-1 py-8 px-4 space-y-2 overflow-y-auto">
+          <p
+            class="hidden lg:block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4 px-4"
+          >
+            Menu Principal
+          </p>
+
+          <button
+            id="nav-dashboard"
+            onclick="App.UI.switchTab('dashboard')"
+            class="nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group bg-brand-600 text-white shadow-md shadow-brand-600/20"
+          >
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            <span class="hidden lg:block ml-3 font-medium"
+              >Painel de Controle</span
+            >
+          </button>
+
+          <button
+            id="nav-scanner"
+            onclick="App.UI.switchTab('scanner')"
+            class="nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"
+          >
+            <i data-lucide="scan-line" class="w-5 h-5"></i>
+            <span class="hidden lg:block ml-3 font-medium"
+              >Leitor / Scanner</span
+            >
+          </button>
+
+          <div id="menu-admin-group">
+            <p
+              class="hidden lg:block text-xs font-semibold text-slate-500 uppercase tracking-wider mt-8 mb-4 px-4"
+            >
+              Administração
+            </p>
+
+            <button
+              id="nav-management"
+              onclick="App.UI.switchTab('management')"
+              class="nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"
+            >
+              <i data-lucide="database" class="w-5 h-5"></i>
+              <span class="hidden lg:block ml-3 font-medium">Inventário</span>
+            </button>
+
+            <button
+              id="nav-collaborators"
+              onclick="App.UI.switchTab('collaborators')"
+              class="nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"
+            >
+              <i data-lucide="users" class="w-5 h-5"></i>
+              <span class="hidden lg:block ml-3 font-medium"
+                >Colaboradores</span
+              >
+            </button>
+
+            <button
+              id="nav-history"
+              onclick="App.UI.switchTab('history')"
+              class="nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"
+            >
+              <i data-lucide="history" class="w-5 h-5"></i>
+              <span class="hidden lg:block ml-3 font-medium"
+                >Histórico (Logs)</span
+              >
+            </button>
+          </div>
+        </nav>
+
+        <div
+          class="p-4 lg:p-5 border-t border-slate-800 bg-slate-900/50 flex justify-between items-center gap-2 overflow-hidden"
+        >
+          <div class="flex items-center text-slate-400 flex-1 min-w-0">
+            <div
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700 shadow-inner shrink-0"
+            >
+              <i
+                data-lucide="shield-check"
+                class="w-5 h-5 text-emerald-400"
+              ></i>
+            </div>
+            <div
+              class="hidden lg:flex flex-col ml-3 text-sm flex-1 min-w-0 pr-1"
+            >
+              <p
+                class="font-bold text-slate-200 truncate whitespace-nowrap"
+                id="display-user-email"
+                title="Usuário logado no sistema"
+              >
+                Carregando...
+              </p>
+              <p
+                class="text-xs text-slate-400 font-mono mt-0.5 truncate whitespace-nowrap"
+                id="display-user-role"
+                title="Nível de permissão atual"
+              >
+                Ponto
+              </p>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center shrink-0">
+            <button
+              onclick="App.Auth.openPasswordModal()"
+              class="p-1.5 text-slate-400 hover:text-brand-400 hover:bg-slate-800 rounded-lg transition-colors"
+              title="Alterar Senha"
+            >
+              <i data-lucide="lock-keyhole" class="w-5 h-5"></i>
+            </button>
+            <button
+              onclick="App.Auth.logout()"
+              class="p-1.5 text-slate-400 hover:text-rose-500 hover:bg-slate-800 rounded-lg transition-colors"
+              title="Encerrar Sessão"
+            >
+              <i data-lucide="log-out" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main
+        class="flex-1 flex flex-col h-screen overflow-hidden relative bg-slate-50"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-slate-200/50 to-transparent pointer-events-none z-0"
+        ></div>
+
+        <div
+          class="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth relative z-10"
+        >
+          <div id="tab-dashboard" class="animate-fade-in max-w-7xl mx-auto">
+            <header
+              class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+              <div>
+                <div
+                  class="flex items-center text-sm font-medium text-brand-600 mb-2"
+                >
+                  <i
+                    data-lucide="activity"
+                    class="w-4 h-4 mr-1.5 animate-pulse"
+                  ></i
+                  ><span>Sincronizado em Tempo Real</span>
+                </div>
+                <h1
+                  class="text-4xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Visão Geral
+                </h1>
+                <p class="text-slate-500 mt-2 text-lg">
+                  Gerencie e monitore o estado do inventário.
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto mt-4 md:mt-0"
+              >
+                <button
+                  onclick="App.Data.exportCSV()"
+                  class="w-full sm:w-auto flex items-center justify-center px-4 py-2.5 bg-white border border-slate-200 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 rounded-xl text-sm font-semibold text-slate-700 shadow-sm transition-all"
+                >
+                  <i
+                    data-lucide="download-cloud"
+                    class="w-4 h-4 mr-2 shrink-0"
+                  ></i
+                  >Exportar CSV
+                </button>
+                <div
+                  class="w-full sm:w-auto flex items-center justify-center px-4 py-2.5 bg-white rounded-xl shadow-sm border border-slate-200 text-sm font-semibold text-slate-600 text-center"
+                >
+                  <i
+                    data-lucide="calendar"
+                    class="w-4 h-4 mr-2 text-brand-500 shrink-0"
+                  ></i>
+                  <span id="current-date" class="capitalize"></span>
+                </div>
+              </div>
+            </header>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 sm:gap-6 mb-8">
+              <div
+                class="xl:col-span-2 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6"
+              >
+                <div
+                  class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-4 -top-4 w-16 h-16 sm:w-24 sm:h-24 bg-slate-50 rounded-full z-0 opacity-50"
+                  ></div>
+                  <div
+                    class="relative z-10 flex justify-between items-start mb-3 sm:mb-6"
+                  >
+                    <div
+                      class="p-2 sm:p-3.5 rounded-xl bg-slate-100/80 backdrop-blur inline-block"
+                    >
+                      <i
+                        data-lucide="layers"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-slate-700"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="relative z-10">
+                    <h3
+                      class="text-2xl sm:text-4xl font-extrabold text-slate-900"
+                      id="stat-total"
+                    >
+                      0
+                    </h3>
+                    <p
+                      class="text-[11px] sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wide truncate"
+                    >
+                      Total
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-4 -top-4 w-16 h-16 sm:w-24 sm:h-24 bg-emerald-50 rounded-full z-0 opacity-50"
+                  ></div>
+                  <div
+                    class="relative z-10 flex justify-between items-start mb-3 sm:mb-6"
+                  >
+                    <div
+                      class="p-2 sm:p-3.5 rounded-xl bg-emerald-50 inline-block"
+                    >
+                      <i
+                        data-lucide="check-circle-2"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="relative z-10">
+                    <h3
+                      class="text-2xl sm:text-4xl font-extrabold text-slate-900"
+                      id="stat-available"
+                    >
+                      0
+                    </h3>
+                    <p
+                      class="text-[11px] sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wide truncate"
+                    >
+                      Disponíveis
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-4 -top-4 w-16 h-16 sm:w-24 sm:h-24 bg-amber-50 rounded-full z-0 opacity-50"
+                  ></div>
+                  <div
+                    class="relative z-10 flex justify-between items-start mb-3 sm:mb-6"
+                  >
+                    <div
+                      class="p-2 sm:p-3.5 rounded-xl bg-amber-50 inline-block"
+                    >
+                      <i
+                        data-lucide="arrow-right-left"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-amber-600"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="relative z-10">
+                    <h3
+                      class="text-2xl sm:text-4xl font-extrabold text-slate-900"
+                      id="stat-borrowed"
+                    >
+                      0
+                    </h3>
+                    <p
+                      class="text-[11px] sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wide truncate"
+                    >
+                      Emprestadas
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-4 -top-4 w-16 h-16 sm:w-24 sm:h-24 bg-rose-50 rounded-full z-0 opacity-50"
+                  ></div>
+                  <div
+                    class="relative z-10 flex justify-between items-start mb-3 sm:mb-6"
+                  >
+                    <div
+                      class="p-2 sm:p-3.5 rounded-xl bg-rose-50 inline-block"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-rose-600"
+                      >
+                        <path
+                          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="relative z-10">
+                    <h3
+                      class="text-2xl sm:text-4xl font-extrabold text-slate-900"
+                      id="stat-maintenance"
+                    >
+                      0
+                    </h3>
+                    <p
+                      class="text-[11px] sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wide truncate"
+                    >
+                      Manutenção
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200 flex flex-col h-full"
+              >
+                <h3
+                  class="text-sm sm:text-base font-bold text-slate-800 mb-4 flex items-center"
+                >
+                  <i
+                    data-lucide="pie-chart"
+                    class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-brand-500"
+                  ></i>
+                  Distribuição
+                </h3>
+                <div
+                  class="flex-1 relative w-full flex items-center justify-center min-h-[180px] sm:min-h-[200px]"
+                >
+                  <canvas id="statusChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8"
+            >
+              <div
+                class="p-5 border-b border-slate-200 bg-slate-50/50 flex flex-col sm:flex-row gap-4 justify-between items-center"
+              >
+                <h2 class="text-lg font-bold text-slate-800 flex items-center">
+                  <i
+                    data-lucide="database"
+                    class="w-5 h-5 mr-2 text-brand-500"
+                  ></i
+                  >Inventário Detalhado
+                </h2>
+                <div class="flex w-full sm:w-auto gap-3">
+                  <div class="relative flex-1 sm:w-72">
+                    <i
+                      data-lucide="search"
+                      class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                    ></i>
+                    <input
+                      type="text"
+                      id="dash-search"
+                      placeholder="Pesquisar..."
+                      class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
+                    />
+                  </div>
+                  <select
+                    id="dash-filter"
+                    class="px-3 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 text-slate-700 font-semibold cursor-pointer"
+                  >
+                    <option value="all">Todos os Estados</option>
+                    <option value="available">Disponíveis</option>
+                    <option value="borrowed">Emprestadas</option>
+                    <option value="maintenance">Em Manutenção</option>
+                  </select>
+                </div>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-slate-50/80 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-bold"
+                    >
+                      <th class="px-6 py-4">Patrimônio</th>
+                      <th class="px-6 py-4">Descrição do Material</th>
+                      <th class="px-6 py-4">Situação</th>
+                      <th class="px-6 py-4">Responsável</th>
+                      <th class="px-6 py-4 text-right">Data/Hora</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="dash-tbody"
+                    class="divide-y divide-slate-100 text-sm"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="tab-scanner"
+            class="hidden-tab flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]"
+          >
+            <input
+              type="text"
+              id="hidden-scanner"
+              class="opacity-0 absolute -z-10"
+              autocomplete="off"
+            />
+
+            <div
+              class="w-full max-w-2xl bg-white p-5 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl shadow-slate-200/50 border border-slate-100 text-center relative overflow-hidden"
+            >
+              <div
+                id="scanner-line-indicator"
+                class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-500 via-indigo-500 to-brand-500 transition-all duration-500"
+              ></div>
+
+              <div id="scanner-waiting" class="animate-slide-up">
+                <div class="flex justify-center space-x-2 sm:space-x-4 mb-8">
+                  <button
+                    id="btn-mode-usb"
+                    onclick="App.Scanner.setMode('usb')"
+                    class="px-3 sm:px-4 py-2 bg-brand-50 text-brand-700 text-sm sm:text-base font-bold rounded-lg border border-brand-200 flex items-center transition-colors"
+                  >
+                    <i
+                      data-lucide="keyboard"
+                      class="w-4 h-4 mr-1.5 sm:mr-2"
+                    ></i>
+                    Leitor USB
+                  </button>
+                  <button
+                    id="btn-mode-cam"
+                    onclick="App.Scanner.setMode('cam')"
+                    class="px-3 sm:px-4 py-2 bg-slate-50 text-slate-600 text-sm sm:text-base font-bold rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center transition-colors"
+                  >
+                    <i data-lucide="camera" class="w-4 h-4 mr-1.5 sm:mr-2"></i>
+                    Usar Câmera
+                  </button>
+                </div>
+
+                <div id="mode-usb-container">
+                  <div
+                    class="w-24 h-24 sm:w-28 sm:h-28 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8 relative"
+                  >
+                    <i
+                      data-lucide="scan-line"
+                      class="w-10 h-10 sm:w-12 sm:h-12 text-brand-600 relative z-10"
+                    ></i>
+                    <div
+                      class="absolute inset-0 bg-brand-400 rounded-full animate-ping-slow opacity-20"
+                    ></div>
+                  </div>
+                  <h2
+                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight"
+                  >
+                    Leitura Rápida
+                  </h2>
+                  <p
+                    class="text-slate-500 text-sm sm:text-base mb-8 max-w-md mx-auto px-4"
+                  >
+                    Conecte o seu leitor de código de barras ou digite o código
+                    abaixo.
+                  </p>
+                  <div class="relative max-w-sm mx-auto group w-full">
+                    <input
+                      type="text"
+                      id="manual-scan-input"
+                      placeholder="Digite o Patrimônio..."
+                      class="w-full text-center px-3 sm:px-5 py-3 sm:py-4 bg-slate-50 border-2 border-slate-200 rounded-2xl font-mono text-base sm:text-xl focus:outline-none focus:border-brand-500 focus:bg-white transition-all placeholder:text-slate-400"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+
+                <div id="mode-cam-container" class="hidden">
+                  <h2
+                    class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 tracking-tight"
+                  >
+                    Câmera Ativa
+                  </h2>
+                  <div
+                    id="reader"
+                    class="w-full max-w-sm mx-auto overflow-hidden rounded-2xl border-4 border-slate-100 shadow-inner bg-black min-h-[250px]"
+                  ></div>
+                </div>
+              </div>
+
+              <div
+                id="scanner-result"
+                class="hidden-tab animate-slide-up text-left"
+              >
+                <button
+                  onclick="App.Scanner.reset()"
+                  class="mb-6 sm:mb-8 px-4 py-2 rounded-lg bg-slate-100 text-sm font-semibold text-slate-600 hover:bg-slate-200 flex items-center transition-colors"
+                >
+                  <i data-lucide="chevron-left" class="w-4 h-4 mr-1"></i> Voltar
+                  / Nova Leitura
+                </button>
+
+                <div
+                  class="flex items-start justify-between mb-6 sm:mb-8 p-4 sm:p-6 bg-slate-50 rounded-2xl border border-slate-100 flex-col sm:flex-row gap-4 sm:gap-0"
+                >
+                  <div class="flex items-center">
+                    <div
+                      id="res-image-container"
+                      class="mr-4 sm:mr-5 shrink-0"
+                    ></div>
+                    <div>
+                      <p
+                        id="res-category"
+                        class="text-[10px] sm:text-xs font-bold text-brand-600 tracking-widest uppercase mb-1.5 sm:mb-2 flex items-center"
+                      >
+                        <i
+                          data-lucide="tag"
+                          class="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1.5"
+                        ></i
+                        ><span>Categoria</span>
+                      </p>
+                      <h2
+                        id="res-name"
+                        class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight"
+                      >
+                        Nome da Ferramenta
+                      </h2>
+                      <p
+                        id="res-code"
+                        class="font-mono text-base sm:text-lg font-medium text-slate-500 mt-1 sm:mt-2"
+                      >
+                        1000
+                      </p>
+                    </div>
+                  </div>
+                  <div id="res-badge-container"></div>
+                </div>
+
+                <div
+                  id="scanner-processing"
+                  class="hidden-tab bg-white rounded-2xl p-6 sm:p-10 border border-slate-100 mb-6 flex flex-col items-center shadow-sm"
+                >
+                  <i
+                    data-lucide="loader-2"
+                    class="w-8 h-8 sm:w-10 sm:h-10 text-brand-600 animate-spin mb-4"
+                  ></i>
+                  <p
+                    class="text-slate-700 font-bold text-base sm:text-lg text-center"
+                  >
+                    Processando transação...
+                  </p>
+                </div>
+
+                <div
+                  id="scanner-status-box"
+                  class="hidden-tab rounded-2xl p-4 sm:p-6 border mb-6 transition-all duration-300"
+                ></div>
+
+                <div
+                  id="scanner-checkout"
+                  class="hidden-tab border-t border-slate-100 pt-6 sm:pt-8 animate-slide-up"
+                >
+                  <label
+                    class="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wide"
+                    >Autorizar Retirada Para:</label
+                  >
+                  <div class="relative mb-4 sm:mb-6">
+                    <i
+                      data-lucide="badge-check"
+                      class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"
+                    ></i>
+                    <input
+                      type="text"
+                      id="checkout-user-badge"
+                      placeholder="Ponto do Colaborador..."
+                      class="w-full pl-11 sm:pl-12 pr-4 py-3 sm:py-4 bg-white border-2 border-slate-200 rounded-2xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all text-slate-800 font-bold text-sm sm:text-lg"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <button
+                    id="btn-checkout"
+                    onclick="App.Scanner.processCheckout()"
+                    class="w-full py-4 sm:py-5 bg-brand-600 hover:bg-brand-700 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-2xl font-extrabold text-base sm:text-lg transition-all flex items-center justify-center"
+                  >
+                    Confirmar Empréstimo
+                  </button>
+                </div>
+
+                <div
+                  id="scanner-return"
+                  class="hidden-tab border-t border-slate-100 pt-6 sm:pt-8 animate-slide-up"
+                >
+                  <div
+                    class="bg-rose-50 rounded-2xl p-4 sm:p-6 border border-rose-200 mb-6"
+                  >
+                    <div class="flex items-center mb-2">
+                      <i
+                        data-lucide="alert-triangle"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-rose-600 mr-2 animate-pulse"
+                      ></i>
+                      <p
+                        class="text-base sm:text-lg text-rose-900 font-extrabold"
+                      >
+                        Acesso Recusado: Ferramenta Emprestada
+                      </p>
+                    </div>
+                    <p
+                      class="text-rose-800 text-sm sm:text-base mb-2 sm:mb-3"
+                      id="return-user-info"
+                    >
+                      Atualmente com: <strong>---</strong>
+                    </p>
+                    <p class="text-rose-700 text-xs sm:text-sm font-medium">
+                      Não é possível registrar uma nova saída. Se o colaborador
+                      estiver a devolver o material, confirme a devolução
+                      abaixo.
+                    </p>
+                  </div>
+                  <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <button
+                      onclick="App.Scanner.reset()"
+                      class="w-full sm:w-1/3 py-3 sm:py-4 bg-white border-2 border-slate-200 hover:bg-slate-50 text-slate-700 rounded-2xl font-bold text-base sm:text-lg transition-all flex items-center justify-center"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      id="btn-return"
+                      onclick="App.Scanner.processReturn()"
+                      class="w-full sm:w-2/3 py-3 sm:py-4 bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 text-white rounded-2xl font-extrabold text-base sm:text-lg transition-all flex items-center justify-center shadow-lg shadow-emerald-600/30"
+                    >
+                      <i
+                        data-lucide="arrow-down-left"
+                        class="w-5 h-5 sm:w-6 sm:h-6 mr-2"
+                      ></i>
+                      Confirmar Devolução
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="tab-management"
+            class="hidden-tab animate-fade-in max-w-7xl mx-auto"
+          >
+            <header
+              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+              <div>
+                <h1
+                  class="text-3xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Gestão de Inventário
+                </h1>
+                <p class="text-slate-500 mt-2">
+                  Adicione, edite ou remova ferramentas do sistema.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div class="relative flex-1 sm:w-64">
+                  <i
+                    data-lucide="search"
+                    class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                  ></i>
+                  <input
+                    type="text"
+                    id="tools-search"
+                    placeholder="Pesquisar..."
+                    class="w-full pl-9 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
+                  />
+                </div>
+                <button
+                  onclick="App.CRUDTools.openModal()"
+                  class="flex items-center justify-center px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold shadow-lg shadow-brand-600/30 transition-all whitespace-nowrap"
+                >
+                  <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Nova
+                  Ferramenta
+                </button>
+              </div>
+            </header>
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-slate-50/80 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-bold"
+                    >
+                      <th class="px-6 py-4">Patrimônio</th>
+                      <th class="px-6 py-4">Ferramenta</th>
+                      <th class="px-6 py-4">Status</th>
+                      <th class="px-6 py-4 text-right">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="crud-tbody"
+                    class="divide-y divide-slate-100 text-sm"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="tab-collaborators"
+            class="hidden-tab animate-fade-in max-w-7xl mx-auto"
+          >
+            <header
+              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+              <div>
+                <h1
+                  class="text-3xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Colaboradores
+                </h1>
+                <p class="text-slate-500 mt-2">
+                  Gerencie a equipe autorizada a retirar ferramentas.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div class="relative flex-1 sm:w-64">
+                  <i
+                    data-lucide="search"
+                    class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                  ></i>
+                  <input
+                    type="text"
+                    id="users-search"
+                    placeholder="Buscar colaborador..."
+                    class="w-full pl-9 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
+                  />
+                </div>
+                <div class="flex gap-3">
+                  <label
+                    class="flex flex-1 items-center justify-center px-4 py-3 bg-white border border-slate-200 hover:bg-slate-50 rounded-xl text-sm font-bold text-slate-700 shadow-sm transition-all cursor-pointer whitespace-nowrap"
+                  >
+                    <i data-lucide="upload" class="w-4 h-4 mr-2"></i> Importar
+                    Excel
+                    <input
+                      type="file"
+                      accept=".xlsx, .xls"
+                      class="hidden"
+                      onchange="App.CRUDUsers.importFile(event)"
+                    />
+                  </label>
+                  <button
+                    onclick="App.CRUDUsers.openModal()"
+                    class="flex flex-1 items-center justify-center px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold shadow-lg shadow-brand-600/30 transition-all whitespace-nowrap"
+                  >
+                    <i data-lucide="user-plus" class="w-5 h-5 mr-2"></i> Novo
+                  </button>
+                </div>
+              </div>
+            </header>
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-slate-50/80 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-bold"
+                    >
+                      <th class="px-6 py-4">Ponto/Crachá</th>
+                      <th class="px-6 py-4">Nome Completo</th>
+                      <th class="px-6 py-4">Função</th>
+                      <th class="px-6 py-4 text-right">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="users-tbody"
+                    class="divide-y divide-slate-100 text-sm"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="tab-history"
+            class="hidden-tab animate-fade-in max-w-7xl mx-auto"
+          >
+            <header
+              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+              <div>
+                <h1
+                  class="text-3xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Histórico de Transações
+                </h1>
+                <p class="text-slate-500 mt-2">
+                  Registro completo de retiradas e devoluções.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div class="relative flex-1 sm:w-64">
+                  <i
+                    data-lucide="search"
+                    class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                  ></i>
+                  <input
+                    type="text"
+                    id="history-search"
+                    placeholder="Procurar registros..."
+                    class="w-full pl-9 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
+                  />
+                </div>
+                <button
+                  onclick="App.Data.cleanOldLogs()"
+                  class="flex items-center justify-center px-4 py-3 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl font-bold transition-all whitespace-nowrap"
+                >
+                  <i data-lucide="trash-2" class="w-4 h-4 mr-2"></i> Limpar
+                  Antigos
+                </button>
+              </div>
+            </header>
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-slate-50/80 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-bold"
+                    >
+                      <th class="px-6 py-4">Data e Hora</th>
+                      <th class="px-6 py-4">Ação</th>
+                      <th class="px-6 py-4">Ferramenta</th>
+                      <th class="px-6 py-4">Colaborador</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="history-tbody"
+                    class="divide-y divide-slate-100 text-sm"
+                  ></tbody>
+                </table>
+              </div>
+              <div
+                id="history-load-more-container"
+                class="p-4 text-center border-t border-slate-200 bg-slate-50 hidden"
+              >
+                <button
+                  onclick="App.Data.loadMoreHistory()"
+                  id="btn-load-more"
+                  class="px-5 py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center justify-center mx-auto"
+                >
+                  <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i>
+                  Carregar Mais Registros
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div
+      id="crud-modal"
+      class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-slide-up"
+      >
+        <div
+          class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50"
+        >
+          <h3 id="modal-title" class="text-xl font-bold text-slate-800">
+            Nova Ferramenta
+          </h3>
+          <button
+            onclick="App.CRUDTools.closeModal()"
+            class="text-slate-400 hover:text-slate-600"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <input type="hidden" id="crud-id" />
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Foto da Ferramenta</label
+            >
+            <div class="flex items-center space-x-4">
+              <div
+                id="image-preview-container"
+                class="w-16 h-16 rounded-xl border-2 border-dashed border-slate-300 flex items-center justify-center bg-slate-50 overflow-hidden shrink-0"
+              >
+                <i
+                  data-lucide="camera"
+                  class="w-6 h-6 text-slate-400"
+                  id="image-placeholder-icon"
+                ></i>
+                <img
+                  id="crud-image-preview"
+                  class="hidden w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1">
+                <input
+                  type="file"
+                  id="crud-image"
+                  accept="image/*"
+                  class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-50 file:text-brand-700 cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Patrimônio</label
+            >
+            <input
+              type="text"
+              id="crud-code"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Descrição do Material</label
+            >
+            <input
+              type="text"
+              id="crud-name"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Categoria</label
+            >
+            <select
+              id="crud-category"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            >
+              <option value="Elétrica">Elétrica</option>
+              <option value="Bateria">Bateria</option>
+              <option value="Medição">Medição</option>
+              <option value="Manual">Manual</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+          <div id="crud-status-container" class="hidden">
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Situação</label
+            >
+            <select
+              id="crud-status"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            >
+              <option value="available">Disponível</option>
+              <option value="maintenance">Em Manutenção</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end space-x-3"
+        >
+          <button
+            onclick="App.CRUDTools.closeModal()"
+            class="px-5 py-2 text-slate-600 font-semibold hover:bg-slate-200 rounded-lg"
+          >
+            Cancelar
+          </button>
+          <button
+            id="btn-save-tool"
+            onclick="App.CRUDTools.saveTool()"
+            class="px-5 py-2 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 shadow-lg flex items-center"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="crud-user-modal"
+      class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-slide-up"
+      >
+        <div
+          class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50"
+        >
+          <h3 id="user-modal-title" class="text-xl font-bold text-slate-800">
+            Novo Colaborador
+          </h3>
+          <button
+            onclick="App.CRUDUsers.closeModal()"
+            class="text-slate-400 hover:text-slate-600"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <input type="hidden" id="crud-user-id" />
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Número do Ponto / Crachá</label
+            >
+            <input
+              type="text"
+              id="crud-user-badge"
+              placeholder="Ex: 987654"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none font-mono"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Nome Completo</label
+            >
+            <input
+              type="text"
+              id="crud-user-name"
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Função</label
+            >
+            <input
+              type="text"
+              id="crud-user-role"
+              placeholder="Ex: Eletricista, Soldador..."
+              class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
+            />
+          </div>
+        </div>
+        <div
+          class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end space-x-3"
+        >
+          <button
+            onclick="App.CRUDUsers.closeModal()"
+            class="px-5 py-2 text-slate-600 font-semibold hover:bg-slate-200 rounded-lg"
+          >
+            Cancelar
+          </button>
+          <button
+            id="btn-save-user"
+            onclick="App.CRUDUsers.saveUser()"
+            class="px-5 py-2 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 shadow-lg flex items-center"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="image-lightbox"
+      class="fixed inset-0 bg-slate-900/90 backdrop-blur-md z-[100] hidden flex items-center justify-center p-4 cursor-zoom-out"
+      onclick="App.UI.closeImagePreview()"
+    >
+      <div
+        class="relative max-w-4xl w-full flex flex-col items-center animate-slide-up"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="App.UI.closeImagePreview()"
+          class="absolute -top-12 right-0 text-white hover:text-slate-300 p-2 transition-colors"
+        >
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img
+          id="lightbox-img"
+          src=""
+          class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border-4 border-white/10 object-contain"
+        />
+        <p
+          id="lightbox-caption"
+          class="text-white mt-4 font-bold text-lg text-center bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm"
+        ></p>
+      </div>
+    </div>
+
+    <div
+      id="password-modal"
+      class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-slide-up"
+      >
+        <div
+          class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50"
+        >
+          <h3 class="text-xl font-bold text-slate-800 flex items-center">
+            <i data-lucide="shield" class="w-5 h-5 mr-2 text-brand-600"></i>
+            Alterar Senha
+          </h3>
+          <button
+            onclick="App.Auth.closePasswordModal()"
+            class="text-slate-400 hover:text-slate-600"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Nova Senha</label
+            >
+            <div class="relative group">
+              <i
+                data-lucide="lock"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              ></i>
+              <input
+                type="password"
+                id="new-password"
+                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
+                placeholder="Mínimo 6 caracteres"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Confirmar Nova Senha</label
+            >
+            <div class="relative group">
+              <i
+                data-lucide="check-circle"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              ></i>
+              <input
+                type="password"
+                id="confirm-password"
+                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
+                placeholder="Digite a senha novamente"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end space-x-3"
+        >
+          <button
+            onclick="App.Auth.closePasswordModal()"
+            class="px-5 py-2 text-slate-600 font-semibold hover:bg-slate-200 rounded-xl transition-colors"
+          >
+            Cancelar
+          </button>
+          <button
+            id="btn-save-password"
+            onclick="App.Auth.updateUserPassword()"
+            class="px-5 py-2 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-600/30 flex items-center transition-all"
+          >
+            Atualizar Senha
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="toast-container"
+      class="fixed top-6 right-6 space-y-3 flex flex-col items-end z-[110]"
+    ></div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        sendPasswordResetEmail,
+        onAuthStateChanged,
+        signOut,
+        updatePassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        onSnapshot,
+        doc,
+        setDoc,
+        updateDoc,
+        deleteDoc,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        limit,
+        enableIndexedDbPersistence,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      let firebaseConfig;
+      let appId = "estoquemaster-default";
+      if (typeof __firebase_config !== "undefined") {
+        firebaseConfig = JSON.parse(__firebase_config);
+        if (typeof __app_id !== "undefined") appId = __app_id;
+      } else {
+        firebaseConfig = {
+          apiKey: "AIzaSyBdwq7ETLLvYeTPCgc0j7TyNAbmCFjuBTY",
+          authDomain: "gestao-de-ferramentas-52e6e.firebaseapp.com",
+          projectId: "gestao-de-ferramentas-52e6e",
+          storageBucket: "gestao-de-ferramentas-52e6e.firebasestorage.app",
+          messagingSenderId: "465217038504",
+          appId: "1:465217038504:web:42ffe774ec5f4e0da2ba9d",
+        };
+      }
+
+      const DB_BASE_PATH = `artifacts/${appId}/public/data`;
+
+      const firebaseApp = initializeApp(firebaseConfig);
+      const auth = getAuth(firebaseApp);
+      const db = getFirestore(firebaseApp);
+
+      try {
+        enableIndexedDbPersistence(db).catch((err) => {
+          console.warn("Persistência offline falhou:", err.code);
+        });
+      } catch (e) {}
+
+      const Utils = {
+        debounce: (func, wait) => {
+          let t;
+          return function (...args) {
+            clearTimeout(t);
+            t = setTimeout(() => func.apply(this, args), wait);
+          };
+        },
+        formatDate: (iso) =>
+          !iso
+            ? '<span class="text-slate-300">Sem registro</span>'
+            : new Date(iso).toLocaleString("pt-BR", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+        escapeHTML: (str) =>
+          typeof str !== "string"
+            ? str
+            : str.replace(
+                /[&<>'"]/g,
+                (tag) =>
+                  ({
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    "'": "&#39;",
+                    '"': "&quot;",
+                  })[tag],
+              ),
+        getBadgeHTML: function (status) {
+          const badges = {
+            available: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-emerald-100 text-emerald-800 border-emerald-200"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5"></i> Disponível</span>`,
+            borrowed: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-amber-100 text-amber-800 border-amber-200"><i data-lucide="arrow-right-left" class="w-3.5 h-3.5 mr-1.5"></i> Emprestada</span>`,
+            maintenance: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-rose-100 text-rose-800 border-rose-200"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 mr-1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Manutenção</span>`,
+            in: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-emerald-100 text-emerald-800 border-emerald-200"><i data-lucide="arrow-down-left" class="w-3.5 h-3.5 mr-1.5"></i> Devolução</span>`,
+            out: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-blue-100 text-blue-800 border-blue-200"><i data-lucide="arrow-up-right" class="w-3.5 h-3.5 mr-1.5"></i> Saída</span>`,
+          };
+          return (
+            badges[status] ||
+            `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-slate-100 text-slate-800 border-slate-200"><i data-lucide="help-circle" class="w-3.5 h-3.5 mr-1.5"></i> ${status}</span>`
+          );
+        },
+        compressImageToBase64: function (file, maxWidth = 500, quality = 0.6) {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+              const img = new Image();
+              img.src = event.target.result;
+              img.onload = () => {
+                const canvas = document.createElement("canvas");
+                let width = img.width,
+                  height = img.height;
+                if (width > height) {
+                  if (width > maxWidth) {
+                    height = Math.round((height * maxWidth) / width);
+                    width = maxWidth;
+                  }
+                } else {
+                  if (height > maxWidth) {
+                    width = Math.round((width * maxWidth) / height);
+                    height = maxWidth;
+                  }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+                resolve(canvas.toDataURL("image/jpeg", quality));
+              };
+              img.onerror = reject;
+            };
+            reader.onerror = reject;
+          });
+        },
+        withTimeout: (promise, ms, err) =>
+          Promise.race([
+            promise,
+            new Promise((_, r) => setTimeout(() => r(new Error(err)), ms)),
+          ]),
+      };
+
+      const AudioSys = {
+        ctx: null,
+        playBeep: function (type = "success") {
+          try {
+            if (!this.ctx)
+              this.ctx = new (
+                window.AudioContext || window.webkitAudioContext
+              )();
+            if (this.ctx.state === "suspended") this.ctx.resume();
+            const osc = this.ctx.createOscillator(),
+              gain = this.ctx.createGain();
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            if (type === "success") {
+              osc.type = "sine";
+              osc.frequency.setValueAtTime(880, this.ctx.currentTime);
+              gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
+              gain.gain.exponentialRampToValueAtTime(
+                0.01,
+                this.ctx.currentTime + 0.1,
+              );
+              osc.start();
+              osc.stop(this.ctx.currentTime + 0.1);
+            } else if (type === "return") {
+              osc.type = "sine";
+              osc.frequency.setValueAtTime(523.25, this.ctx.currentTime);
+              osc.frequency.setValueAtTime(659.25, this.ctx.currentTime + 0.1);
+              gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
+              gain.gain.linearRampToValueAtTime(
+                0.01,
+                this.ctx.currentTime + 0.25,
+              );
+              osc.start();
+              osc.stop(this.ctx.currentTime + 0.25);
+            } else {
+              osc.type = "sawtooth";
+              osc.frequency.setValueAtTime(150, this.ctx.currentTime);
+              gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
+              gain.gain.linearRampToValueAtTime(
+                0.01,
+                this.ctx.currentTime + 0.3,
+              );
+              osc.start();
+              osc.stop(this.ctx.currentTime + 0.3);
+            }
+          } catch (e) {}
+        },
+      };
+
+      const AppPWA = {
+        init: function () {
+          try {
+            const manifest = {
+              name: "Gestão de Ferramentas | COENG",
+              short_name: "COENG",
+              display: "standalone",
+              background_color: "#0f172a",
+              theme_color: "#0f172a",
+              icons: [
+                {
+                  src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiMyNTYzZWIiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzI1NjNlYiIgc3Ryb2tlPSJub25lIiAvPjxwYXRoIGQ9Ik0xNC43IDYuM2ExIDEgMCAwIDAgMCAxLjRsMS42IDEuNmExIDEgMCAwIDAgMS40IDBsMy4xMDYtMy4xMDVjLjMyLS4zMjIuODYzLS4yMi45ODMuMjE4YTYgNiAwIDAgMS04LjI1OSA3LjA1N2wtNy45MSA3LjkxYTEgMSAwIDAgMS0yLjk5OS0zbDcuOTEtNy45MWE2IDYgMCAwIDEgNy4wNTctOC4yNTljLjQzOC4xMi41NC42NjIuMjE5Ljk4NHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIvPjwvc3ZnPg==",
+                  sizes: "512x512",
+                  type: "image/svg+xml",
+                },
+              ],
+            };
+            const manifestLink = document.getElementById("manifest-link");
+            if (manifestLink) {
+              manifestLink.href = URL.createObjectURL(
+                new Blob([JSON.stringify(manifest)], {
+                  type: "application/json",
+                }),
+              );
+            }
+          } catch (e) {}
+        },
+      };
+
+      const AppPDF = {
+        generateReceipt: function (tool, userName) {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+          const d = new Date();
+          const receiptId =
+            d.getFullYear().toString() +
+            (d.getMonth() + 1).toString().padStart(2, "0") +
+            d.getDate().toString().padStart(2, "0") +
+            "-" +
+            Math.floor(Math.random() * 10000)
+              .toString()
+              .padStart(4, "0");
+          const dataFormatada = `${d.toLocaleDateString("pt-BR")} às ${d.toLocaleTimeString("pt-BR")}`;
+          const userObj = AppData.users.find((u) => u.name === userName) || {};
+
+          doc.setFillColor(30, 58, 138);
+          doc.rect(0, 0, 210, 35, "F");
+          doc.setTextColor(255, 255, 255);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(24);
+          doc.text("COENG", 20, 20);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(9);
+          doc.text("SISTEMA DE GESTÃO DE FERRAMENTAS", 20, 27);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(12);
+          doc.text("TERMO DE RESPONSABILIDADE", 190, 20, { align: "right" });
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(9);
+          doc.setTextColor(220, 220, 220);
+          doc.text(`Protocolo: ${receiptId}`, 190, 27, { align: "right" });
+
+          doc.setTextColor(40, 40, 40);
+          doc.setFontSize(10);
+          doc.setFont("helvetica", "normal");
+          const termos =
+            "Pelo presente termo, o colaborador abaixo qualificado declara ter recebido a ferramenta descrita neste documento, assumindo total responsabilidade por sua guarda, conservação e correto uso, de acordo com as normas da empresa.\n\nO colaborador compromete-se a devolvê-la nas mesmas condições em que foi retirada ou a ressarcir a empresa em caso de perda, roubo, extravio ou danos decorrentes de mau uso, negligência ou imperícia.";
+          doc.text(doc.splitTextToSize(termos, 170), 20, 50);
+
+          let startY = 85;
+          doc.setFillColor(255, 255, 255);
+          doc.setDrawColor(180, 180, 180);
+          doc.setLineWidth(0.4);
+          doc.roundedRect(20, startY, 170, 35, 3, 3, "FD");
+          doc.setDrawColor(220, 220, 220);
+          doc.line(20, startY + 11, 190, startY + 11);
+          doc.setTextColor(30, 58, 138);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(10);
+          doc.text("DADOS DO PATRIMÔNIO", 25, startY + 7);
+          doc.setTextColor(0, 0, 0);
+          doc.setFontSize(9);
+          doc.setFont("helvetica", "bold");
+          doc.text("Código/Patrimônio:", 25, startY + 18);
+          doc.setFont("helvetica", "normal");
+          doc.text(tool.code, 65, startY + 18);
+          doc.setFont("helvetica", "bold");
+          doc.text("Descrição:", 25, startY + 25);
+          doc.setFont("helvetica", "normal");
+          doc.text(tool.name, 65, startY + 25);
+          doc.setFont("helvetica", "bold");
+          doc.text("Categoria:", 25, startY + 32);
+          doc.setFont("helvetica", "normal");
+          doc.text(tool.category, 65, startY + 32);
+
+          startY += 45;
+          doc.setFillColor(255, 255, 255);
+          doc.setDrawColor(180, 180, 180);
+          doc.setLineWidth(0.4);
+          doc.roundedRect(20, startY, 170, 35, 3, 3, "FD");
+          doc.setDrawColor(220, 220, 220);
+          doc.line(20, startY + 11, 190, startY + 11);
+          doc.setTextColor(30, 58, 138);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(10);
+          doc.text("DADOS DO COLABORADOR E RETIRADA", 25, startY + 7);
+          doc.setTextColor(0, 0, 0);
+          doc.setFontSize(9);
+          doc.setFont("helvetica", "bold");
+          doc.text("Nome Completo:", 25, startY + 18);
+          doc.setFont("helvetica", "normal");
+          doc.text(userName, 65, startY + 18);
+          doc.setFont("helvetica", "bold");
+          doc.text("Ponto/Crachá:", 25, startY + 25);
+          doc.setFont("helvetica", "normal");
+          doc.text(userObj.badge || "Não registrado", 65, startY + 25);
+          doc.setFont("helvetica", "bold");
+          doc.text("Função/Depto:", 115, startY + 25);
+          doc.setFont("helvetica", "normal");
+          doc.text(
+            userObj.role || userObj.department || "Não registrada",
+            140,
+            startY + 25,
+          );
+          doc.setFont("helvetica", "bold");
+          doc.text("Data da Retirada:", 25, startY + 32);
+          doc.setFont("helvetica", "normal");
+          doc.text(dataFormatada, 65, startY + 32);
+
+          startY += 50;
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(10);
+          doc.text("DECLARAÇÃO DE CONFORMIDADE", 20, startY);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(9);
+          doc.text(
+            "Declaro ter conferido e recebido o material acima descrito em perfeitas condições de uso.",
+            20,
+            startY + 6,
+          );
+          startY += 30;
+          doc.setDrawColor(100, 100, 100);
+          doc.setLineWidth(0.3);
+          doc.line(30, startY, 95, startY);
+          doc.line(115, startY, 180, startY);
+          doc.setTextColor(0, 0, 0);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(9);
+          doc.text(userName, 62.5, startY + 5, { align: "center" });
+          doc.text("Administração COENG", 147.5, startY + 5, {
+            align: "center",
+          });
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(8);
+          doc.text("Assinatura do Colaborador", 62.5, startY + 9, {
+            align: "center",
+          });
+          doc.text("Assinatura do Emissor", 147.5, startY + 9, {
+            align: "center",
+          });
+
+          const hash = Array.from({ length: 32 }, () =>
+            Math.floor(Math.random() * 16).toString(16),
+          )
+            .join("")
+            .toUpperCase();
+          doc.setDrawColor(200, 200, 200);
+          doc.line(20, 275, 190, 275);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(7);
+          doc.setTextColor(120, 120, 120);
+          doc.text(`CHAVE DE AUTENTICAÇÃO ELETRÔNICA: ${hash}`, 105, 281, {
+            align: "center",
+          });
+          doc.setFont("helvetica", "normal");
+          doc.text(
+            `Documento gerado eletronicamente pelo Sistema de Gestão COENG em ${dataFormatada}`,
+            105,
+            285,
+            { align: "center" },
+          );
+          doc.save(
+            `Termo_Resp_${tool.code}_${userName.replace(/\s+/g, "_")}.pdf`,
+          );
+        },
+      };
+
+      const AppSession = {
+        timeout: null,
+        timeLimit: 30 * 60 * 1000,
+        init: function () {
+          this.resetTimer();
+          ["mousemove", "keydown", "scroll", "click"].forEach((evt) => {
+            document.addEventListener(evt, () => this.resetTimer());
+          });
+        },
+        resetTimer: function () {
+          clearTimeout(this.timeout);
+          this.timeout = setTimeout(() => {
+            if (auth.currentUser) {
+              App.Auth.logout();
+              alert("Sessão expirada por inatividade. Faça login novamente.");
+            }
+          }, this.timeLimit);
+        },
+      };
+
+      const AppAuth = {
+        init: function () {
+          const form = document.getElementById("login-form");
+          const btnForgot = document.getElementById("btn-forgot-password");
+          const btnLogin = document.getElementById("btn-login");
+          const loginText = document.getElementById("login-text");
+          const togglePassword = document.getElementById("toggle-password");
+          const loginPassword = document.getElementById("login-password");
+
+          if (togglePassword && loginPassword) {
+            togglePassword.addEventListener("click", () => {
+              const isPassword =
+                loginPassword.getAttribute("type") === "password";
+              loginPassword.setAttribute(
+                "type",
+                isPassword ? "text" : "password",
+              );
+              togglePassword.innerHTML = `<i data-lucide="${isPassword ? "eye-off" : "eye"}" class="w-5 h-5"></i>`;
+              lucide.createIcons();
+            });
+          }
+
+          if (btnForgot) {
+            btnForgot.addEventListener("click", async (e) => {
+              e.preventDefault();
+              const email = document.getElementById("login-email").value;
+              if (!email)
+                return alert(
+                  "Por favor, digite o seu e-mail no campo acima antes de pedir a recuperação.",
+                );
+              try {
+                await sendPasswordResetEmail(auth, email);
+                alert(
+                  "E-mail de recuperação enviado! Verifique a sua caixa de entrada.",
+                );
+              } catch (error) {
+                alert(
+                  "Erro ao enviar e-mail. Verifique se o endereço está correto ou cadastrado.",
+                );
+              }
+            });
+          }
+
+          if (form) {
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+              const email = document.getElementById("login-email").value;
+              const pass = document.getElementById("login-password").value;
+              if (btnLogin) btnLogin.disabled = true;
+              if (loginText)
+                loginText.innerHTML =
+                  '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin inline"></i> Autenticando...';
+              lucide.createIcons();
+              try {
+                await signInWithEmailAndPassword(auth, email, pass);
+              } catch (error) {
+                alert(
+                  "Erro de Autenticação: Verifique as suas credenciais ou contate o administrador.",
+                );
+                if (btnLogin) btnLogin.disabled = false;
+                if (loginText) loginText.textContent = "Entrar";
+              }
+            });
+          }
+
+          onAuthStateChanged(auth, async (user) => {
+            if (user) {
+              const userEmail = user.email.toLowerCase();
+              let adminEmails = ["jefferson.araujo@camara.leg.br"];
+              try {
+                const snap = await getDocs(
+                  collection(db, DB_BASE_PATH, "admins"),
+                );
+                snap.docs.forEach((d) => {
+                  if (d.data().email)
+                    adminEmails.push(d.data().email.toLowerCase());
+                });
+              } catch (e) {
+                console.warn(
+                  "Modo offline ou sem permissão para buscar admins extras.",
+                );
+              }
+
+              const isAdmin = adminEmails.includes(userEmail);
+              let displayName = isAdmin
+                ? "Jefferson de Araújo Silva"
+                : "Operador do Sistema";
+              let roleDisplay = isAdmin
+                ? "Admin | Acesso Total"
+                : "Operador | Acesso Limitado";
+
+              const dUserEmail = document.getElementById("display-user-email");
+              if (dUserEmail) dUserEmail.textContent = displayName;
+
+              const dUserRole = document.getElementById("display-user-role");
+              if (dUserRole) dUserRole.textContent = roleDisplay;
+
+              const adminMenu = document.getElementById("menu-admin-group");
+              if (isAdmin) {
+                if (adminMenu) adminMenu.style.display = "block";
+              } else {
+                if (adminMenu) adminMenu.style.display = "none";
+                if (
+                  ["management", "collaborators", "history"].includes(
+                    App.UI.activeTab,
+                  )
+                )
+                  App.UI.switchTab("dashboard");
+              }
+
+              const loginScreen = document.getElementById("login-screen");
+              const mainApp = document.getElementById("main-app");
+              if (loginScreen) loginScreen.classList.add("hidden");
+              if (mainApp) mainApp.classList.remove("hidden");
+
+              App.Data.init();
+              AppSession.init();
+              if (btnLogin) btnLogin.disabled = false;
+              if (loginText) loginText.textContent = "Entrar";
+              const loginPass = document.getElementById("login-password");
+              if (loginPass) loginPass.value = "";
+            } else {
+              const loginScreen = document.getElementById("login-screen");
+              const mainApp = document.getElementById("main-app");
+              if (loginScreen) loginScreen.classList.remove("hidden");
+              if (mainApp) mainApp.classList.add("hidden");
+              clearTimeout(AppSession.timeout);
+            }
+          });
+        },
+        logout: () => signOut(auth),
+        openPasswordModal: function () {
+          const m = document.getElementById("password-modal");
+          if (m) {
+            m.classList.remove("hidden");
+            m.classList.add("flex");
+          }
+          const np = document.getElementById("new-password"),
+            cp = document.getElementById("confirm-password");
+          if (np) np.value = "";
+          if (cp) cp.value = "";
+        },
+        closePasswordModal: function () {
+          const m = document.getElementById("password-modal");
+          if (m) {
+            m.classList.add("hidden");
+            m.classList.remove("flex");
+          }
+        },
+        updateUserPassword: async function () {
+          const newPass = document.getElementById("new-password").value;
+          const confirmPass = document.getElementById("confirm-password").value;
+          if (newPass.length < 6)
+            return App.UI.showToast(
+              "A senha deve ter pelo menos 6 caracteres.",
+              "error",
+            );
+          if (newPass !== confirmPass)
+            return App.UI.showToast("As senhas não coincidem.", "error");
+
+          const btn = document.getElementById("btn-save-password");
+          const originalText = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML =
+            '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i> Atualizando...';
+          lucide.createIcons();
+
+          try {
+            await updatePassword(auth.currentUser, newPass);
+            App.UI.showToast("Senha atualizada com sucesso!", "success");
+            this.closePasswordModal();
+          } catch (error) {
+            if (error.code === "auth/requires-recent-login") {
+              App.UI.showToast(
+                "Por segurança, faça login novamente para alterar sua senha.",
+                "error",
+              );
+              setTimeout(() => this.logout(), 3000);
+            } else {
+              App.UI.showToast(
+                "Ocorreu um erro ao atualizar a senha.",
+                "error",
+              );
+            }
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+            lucide.createIcons();
+          }
+        },
+      };
+
+      const AppData = {
+        tools: [],
+        history: [],
+        users: [],
+        chartInstance: null,
+        listeners: [],
+        historyLimit: 50,
+        historyUnsub: null,
+        init: function () {
+          this.listeners.forEach((unsub) => unsub());
+          this.listeners = [];
+          this.listeners.push(
+            onSnapshot(
+              collection(db, DB_BASE_PATH, "tools"),
+              (snapshot) => {
+                this.tools = snapshot.docs.map((doc) => ({
+                  firebaseId: doc.id,
+                  ...doc.data(),
+                }));
+                App.UI.renderAll();
+              },
+              (err) => App.UI.showToast("Erro ao ler Ferramentas.", "error"),
+            ),
+          );
+
+          this.loadHistoryQuery();
+          this.listeners.push(
+            onSnapshot(collection(db, DB_BASE_PATH, "users"), (snapshot) => {
+              this.users = snapshot.docs
+                .map((doc) => ({ firebaseId: doc.id, ...doc.data() }))
+                .sort((a, b) => a.name.localeCompare(b.name));
+              if (App.UI.activeTab === "collaborators") App.CRUDUsers.render();
+            }),
+          );
+        },
+        loadHistoryQuery: function () {
+          if (this.historyUnsub) {
+            this.historyUnsub();
+            this.historyUnsub = null;
+          }
+          const historyQuery = query(
+            collection(db, DB_BASE_PATH, "history"),
+            orderBy("date", "desc"),
+            limit(this.historyLimit),
+          );
+          this.historyUnsub = onSnapshot(
+            historyQuery,
+            (snapshot) => {
+              this.history = snapshot.docs.map((doc) => ({
+                firebaseId: doc.id,
+                ...doc.data(),
+              }));
+              if (App.UI.activeTab === "history") App.UI.renderHistory();
+              const btnContainer = document.getElementById(
+                "history-load-more-container",
+              );
+              if (btnContainer) {
+                if (snapshot.docs.length >= this.historyLimit)
+                  btnContainer.classList.remove("hidden");
+                else btnContainer.classList.add("hidden");
+              }
+            },
+            (err) => console.error("Erro History:", err),
+          );
+          this.listeners.push(this.historyUnsub);
+        },
+        loadMoreHistory: function () {
+          this.historyLimit += 50;
+          const btn = document.getElementById("btn-load-more");
+          if (btn)
+            btn.innerHTML =
+              '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Carregando...';
+          lucide.createIcons();
+          this.loadHistoryQuery();
+        },
+        updateTool: async function (code, updates, actionType, user) {
+          const tool = this.tools.find((t) => t.code === code);
+          if (tool) {
+            try {
+              await updateDoc(
+                doc(db, DB_BASE_PATH, "tools", tool.firebaseId),
+                updates,
+              );
+              if (actionType) await this.logAction(tool, actionType, user);
+              return true;
+            } catch (err) {
+              App.UI.showToast("Erro de comunicação.", "error");
+              return false;
+            }
+          }
+        },
+        logAction: async function (tool, type, user) {
+          try {
+            await addDoc(collection(db, DB_BASE_PATH, "history"), {
+              date: new Date().toISOString(),
+              toolCode: tool.code,
+              toolName: tool.name,
+              type: type,
+              user: user || "Sistema",
+            });
+          } catch (e) {}
+        },
+        cleanOldLogs: async function () {
+          if (!confirm("Deseja apagar os registros com mais de 30 dias?"))
+            return;
+          const thirtyDaysAgo = new Date(
+            Date.now() - 30 * 24 * 60 * 60 * 1000,
+          ).toISOString();
+          try {
+            const snap = await getDocs(
+              query(collection(db, DB_BASE_PATH, "history")),
+            );
+            let deleted = 0;
+            snap.forEach((d) => {
+              if (d.data().date < thirtyDaysAgo) {
+                deleteDoc(doc(db, DB_BASE_PATH, "history", d.id));
+                deleted++;
+              }
+            });
+            App.UI.showToast(
+              `${deleted} registros antigos apagados.`,
+              "success",
+            );
+          } catch (e) {
+            App.UI.showToast("Erro ao limpar registros.", "error");
+          }
+        },
+        exportCSV: function () {
+          const headers = [
+            "Patrimônio",
+            "Descrição",
+            "Categoria",
+            "Situação",
+            "Responsável",
+            "Última Ação",
+          ];
+          const rows = this.tools.map((t) =>
+            [
+              t.code,
+              `"${t.name}"`,
+              t.category,
+              t.status,
+              t.currentUser || "",
+              t.lastAction || "",
+            ].join(","),
+          );
+          const link = document.createElement("a");
+          link.setAttribute(
+            "href",
+            encodeURI(
+              "data:text/csv;charset=utf-8,\uFEFF" +
+                headers.join(",") +
+                "\n" +
+                rows.join("\n"),
+            ),
+          );
+          link.setAttribute(
+            "download",
+            `inventario_${new Date().toISOString().slice(0, 10)}.csv`,
+          );
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          App.UI.showToast("Exportação concluída (UTF-8).", "success");
+        },
+      };
+
+      const AppUI = {
+        activeTab: "dashboard",
+        init: function () {
+          window.addEventListener("online", () =>
+            this.showToast(
+              "Conexão restabelecida. Sincronizando...",
+              "success",
+            ),
+          );
+          window.addEventListener("offline", () =>
+            this.showToast(
+              "Sem internet. Modo offline ativado. As alterações serão salvas localmente.",
+              "error",
+            ),
+          );
+
+          const cd = document.getElementById("current-date");
+          if (cd)
+            cd.textContent = new Date().toLocaleDateString("pt-BR", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            });
+
+          const debouncedRender = Utils.debounce(
+            () => this.renderDashboard(),
+            300,
+          );
+
+          const dashSearch = document.getElementById("dash-search");
+          if (dashSearch) dashSearch.addEventListener("input", debouncedRender);
+
+          const dashFilter = document.getElementById("dash-filter");
+          if (dashFilter)
+            dashFilter.addEventListener("change", () => this.renderDashboard());
+
+          const debouncedRenderTools = Utils.debounce(
+            () => App.CRUDTools.render(),
+            300,
+          );
+          const toolsSearch = document.getElementById("tools-search");
+          if (toolsSearch)
+            toolsSearch.addEventListener("input", debouncedRenderTools);
+
+          const debouncedRenderUsers = Utils.debounce(
+            () => App.CRUDUsers.render(),
+            300,
+          );
+          const usersSearch = document.getElementById("users-search");
+          if (usersSearch)
+            usersSearch.addEventListener("input", debouncedRenderUsers);
+
+          const debouncedRenderHistory = Utils.debounce(
+            () => this.renderHistory(),
+            300,
+          );
+          const historySearch = document.getElementById("history-search");
+          if (historySearch)
+            historySearch.addEventListener("input", debouncedRenderHistory);
+
+          const checkBadge = document.getElementById("checkout-user-badge");
+          if (checkBadge) {
+            checkBadge.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" && this.value.trim() !== "")
+                App.Scanner.processCheckout();
+            });
+          }
+
+          const crudImg = document.getElementById("crud-image");
+          if (crudImg) {
+            crudImg.addEventListener("change", (e) => {
+              if (e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                  const pre = document.getElementById("crud-image-preview"),
+                    icon = document.getElementById("image-placeholder-icon");
+                  if (pre) {
+                    pre.src = evt.target.result;
+                    pre.classList.remove("hidden");
+                  }
+                  if (icon) icon.classList.add("hidden");
+                };
+                reader.readAsDataURL(e.target.files[0]);
+              }
+            });
+          }
+        },
+        showImagePreview: function (url, title) {
+          const lb = document.getElementById("image-lightbox"),
+            img = document.getElementById("lightbox-img"),
+            cap = document.getElementById("lightbox-caption");
+          if (img) img.src = url;
+          if (cap) cap.textContent = title || "Visualização do Material";
+          if (lb) {
+            lb.classList.remove("hidden");
+            lb.classList.add("flex");
+          }
+          lucide.createIcons();
+        },
+        closeImagePreview: function () {
+          const lb = document.getElementById("image-lightbox");
+          if (lb) {
+            lb.classList.add("hidden");
+            lb.classList.remove("flex");
+          }
+        },
+        switchTab: function (tab) {
+          this.activeTab = tab;
+          document
+            .querySelectorAll(".nav-btn")
+            .forEach(
+              (btn) =>
+                (btn.className =
+                  "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"),
+            );
+          const activeNav = document.getElementById(`nav-${tab}`);
+          if (activeNav)
+            activeNav.className =
+              "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group bg-brand-600 text-white shadow-md shadow-brand-600/20";
+          [
+            "dashboard",
+            "scanner",
+            "management",
+            "collaborators",
+            "history",
+          ].forEach((t) => {
+            const el = document.getElementById(`tab-${t}`);
+            if (el) el.classList.add("hidden-tab");
+          });
+          const activeTabEl = document.getElementById(`tab-${tab}`);
+          if (activeTabEl) activeTabEl.classList.remove("hidden-tab");
+
+          if (tab !== "scanner") App.Scanner.stopCamera();
+          if (tab === "scanner") App.Scanner.focus();
+          this.renderAll();
+        },
+        renderAll: function () {
+          this.renderDashboard();
+          if (this.activeTab === "management") App.CRUDTools.render();
+          if (this.activeTab === "collaborators") App.CRUDUsers.render();
+          if (this.activeTab === "history") this.renderHistory();
+        },
+        renderDashboard: function () {
+          const tools = AppData.tools;
+          const cA = tools.filter((t) => t.status === "available").length,
+            cB = tools.filter((t) => t.status === "borrowed").length,
+            cM = tools.filter((t) => t.status === "maintenance").length;
+          const statT = document.getElementById("stat-total"),
+            statA = document.getElementById("stat-available"),
+            statB = document.getElementById("stat-borrowed"),
+            statM = document.getElementById("stat-maintenance");
+          if (statT) statT.textContent = tools.length;
+          if (statA) statA.textContent = cA;
+          if (statB) statB.textContent = cB;
+          if (statM) statM.textContent = cM;
+
+          const chartCanvas = document.getElementById("statusChart");
+          if (chartCanvas) {
+            const ctx = chartCanvas.getContext("2d");
+            if (AppData.chartInstance) {
+              AppData.chartInstance.data.datasets[0].data = [cA, cB, cM];
+              AppData.chartInstance.update();
+            } else {
+              AppData.chartInstance = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                  labels: ["Disponível", "Emprestada", "Manutenção"],
+                  datasets: [
+                    {
+                      data: [cA, cB, cM],
+                      backgroundColor: ["#10b981", "#f59e0b", "#f43f5e"],
+                      borderWidth: 0,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  cutout: "75%",
+                  plugins: { legend: { position: "bottom" } },
+                },
+              });
+            }
+          }
+
+          const searchEl = document.getElementById("dash-search"),
+            filterEl = document.getElementById("dash-filter");
+          const q = searchEl ? searchEl.value.toLowerCase() : "";
+          const f = filterEl ? filterEl.value : "all";
+
+          const filtered = tools.filter(
+            (t) =>
+              (t.name.toLowerCase().includes(q) ||
+                t.code.includes(q) ||
+                (t.currentUser || "").toLowerCase().includes(q)) &&
+              (f === "all" || t.status === f),
+          );
+
+          const tbody = document.getElementById("dash-tbody");
+          if (!tbody) return;
+          tbody.innerHTML = "";
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="5" class="px-6 py-10 text-center text-slate-400">Sem resultados.</td></tr>`;
+            return;
+          }
+
+          filtered.forEach((t) => {
+            const uHtml = t.currentUser
+              ? `<div class="font-semibold text-slate-700">${Utils.escapeHTML(t.currentUser)}</div>`
+              : `<span class="text-slate-300">---</span>`;
+            const safeName = Utils.escapeHTML(t.name).replace(/'/g, "\\'");
+            const imgHtml = t.imageUrl
+              ? `<img src="${t.imageUrl}" onclick="App.UI.showImagePreview('${t.imageUrl}', '${safeName}')" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:scale-110 transition-transform shadow-sm">`
+              : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
+            tbody.innerHTML += `<tr class="hover:bg-brand-50/50"><td class="px-6 py-4 font-mono font-semibold">${Utils.escapeHTML(t.code)}</td><td class="px-6 py-4"><div class="flex items-center">${imgHtml}<div><p class="font-bold text-slate-800">${Utils.escapeHTML(t.name)}</p><p class="text-xs font-normal text-slate-400">${Utils.escapeHTML(t.category)}</p></div></div></td><td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td><td class="px-6 py-4">${uHtml}</td><td class="px-6 py-4 text-right text-xs">${Utils.formatDate(t.lastAction)}</td></tr>`;
+          });
+          lucide.createIcons();
+        },
+        renderHistory: function () {
+          const tbody = document.getElementById("history-tbody");
+          if (!tbody) return;
+          tbody.innerHTML = "";
+
+          const searchEl = document.getElementById("history-search");
+          const q = searchEl ? searchEl.value.toLowerCase() : "";
+          const filtered = AppData.history.filter(
+            (log) =>
+              log.toolName.toLowerCase().includes(q) ||
+              log.toolCode.toLowerCase().includes(q) ||
+              log.user.toLowerCase().includes(q),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhum registro de histórico encontrado.</td></tr>`;
+            return;
+          }
+
+          filtered.forEach((log) => {
+            tbody.innerHTML += `<tr class="hover:bg-slate-50"><td class="px-6 py-4 text-sm font-medium text-slate-600">${Utils.formatDate(log.date)}</td><td class="px-6 py-4">${Utils.getBadgeHTML(log.type)}</td><td class="px-6 py-4 font-bold">${Utils.escapeHTML(log.toolName)} <span class="font-mono text-xs text-slate-400">(${Utils.escapeHTML(log.toolCode)})</span></td><td class="px-6 py-4 font-semibold text-slate-700">${Utils.escapeHTML(log.user)}</td></tr>`;
+          });
+          lucide.createIcons();
+        },
+        showToast: function (msg, type = "info") {
+          const cont = document.getElementById("toast-container");
+          if (!cont) return;
+          const t = document.createElement("div");
+          const conf =
+            type === "success"
+              ? { bg: "bg-emerald-600 border-emerald-500", ic: "check-circle" }
+              : { bg: "bg-rose-600 border-rose-500", ic: "alert-triangle" };
+          t.className = `toast-item flex items-center p-4 rounded-xl shadow-2xl text-white border ${conf.bg}`;
+          t.innerHTML = `<i data-lucide="${conf.ic}" class="w-5 h-5 mr-3 shrink-0"></i><span class="font-semibold text-sm pr-6">${msg}</span><button onclick="this.parentElement.remove()" class="ml-auto focus:outline-none"><i data-lucide="x" class="w-4 h-4"></i></button>`;
+          cont.appendChild(t);
+          lucide.createIcons();
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => t.classList.add("show")),
+          );
+          setTimeout(() => {
+            t.classList.remove("show");
+            setTimeout(() => {
+              if (t.parentElement) t.remove();
+            }, 400);
+          }, 4000);
+        },
+      };
+
+      const AppCRUDTools = {
+        render: function () {
+          const tbody = document.getElementById("crud-tbody");
+          if (!tbody) return;
+          tbody.innerHTML = "";
+
+          const searchEl = document.getElementById("tools-search");
+          const q = searchEl ? searchEl.value.toLowerCase() : "";
+          const filtered = AppData.tools.filter(
+            (t) =>
+              t.name.toLowerCase().includes(q) ||
+              t.code.toLowerCase().includes(q) ||
+              t.category.toLowerCase().includes(q),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhuma ferramenta encontrada.</td></tr>`;
+            return;
+          }
+
+          filtered.forEach((t) => {
+            const btn = `<button onclick="App.CRUDTools.openModal('${t.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button><button onclick="App.CRUDTools.deleteTool('${t.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`;
+            const safeName = Utils.escapeHTML(t.name).replace(/'/g, "\\'");
+            const img = t.imageUrl
+              ? `<img src="${t.imageUrl}" onclick="App.UI.showImagePreview('${t.imageUrl}', '${safeName}')" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:brightness-90 transition-all">`
+              : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
+            tbody.innerHTML += `<tr><td class="px-6 py-4 font-mono">${Utils.escapeHTML(t.code)}</td><td class="px-6 py-4"><div class="flex items-center">${img}<div><p class="font-bold text-slate-800">${Utils.escapeHTML(t.name)}</p><p class="text-xs font-normal text-slate-400 block">${Utils.escapeHTML(t.category)}</p></div></div></td><td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td><td class="px-6 py-4 text-right">${btn}</td></tr>`;
+          });
+          lucide.createIcons();
+        },
+        openModal: function (firebaseId = null) {
+          const m = document.getElementById("crud-modal");
+          if (m) m.classList.remove("hidden");
+          const cImg = document.getElementById("crud-image"),
+            pre = document.getElementById("crud-image-preview"),
+            icon = document.getElementById("image-placeholder-icon");
+          if (cImg) cImg.value = "";
+          if (pre) {
+            pre.classList.add("hidden");
+            pre.src = "";
+          }
+          if (icon) icon.classList.remove("hidden");
+
+          if (firebaseId) {
+            const t = AppData.tools.find((x) => x.firebaseId === firebaseId);
+            document.getElementById("modal-title").textContent =
+              "Editar Ferramenta";
+            document.getElementById("crud-id").value = t.firebaseId;
+            document.getElementById("crud-code").value = t.code;
+            document.getElementById("crud-code").disabled = true;
+            document.getElementById("crud-name").value = t.name;
+            document.getElementById("crud-category").value = t.category;
+            document
+              .getElementById("crud-status-container")
+              .classList.remove("hidden");
+            document.getElementById("crud-status").value =
+              t.status === "borrowed" ? "available" : t.status;
+            if (t.imageUrl && pre && icon) {
+              pre.src = t.imageUrl;
+              pre.classList.remove("hidden");
+              icon.classList.add("hidden");
+            }
+          } else {
+            document.getElementById("modal-title").textContent =
+              "Nova Ferramenta";
+            document.getElementById("crud-id").value = "";
+            document.getElementById("crud-code").value = "";
+            document.getElementById("crud-code").disabled = false;
+            document.getElementById("crud-name").value = "";
+            document
+              .getElementById("crud-status-container")
+              .classList.add("hidden");
+          }
+        },
+        closeModal: () => {
+          const m = document.getElementById("crud-modal");
+          if (m) m.classList.add("hidden");
+        },
+        saveTool: async function () {
+          const firebaseId = document.getElementById("crud-id").value,
+            code = document.getElementById("crud-code").value.trim(),
+            name = document.getElementById("crud-name").value.trim(),
+            cat = document.getElementById("crud-category").value,
+            fileInput = document.getElementById("crud-image");
+          if (!code || !name)
+            return App.UI.showToast("Preencha Código e Nome.", "error");
+
+          const btn = document.getElementById("btn-save-tool"),
+            original = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML =
+            '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Salvando...';
+          lucide.createIcons();
+
+          try {
+            let imageUrl = null;
+            const tool = firebaseId
+              ? AppData.tools.find((t) => t.firebaseId === firebaseId)
+              : null;
+            if (tool && tool.imageUrl) imageUrl = tool.imageUrl;
+            if (fileInput && fileInput.files.length > 0)
+              imageUrl = await Utils.compressImageToBase64(
+                fileInput.files[0],
+                400,
+                0.6,
+              );
+
+            if (firebaseId) {
+              const updates = { name, category: cat };
+              if (tool && tool.status !== "borrowed")
+                updates.status = document.getElementById("crud-status").value;
+              if (imageUrl) updates.imageUrl = imageUrl;
+              await Utils.withTimeout(
+                updateDoc(doc(db, DB_BASE_PATH, "tools", firebaseId), updates),
+                8000,
+                "Timeout DB",
+              );
+              App.UI.showToast("Atualizada!", "success");
+            } else {
+              if (AppData.tools.find((t) => t.code === code)) {
+                btn.disabled = false;
+                btn.innerHTML = original;
+                return App.UI.showToast("Código já existe!", "error");
+              }
+              const newTool = {
+                code,
+                name,
+                category: cat,
+                status: "available",
+                currentUser: null,
+                lastAction: null,
+              };
+              if (imageUrl) newTool.imageUrl = imageUrl;
+              await Utils.withTimeout(
+                setDoc(doc(db, DB_BASE_PATH, "tools", code), newTool),
+                8000,
+                "Timeout DB",
+              );
+              App.UI.showToast("Adicionada com sucesso!", "success");
+            }
+            this.closeModal();
+          } catch (err) {
+            App.UI.showToast("Erro ao gravar.", "error");
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = original;
+            lucide.createIcons();
+          }
+        },
+        deleteTool: async function (firebaseId) {
+          if (confirm("Tem certeza que deseja excluir?"))
+            try {
+              await deleteDoc(doc(db, DB_BASE_PATH, "tools", firebaseId));
+              App.UI.showToast("Ferramenta excluída.", "success");
+            } catch (e) {}
+        },
+      };
+
+      const AppCRUDUsers = {
+        render: function () {
+          const tbody = document.getElementById("users-tbody");
+          if (!tbody) return;
+          tbody.innerHTML = "";
+
+          const searchEl = document.getElementById("users-search");
+          const q = searchEl ? searchEl.value.toLowerCase() : "";
+          const filtered = AppData.users.filter(
+            (u) =>
+              u.name.toLowerCase().includes(q) ||
+              (u.badge && u.badge.toLowerCase().includes(q)) ||
+              (u.role && u.role.toLowerCase().includes(q)),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhum colaborador encontrado.</td></tr>`;
+            return;
+          }
+
+          filtered.forEach((u) => {
+            const btn = `<button onclick="App.CRUDUsers.openModal('${u.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button><button onclick="App.CRUDUsers.deleteUser('${u.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`;
+            tbody.innerHTML += `<tr><td class="px-6 py-4 font-mono text-brand-600 font-bold">${Utils.escapeHTML(u.badge || "---")}</td><td class="px-6 py-4 font-bold">${Utils.escapeHTML(u.name)}</td><td class="px-6 py-4 text-slate-500">${Utils.escapeHTML(u.role || u.department || "---")}</td><td class="px-6 py-4 text-right">${btn}</td></tr>`;
+          });
+          lucide.createIcons();
+        },
+        openModal: function (id = null) {
+          const m = document.getElementById("crud-user-modal");
+          if (m) m.classList.remove("hidden");
+          if (id) {
+            const u = AppData.users.find((x) => x.firebaseId === id);
+            document.getElementById("user-modal-title").textContent =
+              "Editar Colaborador";
+            document.getElementById("crud-user-id").value = u.firebaseId;
+            document.getElementById("crud-user-badge").value = u.badge || "";
+            document.getElementById("crud-user-name").value = u.name;
+            document.getElementById("crud-user-role").value =
+              u.role || u.department || "";
+          } else {
+            document.getElementById("user-modal-title").textContent =
+              "Novo Colaborador";
+            document.getElementById("crud-user-id").value = "";
+            document.getElementById("crud-user-badge").value = "";
+            document.getElementById("crud-user-name").value = "";
+            document.getElementById("crud-user-role").value = "";
+          }
+        },
+        closeModal: () => {
+          const m = document.getElementById("crud-user-modal");
+          if (m) m.classList.add("hidden");
+        },
+        saveUser: async function () {
+          const id = document.getElementById("crud-user-id").value,
+            badge = document.getElementById("crud-user-badge").value.trim(),
+            name = document.getElementById("crud-user-name").value.trim(),
+            role = document.getElementById("crud-user-role").value.trim();
+          if (!name) return App.UI.showToast("Preencha o Nome.", "error");
+
+          try {
+            if (id) {
+              await updateDoc(doc(db, DB_BASE_PATH, "users", id), {
+                badge,
+                name,
+                role,
+              });
+              App.UI.showToast("Colaborador atualizado!", "success");
+            } else {
+              await addDoc(collection(db, DB_BASE_PATH, "users"), {
+                badge,
+                name,
+                role,
+              });
+              App.UI.showToast("Colaborador adicionado!", "success");
+            }
+            this.closeModal();
+          } catch (e) {
+            App.UI.showToast("Erro ao salvar.", "error");
+          }
+        },
+        deleteUser: async function (id) {
+          if (confirm("Remover este colaborador?"))
+            try {
+              await deleteDoc(doc(db, DB_BASE_PATH, "users", id));
+              App.UI.showToast("Removido.", "success");
+            } catch (e) {}
+        },
+        importFile: function (event) {
+          const file = event.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = async (e) => {
+            try {
+              const workbook = XLSX.read(new Uint8Array(e.target.result), {
+                type: "array",
+              });
+              const rows = XLSX.utils.sheet_to_json(
+                workbook.Sheets[workbook.SheetNames[0]],
+                { header: 1 },
+              );
+              if (rows.length < 2)
+                return App.UI.showToast(
+                  "Arquivo vazio ou com formato incorreto.",
+                  "error",
+                );
+
+              App.UI.showToast("Importando colaboradores... Aguarde.", "info");
+              let count = 0;
+              for (let i = 1; i < rows.length; i++) {
+                const cols = rows[i];
+                if (!cols || cols.length === 0) continue;
+                const badge = cols[0] != null ? String(cols[0]).trim() : "",
+                  name = cols[1] != null ? String(cols[1]).trim() : "",
+                  role = cols[2] != null ? String(cols[2]).trim() : "";
+                if (name) {
+                  try {
+                    await addDoc(collection(db, DB_BASE_PATH, "users"), {
+                      badge,
+                      name,
+                      role,
+                    });
+                    count++;
+                  } catch (err) {}
+                }
+              }
+              App.UI.showToast(
+                `${count} colaboradores importados com sucesso!`,
+                "success",
+              );
+            } catch (err) {
+              App.UI.showToast(
+                "Falha ao ler o arquivo Excel. Verifique se não está corrompido.",
+                "error",
+              );
+            } finally {
+              event.target.value = "";
+            }
+          };
+          reader.readAsArrayBuffer(file);
+        },
+      };
+
+      const AppScanner = {
+        currentTool: null,
+        buffer: "",
+        timeout: null,
+        html5QrCode: null,
+        currentMode: "usb",
+        init: function () {
+          document.addEventListener("keydown", (e) => {
+            if (App.UI.activeTab !== "scanner" || this.currentMode !== "usb")
+              return;
+            if (
+              ["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName) &&
+              e.target.id !== "hidden-scanner" &&
+              e.target.id !== "manual-scan-input"
+            )
+              return;
+            if (e.key === "Enter") {
+              if (this.buffer.length > 2) this.processCode(this.buffer);
+              this.buffer = "";
+            } else if (e.key.length === 1) {
+              this.buffer += e.key;
+              clearTimeout(this.timeout);
+              this.timeout = setTimeout(() => {
+                this.buffer = "";
+              }, 60);
+            }
+          });
+          const ts = document.getElementById("tab-scanner");
+          if (ts)
+            ts.addEventListener("click", (e) => {
+              if (!["INPUT", "BUTTON", "SELECT"].includes(e.target.tagName))
+                this.focus();
+            });
+
+          const mFn = function (e) {
+            if (e.key === "Enter" && this.value.trim() !== "") {
+              App.Scanner.processCode(this.value.trim());
+              this.value = "";
+            }
+          };
+          const mIn = document.getElementById("manual-scan-input"),
+            hIn = document.getElementById("hidden-scanner");
+          if (mIn) mIn.addEventListener("keydown", mFn);
+          if (hIn) hIn.addEventListener("keydown", mFn);
+        },
+        setMode: function (mode) {
+          this.currentMode = mode;
+          const active =
+              "px-4 py-2 bg-brand-50 text-brand-700 font-bold rounded-lg border border-brand-200 flex items-center transition-colors",
+            inactive =
+              "px-4 py-2 bg-slate-50 text-slate-600 font-bold rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center transition-colors";
+          const bUsb = document.getElementById("btn-mode-usb"),
+            bCam = document.getElementById("btn-mode-cam");
+          if (bUsb) bUsb.className = mode === "usb" ? active : inactive;
+          if (bCam) bCam.className = mode === "cam" ? active : inactive;
+
+          const cUsb = document.getElementById("mode-usb-container"),
+            cCam = document.getElementById("mode-cam-container");
+          if (cUsb) cUsb.classList.toggle("hidden", mode !== "usb");
+          if (cCam) cCam.classList.toggle("hidden", mode !== "cam");
+
+          if (mode === "cam") this.startCamera();
+          else this.stopCamera();
+        },
+        startCamera: function () {
+          if (!this.html5QrCode) this.html5QrCode = new Html5Qrcode("reader");
+
+          const config = {
+            fps: 15,
+            qrbox: { width: 280, height: 100 },
+          };
+
+          this.html5QrCode
+            .start(
+              {
+                facingMode: "environment",
+                advanced: [{ focusMode: "continuous" }],
+              },
+              config,
+              (code) => {
+                this.processCode(code);
+                this.stopCamera();
+              },
+            )
+            .catch((err) => {
+              this.html5QrCode
+                .start({ facingMode: "environment" }, config, (code) => {
+                  this.processCode(code);
+                  this.stopCamera();
+                })
+                .catch(() => {
+                  App.UI.showToast("Erro ao acessar a câmera.", "error");
+                  this.setMode("usb");
+                });
+            });
+        },
+        stopCamera: function () {
+          if (this.html5QrCode && this.html5QrCode.isScanning)
+            this.html5QrCode.stop().catch(() => {});
+        },
+        focus: function () {
+          const hs = document.getElementById("hidden-scanner");
+          if (!this.currentTool && this.currentMode === "usb" && hs) hs.focus();
+        },
+        processCode: function (code) {
+          const tool = AppData.tools.find((t) => t.code === code);
+          if (!tool) {
+            AudioSys.playBeep("error");
+            App.UI.showToast(
+              `Código ${Utils.escapeHTML(code)} não encontrado.`,
+              "error",
+            );
+            this.reset();
+            return;
+          }
+
+          AudioSys.playBeep("success");
+          this.currentTool = tool;
+          const sw = document.getElementById("scanner-waiting"),
+            sr = document.getElementById("scanner-result");
+          if (sw) sw.classList.add("hidden-tab");
+          if (sr) sr.classList.remove("hidden-tab");
+
+          const sli = document.getElementById("scanner-line-indicator");
+          if (sli)
+            sli.className =
+              "absolute top-0 left-0 w-full h-2 transition-all duration-500 " +
+              (tool.status === "available"
+                ? "bg-gradient-to-r from-emerald-400 to-emerald-600"
+                : "bg-gradient-to-r from-rose-400 to-rose-600");
+
+          const ric = document.getElementById("res-image-container"),
+            rcat = document.getElementById("res-category"),
+            rnam = document.getElementById("res-name"),
+            rcod = document.getElementById("res-code"),
+            rbdg = document.getElementById("res-badge-container");
+          if (ric)
+            ric.innerHTML = tool.imageUrl
+              ? `<img src="${tool.imageUrl}" class="w-16 h-16 rounded-xl object-cover border border-slate-200">`
+              : `<div class="w-16 h-16 rounded-xl bg-slate-200 flex items-center justify-center border border-slate-300"><i data-lucide="image" class="w-8 h-8 text-slate-400"></i></div>`;
+          if (rcat) rcat.querySelector("span").textContent = tool.category;
+          if (rnam) rnam.textContent = tool.name;
+          if (rcod) rcod.textContent = tool.code;
+          if (rbdg) rbdg.innerHTML = Utils.getBadgeHTML(tool.status);
+
+          const bProc = document.getElementById("scanner-processing"),
+            bStat = document.getElementById("scanner-status-box"),
+            bCheck = document.getElementById("scanner-checkout"),
+            bRet = document.getElementById("scanner-return");
+          [bStat, bCheck, bProc, bRet].forEach((el) => {
+            if (el) el.classList.add("hidden-tab");
+          });
+
+          if (tool.status === "borrowed") {
+            const rui = document.getElementById("return-user-info");
+            if (rui)
+              rui.innerHTML = `Atualmente com: <strong>${Utils.escapeHTML(tool.currentUser || "Desconhecido")}</strong>`;
+            if (bRet) bRet.classList.remove("hidden-tab");
+            setTimeout(() => {
+              const btnReturn = document.getElementById("btn-return");
+              if (btnReturn) btnReturn.focus();
+            }, 100);
+          } else if (tool.status === "available") {
+            if (bStat) {
+              bStat.innerHTML = `<div class="flex items-start text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-100"><i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-0.5 text-emerald-500"></i><div><p class="font-extrabold text-lg">Pronta para Uso</p></div></div>`;
+              bStat.classList.remove("hidden-tab");
+            }
+            if (bCheck) bCheck.classList.remove("hidden-tab");
+            const badgeInput = document.getElementById("checkout-user-badge");
+            if (badgeInput) {
+              badgeInput.value = "";
+              setTimeout(() => badgeInput.focus(), 100);
+            }
+          } else {
+            AudioSys.playBeep("error");
+            App.UI.showToast("Ferramenta em Manutenção.", "error");
+            setTimeout(() => this.reset(), 2000);
+          }
+          lucide.createIcons();
+        },
+        processReturn: function () {
+          const tool = this.currentTool;
+          if (!tool) return;
+          const sr = document.getElementById("scanner-return"),
+            sp = document.getElementById("scanner-processing");
+          if (sr) sr.classList.add("hidden-tab");
+          if (sp) sp.classList.remove("hidden-tab");
+
+          setTimeout(() => {
+            AppData.updateTool(
+              tool.code,
+              {
+                status: "available",
+                currentUser: null,
+                lastAction: new Date().toISOString(),
+              },
+              "in",
+              tool.currentUser,
+            );
+            AudioSys.playBeep("return");
+            App.UI.showToast(`Devolução Concluída`, "success");
+
+            if (sp) sp.classList.add("hidden-tab");
+            const rbc = document.getElementById("res-badge-container");
+            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("available");
+            const ssb = document.getElementById("scanner-status-box");
+            if (ssb) {
+              ssb.innerHTML = `<div class="text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-200"><p class="font-extrabold text-lg">Devolução Registrada</p></div>`;
+              ssb.classList.remove("hidden-tab");
+            }
+            setTimeout(() => this.reset(), 2000);
+          }, 800);
+        },
+        processCheckout: function () {
+          const badgeInput = document.getElementById("checkout-user-badge");
+          const badgeValue = badgeInput ? badgeInput.value.trim() : "";
+          if (!badgeValue || !this.currentTool) return;
+
+          const userObj = AppData.users.find(
+            (u) =>
+              u.badge === badgeValue ||
+              u.name.toLowerCase() === badgeValue.toLowerCase(),
+          );
+          if (!userObj) {
+            AudioSys.playBeep("error");
+            App.UI.showToast(
+              "Colaborador não encontrado. Verifique o número do crachá.",
+              "error",
+            );
+            return;
+          }
+
+          const userName = userObj.name;
+          const sc = document.getElementById("scanner-checkout"),
+            ssb = document.getElementById("scanner-status-box"),
+            sp = document.getElementById("scanner-processing");
+          if (sc) sc.classList.add("hidden-tab");
+          if (ssb) ssb.classList.add("hidden-tab");
+          if (sp) sp.classList.remove("hidden-tab");
+
+          setTimeout(() => {
+            AppData.updateTool(
+              this.currentTool.code,
+              {
+                status: "borrowed",
+                currentUser: userName,
+                lastAction: new Date().toISOString(),
+              },
+              "out",
+              userName,
+            );
+            AudioSys.playBeep("success");
+            App.UI.showToast(`Saída autorizada para ${userName}`, "success");
+            App.PDF.generateReceipt(this.currentTool, userName);
+
+            if (sp) sp.classList.add("hidden-tab");
+            const rbc = document.getElementById("res-badge-container");
+            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("borrowed");
+            if (ssb) {
+              ssb.innerHTML = `<div class="text-amber-900 bg-amber-50 p-5 rounded-xl border border-amber-200"><p class="font-extrabold text-xl">Responsabilidade Transferida</p></div>`;
+              ssb.classList.remove("hidden-tab");
+            }
+            setTimeout(() => this.reset(), 3000);
+          }, 1000);
+        },
+        reset: function () {
+          this.currentTool = null;
+          const sr = document.getElementById("scanner-result"),
+            sw = document.getElementById("scanner-waiting");
+          if (sr) sr.classList.add("hidden-tab");
+          if (sw) sw.classList.remove("hidden-tab");
+          const msi = document.getElementById("manual-scan-input");
+          if (msi) msi.value = "";
+          const sli = document.getElementById("scanner-line-indicator");
+          if (sli)
+            sli.className =
+              "absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-500 via-indigo-500 to-brand-500 transition-all duration-500";
+          if (this.currentMode === "cam") this.startCamera();
+          this.focus();
+        },
+      };
+
+      const App = {
+        Auth: AppAuth,
+        Session: AppSession,
+        Data: AppData,
+        UI: AppUI,
+        Scanner: AppScanner,
+        CRUDTools: AppCRUDTools,
+        CRUDUsers: AppCRUDUsers,
+        PWA: AppPWA,
+        PDF: AppPDF,
+        init: function () {
+          this.PWA.init();
+          this.Auth.init();
+          this.UI.init();
+          this.Scanner.init();
+        },
+      };
+      window.App = App;
+      window.Utils = Utils;
+      window.AudioSys = AudioSys;
+      document.addEventListener("DOMContentLoaded", () => App.init());
+    </script>
+  </body>
+</html>
