@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,7 @@
     />
     <meta name="theme-color" content="#0f172a" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
@@ -64,24 +65,20 @@
       href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQuNyA2LjNhMSAxIDAgMCAwIDAgMS40bDEuNiAxLjZhMSAxIDAgMCAwIDEuNCAwbDMuMTA2LTMuMTA1Yy4zMi0uMzIyLjg2My0uMjIuOTgzLjIxOGE2IDYgMCAwIDEtOC4yNTkgNy4wNTdsLTcuOTEgNy45MWExIDEgMCAwIDEtMi45OTktM2w3LjkxLTcuOTFhNiA2IDAgMCAxIDcuMDU3LTguMjU5Yy40MzguMTIuNTQuNjYyLjIxOS45ODR6Ii8+PC9zdmc+"
       type="image/svg+xml"
     />
-
     <link
       rel="apple-touch-icon"
       href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiMyNTYzZWIiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzI1NjNlYiIgc3Ryb2tlPSJub25lIiAvPjxwYXRoIGQ9Ik0xNC43IDYuM2ExIDEgMCAwIDAgMCAxLjRsMS42IDEuNmExIDEgMCAwIDAgMS40IDBsMy4xMDYtMy4xMDVjLjMyLS4zMjIuODYzLS4yMi45ODMuMjE4YTYgNiAwIDAgMS04LjI1OSA3LjA1N2wtNy45MSA3LjkxYTEgMSAwIDAgMS0yLjk5OS0zbDcuOTEtNy45MWE2IDYgMCAwIDEgNy4wNTctOC4yNTljLjQzOC4xMi41NC42NjIuMjE5Ljk4NHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIvPjwvc3ZnPg=="
     />
 
-    <link id="manifest-link" rel="manifest" href="" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link id="manifest-link" rel="manifest" />
 
+    <!-- Preconnect para acelerar o carregamento das CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -93,12 +90,14 @@
                 100: "#dbeafe",
                 500: "#3b82f6",
                 600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
                 900: "#1e3a8a",
               },
             },
             animation: {
-              "fade-in": "fadeIn 0.3s ease-out",
-              "slide-up": "slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+              "fade-in": "fadeIn 0.3s ease-out forwards",
+              "slide-up": "slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               "ping-slow": "ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite",
             },
             keyframes: {
@@ -112,11 +111,26 @@
         },
       };
     </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://unpkg.com/html5-qrcode" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
+      :root {
+        --brand-50: #eff6ff;
+        --brand-200: #bfdbfe;
+        --brand-500: #3b82f6;
+        --brand-600: #2563eb;
+        --brand-700: #1d4ed8;
+      }
       body {
         font-family: "Inter", sans-serif;
         background-color: #f8fafc;
+        background-image: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
       }
       .hidden-tab {
         display: none !important;
@@ -152,11 +166,20 @@
         opacity: 1;
       }
 
-      /* Correção do leitor de código de barras para o celular */
       #reader video {
         border-radius: 1rem;
-        object-fit: contain; /* Ajusta para exibir a lente inteira sem zoom artificial */
+        object-fit: contain;
         background-color: #000;
+      }
+
+      /* Classes customizadas que não existem no Tailwind padrão */
+      .bg-slate-50\/50 {
+        /* O nome da classe indica slate-50 (#f8fafc) com 50% de opacidade. */
+        background-color: rgba(248, 250, 252, 0.5) !important;
+      }
+      .border-slate-200\/60 {
+        /* O nome da classe indica slate-200 (#e2e8f0) com 60% de opacidade. */
+        border-color: rgba(226, 232, 240, 0.6) !important;
       }
     </style>
   </head>
@@ -272,7 +295,7 @@
                   type="password"
                   id="login-password"
                   required
-                  placeholder="••••••••"
+                  placeholder=""
                   class="w-full pl-12 pr-12 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-brand-500/10 focus:border-brand-500 outline-none transition-all text-slate-700 font-medium placeholder:text-slate-400"
                 />
                 <button
@@ -293,21 +316,6 @@
               <span id="login-text">Entrar</span>
             </button>
           </form>
-
-          <div class="mt-8 pt-6 border-t border-slate-100 text-center">
-            <div
-              class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-50 rounded-full border border-emerald-100"
-            >
-              <i
-                data-lucide="shield-check"
-                class="w-4 h-4 text-emerald-600"
-              ></i>
-              <span
-                class="text-xs font-bold text-emerald-800 uppercase tracking-wide"
-                >Acesso Exclusivo e Seguro</span
-              >
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -399,7 +407,7 @@
             >
               <i data-lucide="history" class="w-5 h-5"></i>
               <span class="hidden lg:block ml-3 font-medium"
-                >Histórico (Logs)</span
+                >Histórico (Registros)</span
               >
             </button>
           </div>
@@ -410,6 +418,7 @@
         >
           <div class="flex items-center text-slate-400 flex-1 min-w-0">
             <div
+              id="user-avatar-container"
               class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700 shadow-inner shrink-0"
             >
               <i
@@ -423,16 +432,14 @@
               <p
                 class="font-bold text-slate-200 truncate whitespace-nowrap"
                 id="display-user-email"
-                title="Usuário logado no sistema"
               >
                 Carregando...
               </p>
               <p
                 class="text-xs text-slate-400 font-mono mt-0.5 truncate whitespace-nowrap"
                 id="display-user-role"
-                title="Nível de permissão atual"
               >
-                Ponto
+                Nível
               </p>
             </div>
           </div>
@@ -467,7 +474,7 @@
         >
           <div id="tab-dashboard" class="animate-fade-in max-w-7xl mx-auto">
             <header
-              class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4"
+              class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
               <div>
                 <div
@@ -490,7 +497,7 @@
               </div>
 
               <div
-                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto mt-4 md:mt-0"
+                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto mt-4 md:mt-0 items-center"
               >
                 <button
                   onclick="App.Data.exportCSV()"
@@ -508,8 +515,8 @@
                   <i
                     data-lucide="calendar"
                     class="w-4 h-4 mr-2 text-brand-500 shrink-0"
-                  ></i>
-                  <span id="current-date" class="capitalize"></span>
+                  ></i
+                  ><span id="current-date"></span>
                 </div>
               </div>
             </header>
@@ -629,20 +636,10 @@
                     <div
                       class="p-2 sm:p-3.5 rounded-xl bg-rose-50 inline-block"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                      <i
+                        data-lucide="wrench"
                         class="w-5 h-5 sm:w-6 sm:h-6 text-rose-600"
-                      >
-                        <path
-                          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-                        />
-                      </svg>
+                      ></i>
                     </div>
                   </div>
                   <div class="relative z-10">
@@ -670,13 +667,13 @@
                   <i
                     data-lucide="pie-chart"
                     class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-brand-500"
-                  ></i>
-                  Distribuição
+                  ></i
+                  >Distribuição
                 </h3>
                 <div
-                  class="flex-1 relative w-full flex items-center justify-center min-h-[180px] sm:min-h-[200px]"
+                  class="relative w-full h-[240px] min-h-[240px] max-h-[240px] flex items-center justify-center mt-4"
                 >
-                  <canvas id="statusChart"></canvas>
+                  <canvas id="statusChart" class="w-full h-full"></canvas>
                 </div>
               </div>
             </div>
@@ -711,7 +708,7 @@
                     id="dash-filter"
                     class="px-3 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 text-slate-700 font-semibold cursor-pointer"
                   >
-                    <option value="all">Todos os Estados</option>
+                    <option value="all">Todos os Status</option>
                     <option value="available">Disponíveis</option>
                     <option value="borrowed">Emprestadas</option>
                     <option value="maintenance">Em Manutenção</option>
@@ -726,9 +723,9 @@
                     >
                       <th class="px-6 py-4">Patrimônio</th>
                       <th class="px-6 py-4">Descrição do Material</th>
-                      <th class="px-6 py-4">Situação</th>
+                      <th class="px-6 py-4">Status</th>
                       <th class="px-6 py-4">Responsável</th>
-                      <th class="px-6 py-4 text-right">Data/Hora</th>
+                      <th class="px-6 py-4 text-right">Data e Hora</th>
                     </tr>
                   </thead>
                   <tbody
@@ -766,19 +763,16 @@
                     onclick="App.Scanner.setMode('usb')"
                     class="px-3 sm:px-4 py-2 bg-brand-50 text-brand-700 text-sm sm:text-base font-bold rounded-lg border border-brand-200 flex items-center transition-colors"
                   >
-                    <i
-                      data-lucide="keyboard"
-                      class="w-4 h-4 mr-1.5 sm:mr-2"
-                    ></i>
-                    Leitor USB
+                    <i data-lucide="keyboard" class="w-4 h-4 mr-1.5 sm:mr-2"></i
+                    >Leitor USB
                   </button>
                   <button
                     id="btn-mode-cam"
                     onclick="App.Scanner.setMode('cam')"
                     class="px-3 sm:px-4 py-2 bg-slate-50 text-slate-600 text-sm sm:text-base font-bold rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center transition-colors"
                   >
-                    <i data-lucide="camera" class="w-4 h-4 mr-1.5 sm:mr-2"></i>
-                    Usar Câmera
+                    <i data-lucide="camera" class="w-4 h-4 mr-1.5 sm:mr-2"></i
+                    >Usar Câmera
                   </button>
                 </div>
 
@@ -805,6 +799,7 @@
                     Conecte o seu leitor de código de barras ou digite o código
                     abaixo.
                   </p>
+
                   <div class="relative max-w-sm mx-auto group w-full">
                     <input
                       type="text"
@@ -942,7 +937,7 @@
                       <p
                         class="text-base sm:text-lg text-rose-900 font-extrabold"
                       >
-                        Acesso Recusado: Ferramenta Emprestada
+                        Acesso recusado: ferramenta emprestada
                       </p>
                     </div>
                     <p
@@ -952,9 +947,8 @@
                       Atualmente com: <strong>---</strong>
                     </p>
                     <p class="text-rose-700 text-xs sm:text-sm font-medium">
-                      Não é possível registrar uma nova saída. Se o colaborador
-                      estiver a devolver o material, confirme a devolução
-                      abaixo.
+                      Não é possível registrar uma nova retirada. Confirme a
+                      devolução abaixo.
                     </p>
                   </div>
                   <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -972,8 +966,8 @@
                       <i
                         data-lucide="arrow-down-left"
                         class="w-5 h-5 sm:w-6 sm:h-6 mr-2"
-                      ></i>
-                      Confirmar Devolução
+                      ></i
+                      >Confirmar Devolução
                     </button>
                   </div>
                 </div>
@@ -986,7 +980,7 @@
             class="hidden-tab animate-fade-in max-w-7xl mx-auto"
           >
             <header
-              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+              class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
               <div>
                 <h1
@@ -998,13 +992,15 @@
                   Adicione, edite ou remova ferramentas do sistema.
                 </p>
               </div>
-              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <div
+                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto items-center"
+              >
                 <div class="relative flex-1 sm:w-64">
                   <i
                     data-lucide="search"
                     class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-                  ></i>
-                  <input
+                  ></i
+                  ><input
                     type="text"
                     id="tools-search"
                     placeholder="Pesquisar..."
@@ -1049,7 +1045,7 @@
             class="hidden-tab animate-fade-in max-w-7xl mx-auto"
           >
             <header
-              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+              class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
               <div>
                 <h1
@@ -1061,32 +1057,31 @@
                   Gerencie a equipe autorizada a retirar ferramentas.
                 </p>
               </div>
-              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <div
+                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto items-center"
+              >
                 <div class="relative flex-1 sm:w-64">
                   <i
                     data-lucide="search"
                     class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-                  ></i>
-                  <input
+                  ></i
+                  ><input
                     type="text"
                     id="users-search"
-                    placeholder="Buscar colaborador..."
+                    placeholder="Pesquisar colaborador..."
                     class="w-full pl-9 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
                   />
                 </div>
-                <div class="flex gap-3">
+                <div class="flex gap-3 items-center justify-center">
                   <label
                     class="flex flex-1 items-center justify-center px-4 py-3 bg-white border border-slate-200 hover:bg-slate-50 rounded-xl text-sm font-bold text-slate-700 shadow-sm transition-all cursor-pointer whitespace-nowrap"
-                  >
-                    <i data-lucide="upload" class="w-4 h-4 mr-2"></i> Importar
-                    Excel
-                    <input
+                    ><i data-lucide="upload" class="w-4 h-4 mr-2"></i> Importar
+                    Excel<input
                       type="file"
                       accept=".xlsx, .xls"
                       class="hidden"
                       onchange="App.CRUDUsers.importFile(event)"
-                    />
-                  </label>
+                  /></label>
                   <button
                     onclick="App.CRUDUsers.openModal()"
                     class="flex flex-1 items-center justify-center px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold shadow-lg shadow-brand-600/30 transition-all whitespace-nowrap"
@@ -1125,7 +1120,7 @@
             class="hidden-tab animate-fade-in max-w-7xl mx-auto"
           >
             <header
-              class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+              class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
               <div>
                 <h1
@@ -1137,16 +1132,18 @@
                   Registro completo de retiradas e devoluções.
                 </p>
               </div>
-              <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <div
+                class="flex flex-col sm:flex-row gap-3 w-full md:w-auto items-center"
+              >
                 <div class="relative flex-1 sm:w-64">
                   <i
                     data-lucide="search"
                     class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-                  ></i>
-                  <input
+                  ></i
+                  ><input
                     type="text"
                     id="history-search"
-                    placeholder="Procurar registros..."
+                    placeholder="Pesquisar registros..."
                     class="w-full pl-9 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-medium"
                   />
                 </div>
@@ -1155,7 +1152,7 @@
                   class="flex items-center justify-center px-4 py-3 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl font-bold transition-all whitespace-nowrap"
                 >
                   <i data-lucide="trash-2" class="w-4 h-4 mr-2"></i> Limpar
-                  Antigos
+                  Registros Antigos
                 </button>
               </div>
             </header>
@@ -1189,8 +1186,8 @@
                   id="btn-load-more"
                   class="px-5 py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-sm font-bold transition-all shadow-sm flex items-center justify-center mx-auto"
                 >
-                  <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i>
-                  Carregar Mais Registros
+                  <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i
+                  >Carregar Mais Registros
                 </button>
               </div>
             </div>
@@ -1234,8 +1231,8 @@
                   data-lucide="camera"
                   class="w-6 h-6 text-slate-400"
                   id="image-placeholder-icon"
-                ></i>
-                <img
+                ></i
+                ><img
                   id="crud-image-preview"
                   class="hidden w-full h-full object-cover"
                 />
@@ -1253,8 +1250,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Patrimônio</label
-            >
-            <input
+            ><input
               type="text"
               id="crud-code"
               class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
@@ -1263,8 +1259,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Descrição do Material</label
-            >
-            <input
+            ><input
               type="text"
               id="crud-name"
               class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
@@ -1273,8 +1268,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Categoria</label
-            >
-            <select
+            ><select
               id="crud-category"
               class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
             >
@@ -1287,9 +1281,8 @@
           </div>
           <div id="crud-status-container" class="hidden">
             <label class="block text-sm font-bold text-slate-700 mb-1"
-              >Situação</label
-            >
-            <select
+              >Status</label
+            ><select
               id="crud-status"
               class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
             >
@@ -1343,8 +1336,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Número do Ponto / Crachá</label
-            >
-            <input
+            ><input
               type="text"
               id="crud-user-badge"
               placeholder="Ex: 987654"
@@ -1354,8 +1346,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Nome Completo</label
-            >
-            <input
+            ><input
               type="text"
               id="crud-user-name"
               class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:border-brand-500 outline-none"
@@ -1364,8 +1355,7 @@
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-1"
               >Função</label
-            >
-            <input
+            ><input
               type="text"
               id="crud-user-role"
               placeholder="Ex: Eletricista, Soldador..."
@@ -1388,6 +1378,83 @@
             class="px-5 py-2 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 shadow-lg flex items-center"
           >
             Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="password-modal"
+      class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-slide-up"
+      >
+        <div
+          class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50"
+        >
+          <h3 class="text-xl font-bold text-slate-800 flex items-center">
+            <i data-lucide="shield" class="w-5 h-5 mr-2 text-brand-600"></i
+            >Alterar Senha
+          </h3>
+          <button
+            onclick="App.Auth.closePasswordModal()"
+            class="text-slate-400 hover:text-slate-600"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Nova Senha</label
+            >
+            <div class="relative group">
+              <i
+                data-lucide="lock"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              ></i
+              ><input
+                type="password"
+                id="new-password"
+                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
+                placeholder="Mínimo 6 caracteres"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Confirmar Nova Senha</label
+            >
+            <div class="relative group">
+              <i
+                data-lucide="check-circle"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              ></i
+              ><input
+                type="password"
+                id="confirm-password"
+                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
+                placeholder="Digite a senha novamente"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end space-x-3"
+        >
+          <button
+            onclick="App.Auth.closePasswordModal()"
+            class="px-5 py-2 text-slate-600 font-semibold hover:bg-slate-200 rounded-xl transition-colors"
+          >
+            Cancelar
+          </button>
+          <button
+            id="btn-save-password"
+            onclick="App.Auth.updateUserPassword()"
+            class="px-5 py-2 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-600/30 flex items-center transition-all"
+          >
+            Atualizar Senha
           </button>
         </div>
       </div>
@@ -1421,83 +1488,6 @@
     </div>
 
     <div
-      id="password-modal"
-      class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden items-center justify-center"
-    >
-      <div
-        class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-slide-up"
-      >
-        <div
-          class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50"
-        >
-          <h3 class="text-xl font-bold text-slate-800 flex items-center">
-            <i data-lucide="shield" class="w-5 h-5 mr-2 text-brand-600"></i>
-            Alterar Senha
-          </h3>
-          <button
-            onclick="App.Auth.closePasswordModal()"
-            class="text-slate-400 hover:text-slate-600"
-          >
-            <i data-lucide="x" class="w-6 h-6"></i>
-          </button>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <label class="block text-sm font-bold text-slate-700 mb-1"
-              >Nova Senha</label
-            >
-            <div class="relative group">
-              <i
-                data-lucide="lock"
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
-              ></i>
-              <input
-                type="password"
-                id="new-password"
-                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
-                placeholder="Mínimo 6 caracteres"
-              />
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-bold text-slate-700 mb-1"
-              >Confirmar Nova Senha</label
-            >
-            <div class="relative group">
-              <i
-                data-lucide="check-circle"
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
-              ></i>
-              <input
-                type="password"
-                id="confirm-password"
-                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium"
-                placeholder="Digite a senha novamente"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="p-6 border-t border-slate-100 bg-slate-50 flex justify-end space-x-3"
-        >
-          <button
-            onclick="App.Auth.closePasswordModal()"
-            class="px-5 py-2 text-slate-600 font-semibold hover:bg-slate-200 rounded-xl transition-colors"
-          >
-            Cancelar
-          </button>
-          <button
-            id="btn-save-password"
-            onclick="App.Auth.updateUserPassword()"
-            class="px-5 py-2 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 shadow-lg shadow-brand-600/30 flex items-center transition-all"
-          >
-            Atualizar Senha
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div
       id="toast-container"
       class="fixed top-6 right-6 space-y-3 flex flex-col items-end z-[110]"
     ></div>
@@ -1514,9 +1504,12 @@
       } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
       import {
         getFirestore,
+        initializeFirestore,
+        persistentLocalCache,
         collection,
         onSnapshot,
         doc,
+        getDoc,
         setDoc,
         updateDoc,
         deleteDoc,
@@ -1525,38 +1518,68 @@
         query,
         orderBy,
         limit,
-        enableIndexedDbPersistence,
       } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-      let firebaseConfig;
-      let appId = "estoquemaster-default";
-      if (typeof __firebase_config !== "undefined") {
-        firebaseConfig = JSON.parse(__firebase_config);
-        if (typeof __app_id !== "undefined") appId = __app_id;
-      } else {
-        firebaseConfig = {
-          apiKey: "AIzaSyBdwq7ETLLvYeTPCgc0j7TyNAbmCFjuBTY",
-          authDomain: "gestao-de-ferramentas-52e6e.firebaseapp.com",
-          projectId: "gestao-de-ferramentas-52e6e",
-          storageBucket: "gestao-de-ferramentas-52e6e.firebasestorage.app",
-          messagingSenderId: "465217038504",
-          appId: "1:465217038504:web:42ffe774ec5f4e0da2ba9d",
-        };
-      }
+      // ==========================================
+      // CONFIGURAÇÕES E ESTADO GLOBAL
+      // ==========================================
+      const CONFIG = {
+        APP_ID: "gestao-de-ferramentas-52e6e",
+        TIMEOUT_MS: 8000,
+        SESSION_LIMIT_MS: 30 * 60 * 1000, // 30 minutos
+        IMAGE_QUALITY: 0.6,
+        IMAGE_MAX_WIDTH: 500,
+      };
 
-      const DB_BASE_PATH = `artifacts/${appId}/public/data`;
+      const DB_BASE_PATH = `artifacts/${CONFIG.APP_ID}/public/data`;
+      const COLLECTIONS = {
+        TOOLS: "tools",
+        USERS: "users",
+        HISTORY: "history",
+      };
+
+      // Sua configuração oficial do Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyBdwq7ETLLvYeTPCgc0j7TyNAbmCFjuBTY",
+        authDomain: "gestao-de-ferramentas-52e6e.firebaseapp.com",
+        projectId: "gestao-de-ferramentas-52e6e",
+        storageBucket: "gestao-de-ferramentas-52e6e.firebasestorage.app",
+        messagingSenderId: "465217038504",
+        appId: "1:465217038504:web:42ffe774ec5f4e0da2ba9d",
+      };
 
       const firebaseApp = initializeApp(firebaseConfig);
       const auth = getAuth(firebaseApp);
-      const db = getFirestore(firebaseApp);
-
+      let db;
       try {
-        enableIndexedDbPersistence(db).catch((err) => {
-          console.warn("Persistência offline falhou:", err.code);
+        db = initializeFirestore(firebaseApp, {
+          localCache: persistentLocalCache(),
         });
-      } catch (e) {}
+      } catch (err) {
+        console.warn("Persistência offline falhou:", err?.code || err);
+        db = getFirestore(firebaseApp);
+      }
 
+      // ==========================================
+      // SERVIÇOS DE UTILIDADE E CORE
+      // ==========================================
+
+      /**
+       * Logger Centralizado para tratamento de erros em produção
+       */
+      const Logger = {
+        error: (msg, error) => {
+          console.error(`[ERROR] ${msg}`, error || "");
+          App.UI.showToast(msg, "error");
+        },
+        warn: (msg, data) => console.warn(`[WARN] ${msg}`, data || ""),
+      };
+
+      /**
+       * Utilitários Puros
+       */
       const Utils = {
+        /** Evita que uma função seja chamada muitas vezes num curto espaço de tempo */
         debounce: (func, wait) => {
           let t;
           return function (...args) {
@@ -1564,6 +1587,7 @@
             t = setTimeout(() => func.apply(this, args), wait);
           };
         },
+        /** Formatação de data padronizada */
         formatDate: (iso) =>
           !iso
             ? '<span class="text-slate-300">Sem registro</span>'
@@ -1574,34 +1598,49 @@
                 hour: "2-digit",
                 minute: "2-digit",
               }),
-        escapeHTML: (str) =>
-          typeof str !== "string"
-            ? str
-            : str.replace(
-                /[&<>'"]/g,
-                (tag) =>
-                  ({
-                    "&": "&amp;",
-                    "<": "&lt;",
-                    ">": "&gt;",
-                    "'": "&#39;",
-                    '"': "&quot;",
-                  })[tag],
-              ),
+        /** Sanitização contra ataques XSS (Cross-Site Scripting) */
+        escapeHTML: (str) => {
+          if (str === null || str === undefined) return "";
+          return String(str).replace(
+            /[&<>'"]/g,
+            (tag) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                "'": "&#39;",
+                '"': "&quot;",
+              })[tag],
+          );
+        },
+        safeCreateIcons: () => {
+          if (
+            window.lucide &&
+            typeof window.lucide.createIcons === "function"
+          ) {
+            window.lucide.createIcons();
+          }
+        },
+        /** Gera HTML dos emblemas (badges) de estado */
         getBadgeHTML: function (status) {
           const badges = {
             available: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-emerald-100 text-emerald-800 border-emerald-200"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5"></i> Disponível</span>`,
             borrowed: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-amber-100 text-amber-800 border-amber-200"><i data-lucide="arrow-right-left" class="w-3.5 h-3.5 mr-1.5"></i> Emprestada</span>`,
-            maintenance: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-rose-100 text-rose-800 border-rose-200"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 mr-1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Manutenção</span>`,
+            maintenance: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-rose-100 text-rose-800 border-rose-200"><i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5"></i> Manutenção</span>`,
             in: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-emerald-100 text-emerald-800 border-emerald-200"><i data-lucide="arrow-down-left" class="w-3.5 h-3.5 mr-1.5"></i> Devolução</span>`,
-            out: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-blue-100 text-blue-800 border-blue-200"><i data-lucide="arrow-up-right" class="w-3.5 h-3.5 mr-1.5"></i> Saída</span>`,
+            out: `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-blue-100 text-blue-800 border-blue-200"><i data-lucide="arrow-up-right" class="w-3.5 h-3.5 mr-1.5"></i> Retirada</span>`,
           };
           return (
             badges[status] ||
             `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border bg-slate-100 text-slate-800 border-slate-200"><i data-lucide="help-circle" class="w-3.5 h-3.5 mr-1.5"></i> ${status}</span>`
           );
         },
-        compressImageToBase64: function (file, maxWidth = 500, quality = 0.6) {
+        /** Otimização agressiva de imagem nativa no browser via Canvas */
+        compressImageToBase64: function (
+          file,
+          maxWidth = CONFIG.IMAGE_MAX_WIDTH,
+          quality = CONFIG.IMAGE_QUALITY,
+        ) {
           return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
@@ -1612,16 +1651,12 @@
                 const canvas = document.createElement("canvas");
                 let width = img.width,
                   height = img.height;
-                if (width > height) {
-                  if (width > maxWidth) {
-                    height = Math.round((height * maxWidth) / width);
-                    width = maxWidth;
-                  }
-                } else {
-                  if (height > maxWidth) {
-                    width = Math.round((width * maxWidth) / height);
-                    height = maxWidth;
-                  }
+                if (width > height && width > maxWidth) {
+                  height = Math.round((height * maxWidth) / width);
+                  width = maxWidth;
+                } else if (height > maxWidth) {
+                  width = Math.round((width * maxWidth) / height);
+                  height = maxWidth;
                 }
                 canvas.width = width;
                 canvas.height = height;
@@ -1633,11 +1668,28 @@
             reader.onerror = reject;
           });
         },
-        withTimeout: (promise, ms, err) =>
+        /** Wrapper de Promise para Timeout (Prevenção de Locks infinitos) */
+        withTimeout: (
+          promise,
+          ms = CONFIG.TIMEOUT_MS,
+          err = "A operação excedeu o tempo limite",
+        ) =>
           Promise.race([
             promise,
             new Promise((_, r) => setTimeout(() => r(new Error(err)), ms)),
           ]),
+
+        /** Carregamento assíncrono de bibliotecas pesadas sob demanda (Lazy Loading) */
+        loadScript: (src) =>
+          new Promise((resolve, reject) => {
+            if (document.querySelector(`script[src="${src}"]`))
+              return resolve();
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          }),
       };
 
       const AudioSys = {
@@ -1648,11 +1700,14 @@
               this.ctx = new (
                 window.AudioContext || window.webkitAudioContext
               )();
-            if (this.ctx.state === "suspended") this.ctx.resume();
-            const osc = this.ctx.createOscillator(),
-              gain = this.ctx.createGain();
+            if (this.ctx.state === "suspended")
+              this.ctx.resume().catch(() => {});
+
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
             osc.connect(gain);
             gain.connect(this.ctx.destination);
+
             if (type === "success") {
               osc.type = "sine";
               osc.frequency.setValueAtTime(880, this.ctx.currentTime);
@@ -1685,7 +1740,1488 @@
               osc.start();
               osc.stop(this.ctx.currentTime + 0.3);
             }
-          } catch (e) {}
+          } catch (e) {
+            Logger.warn("Audio Context bloqueado pelo navegador.");
+          }
+        },
+      };
+
+      // ==========================================
+      // GESTORES DE DADOS E MÓDULOS DE NEGÓCIO
+      // ==========================================
+
+      const AppData = {
+        tools: [],
+        history: [],
+        users: [],
+        chartInstance: null,
+        listeners: [],
+        historyLimit: 50,
+        historyUnsub: null,
+
+        init: function () {
+          this.destroyListeners(); // Clean up estrito
+
+          this.listeners.push(
+            onSnapshot(
+              collection(db, DB_BASE_PATH, COLLECTIONS.TOOLS),
+              (snapshot) => {
+                this.tools = snapshot.docs.map((doc) => ({
+                  firebaseId: doc.id,
+                  ...doc.data(),
+                }));
+                App.UI.renderAll();
+              },
+              (err) => Logger.error("Falha ao sincronizar Ferramentas.", err)
+            ),
+          );
+
+          this.loadHistoryQuery();
+
+          this.listeners.push(
+            onSnapshot(
+              collection(db, DB_BASE_PATH, COLLECTIONS.USERS),
+              (snapshot) => {
+                this.users = snapshot.docs
+                  .map((doc) => ({ firebaseId: doc.id, ...doc.data() }))
+                  .sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+                if (App.UI.activeTab === "collaborators")
+                  App.CRUDUsers.render();
+              },
+              (err) => Logger.error("Falha ao sincronizar Colaboradores.", err)
+            ),
+          );
+        },
+        destroyListeners: function () {
+          this.listeners.forEach((unsub) => {
+            if (typeof unsub === "function") unsub();
+          });
+          this.listeners = [];
+        },
+        loadHistoryQuery: function () {
+          if (this.historyUnsub) {
+            this.historyUnsub();
+            this.listeners = this.listeners.filter(
+              (l) => l !== this.historyUnsub,
+            );
+            this.historyUnsub = null;
+          }
+          const historyQuery = query(
+            collection(db, DB_BASE_PATH, COLLECTIONS.HISTORY),
+            orderBy("date", "desc"),
+            limit(this.historyLimit),
+          );
+          this.historyUnsub = onSnapshot(
+            historyQuery,
+            (snapshot) => {
+              this.history = snapshot.docs.map((doc) => ({
+                firebaseId: doc.id,
+                ...doc.data(),
+              }));
+              if (App.UI.activeTab === "history") App.UI.renderHistory();
+
+              const btnContainer = document.getElementById(
+                "history-load-more-container",
+              );
+              if (btnContainer)
+                btnContainer.classList.toggle(
+                  "hidden",
+                  snapshot.docs.length < this.historyLimit,
+                );
+            },
+            (err) => Logger.error("Erro ao carregar histórico.", err)
+          );
+          this.listeners.push(this.historyUnsub);
+        },
+        loadMoreHistory: function () {
+          this.historyLimit += 50;
+          const btn = document.getElementById("btn-load-more");
+          if (btn)
+            btn.innerHTML =
+              '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Carregando...';
+          Utils.safeCreateIcons();
+          this.loadHistoryQuery();
+        },
+        updateTool: async function (code, updates, actionType, user) {
+          const tool = this.tools.find(
+            (t) => String(t.code || "") === String(code || ""),
+          );
+          if (!tool) return false;
+
+          try {
+            await updateDoc(
+              doc(db, DB_BASE_PATH, COLLECTIONS.TOOLS, tool.firebaseId),
+              updates,
+            );
+            if (actionType) await this.logAction(tool, actionType, user);
+            return true;
+          } catch (err) {
+            Logger.error("Erro na comunicação com o banco de dados.", err);
+            return false;
+          }
+        },
+        logAction: async function (tool, type, user) {
+          try {
+            await addDoc(collection(db, DB_BASE_PATH, COLLECTIONS.HISTORY), {
+              date: new Date().toISOString(),
+              toolCode: tool.code,
+              toolName: tool.name,
+              type: type,
+              user: user || "Sistema automático",
+            });
+          } catch (e) {
+            Logger.warn("Falha ao criar log de auditoria.", e);
+          }
+        },
+        cleanOldLogs: async function () {
+          if (!confirm("Deseja excluir os registros com mais de 30 dias?"))
+            return;
+          const thirtyDaysAgo = new Date(
+            Date.now() - 30 * 24 * 60 * 60 * 1000,
+          ).toISOString();
+          try {
+            const snap = await getDocs(
+              query(collection(db, DB_BASE_PATH, COLLECTIONS.HISTORY)),
+            );
+            let deleted = 0;
+            snap.forEach((d) => {
+              if (d.data().date < thirtyDaysAgo) {
+                deleteDoc(doc(db, DB_BASE_PATH, COLLECTIONS.HISTORY, d.id));
+                deleted++;
+              }
+            });
+            App.UI.showToast(
+              `${deleted} registros antigos excluídos.`,
+              "success",
+            );
+          } catch (e) {
+            App.UI.showToast("Erro ao limpar registros.", "error");
+          }
+        },
+        exportCSV: function () {
+          const headers = [
+            "Patrimônio",
+            "Descrição",
+            "Categoria",
+            "Status",
+            "Responsável",
+            "Última Ação",
+          ];
+          // Uso eficiente de Map/Join para geração em larga escala
+          const rows = this.tools
+            .map((t) =>
+              [
+                t.code,
+                `"${Utils.escapeHTML(t.name)}"`, // Safe enclosure
+                t.category,
+                t.status,
+                t.currentUser || "",
+                t.lastAction || "",
+              ].join(","),
+            )
+            .join("\n");
+
+          const csvContent = "\uFEFF" + headers.join(",") + "\n" + rows;
+          const blob = new Blob([csvContent], {
+            type: "text/csv;charset=utf-8;",
+          });
+          const url = URL.createObjectURL(blob);
+
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = `inventario_coeng_${new Date().toISOString().slice(0, 10)}.csv`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+
+          App.UI.showToast("Exportação gerada com sucesso.", "success");
+        },
+      };
+
+      // ==========================================
+      // UI CONTROLLER (RENDERIZAÇÃO)
+      // ==========================================
+
+      const AppUI = {
+        activeTab: "dashboard",
+        domCache: {},
+        init: function () {
+          // Cache de elementos do DOM (Evita consultas repetidas durante digitação em barras de busca)
+          this.domCache = {
+            dashTbody: document.getElementById("dash-tbody"),
+            historyTbody: document.getElementById("history-tbody"),
+            crudTbody: document.getElementById("crud-tbody"),
+            usersTbody: document.getElementById("users-tbody"),
+          };
+
+          window.addEventListener("online", () =>
+            this.showToast(
+              "Conexão restabelecida. Sincronizando...",
+              "success",
+            ),
+          );
+          window.addEventListener("offline", () =>
+            this.showToast(
+              "Sem internet. Modo offline ativado (alterações salvas localmente).",
+              "warning",
+            ),
+          );
+
+          const cd = document.getElementById("current-date");
+          if (cd)
+            cd.textContent = new Date().toLocaleDateString("pt-BR", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            });
+
+          // Delegação de Eventos Otimizada
+          const setupSearch = (id, renderFn) => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener("input", Utils.debounce(renderFn, 300));
+          };
+
+          setupSearch("dash-search", () => this.renderDashboard());
+          setupSearch("tools-search", () => App.CRUDTools.render());
+          setupSearch("users-search", () => App.CRUDUsers.render());
+          setupSearch("history-search", () => this.renderHistory());
+
+          const dashFilter = document.getElementById("dash-filter");
+          if (dashFilter)
+            dashFilter.addEventListener("change", () => this.renderDashboard());
+
+          const checkBadge = document.getElementById("checkout-user-badge");
+          if (checkBadge) {
+            checkBadge.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" && this.value.trim() !== "")
+                App.Scanner.processCheckout();
+            });
+          }
+
+          const crudImg = document.getElementById("crud-image");
+          if (crudImg) {
+            crudImg.addEventListener("change", (e) => {
+              if (e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                  const pre = document.getElementById("crud-image-preview"),
+                    icon = document.getElementById("image-placeholder-icon");
+                  if (pre) {
+                    pre.src = evt.target.result;
+                    pre.classList.remove("hidden");
+                  }
+                  if (icon) icon.classList.add("hidden");
+                };
+                reader.readAsDataURL(e.target.files[0]);
+              }
+            });
+          }
+        },
+        switchTab: function (tab) {
+          this.activeTab = tab;
+          document
+            .querySelectorAll(".nav-btn")
+            .forEach(
+              (btn) =>
+                (btn.className =
+                  "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"),
+            );
+
+          const activeNav = document.getElementById(`nav-${tab}`);
+          if (activeNav)
+            activeNav.className =
+              "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group bg-brand-600 text-white shadow-md shadow-brand-600/20";
+
+          [
+            "dashboard",
+            "scanner",
+            "management",
+            "collaborators",
+            "history",
+          ].forEach((t) => {
+            const el = document.getElementById(`tab-${t}`);
+            if (el) el.classList.toggle("hidden-tab", t !== tab);
+          });
+
+          if (tab !== "scanner") App.Scanner.stopCamera();
+          if (tab === "scanner") App.Scanner.focus();
+
+          this.renderAll();
+        },
+        renderAll: function () {
+          if (this.activeTab === "dashboard") this.renderDashboard();
+          if (this.activeTab === "management") App.CRUDTools.render();
+          if (this.activeTab === "collaborators") App.CRUDUsers.render();
+          if (this.activeTab === "history") this.renderHistory();
+        },
+        /**
+         * Renderização em Lote (Batch Rendering)
+         */
+        renderDashboard: function () {
+          const tools = AppData.tools;
+          const cA = tools.filter((t) => t.status === "available").length;
+          const cB = tools.filter((t) => t.status === "borrowed").length;
+          const cM = tools.filter((t) => t.status === "maintenance").length;
+
+          const setText = (id, val) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = val;
+          };
+          setText("stat-total", tools.length);
+          setText("stat-available", cA);
+          setText("stat-borrowed", cB);
+          setText("stat-maintenance", cM);
+
+          // Atualização Gráfico
+          const chartCanvas = document.getElementById("statusChart");
+          if (chartCanvas && window.Chart) {
+            if (AppData.chartInstance) {
+              AppData.chartInstance.data.datasets[0].data = [cA, cB, cM];
+              AppData.chartInstance.update();
+            } else {
+              AppData.chartInstance = new Chart(chartCanvas.getContext("2d"), {
+                type: "doughnut",
+                data: {
+                  labels: ["Disponível", "Emprestada", "Manutenção"],
+                  datasets: [
+                    {
+                      data: [cA, cB, cM],
+                      backgroundColor: ["#10b981", "#f59e0b", "#f43f5e"],
+                      borderWidth: 0,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  cutout: "75%",
+                  plugins: {
+                    legend: {
+                      position: "bottom",
+                      align: "center",
+                      labels: {
+                        usePointStyle: true,
+                        pointStyle: "circle",
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        padding: 18,
+                        color: "#475569",
+                        font: { size: 12, weight: "600" },
+                      },
+                    },
+                  },
+                },
+              });
+            }
+          }
+
+          const tbody = this.domCache.dashTbody;
+          if (!tbody) return;
+
+          const q = (
+            document.getElementById("dash-search")?.value || ""
+          ).toLowerCase();
+          const f = document.getElementById("dash-filter")?.value || "all";
+
+          const filtered = tools.filter((t) => {
+            const matchName = (t.name || "").toLowerCase().includes(q);
+            const matchCode = String(t.code || "")
+              .toLowerCase()
+              .includes(q);
+            const matchUser = (t.currentUser || "").toLowerCase().includes(q);
+            return (
+              (matchName || matchCode || matchUser) &&
+              (f === "all" || t.status === f)
+            );
+          });
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="5" class="px-6 py-10 text-center text-slate-400">Sem resultados para a sua pesquisa.</td></tr>`;
+            return;
+          }
+
+          // RENDERIZAÇÃO MASSIVA OTIMIZADA
+          tbody.innerHTML = filtered
+            .map((t) => {
+              const uHtml = t.currentUser
+                ? `<div class="font-semibold text-slate-700">${Utils.escapeHTML(t.currentUser)}</div>`
+                : `<span class="text-slate-300">---</span>`;
+              const safeName = Utils.escapeHTML(t.name);
+              const imgHtml = t.imageUrl
+                ? `<img src="${Utils.escapeHTML(t.imageUrl)}" data-name="${safeName}" onclick="App.UI.showImagePreview(this.src, this.getAttribute('data-name'))" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:scale-110 transition-transform shadow-sm">`
+                : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
+
+              return `<tr class="hover:bg-brand-50/50">
+                <td class="px-6 py-4 font-mono font-semibold">${Utils.escapeHTML(t.code)}</td>
+                <td class="px-6 py-4"><div class="flex items-center">${imgHtml}<div><p class="font-bold text-slate-800">${safeName}</p><p class="text-xs font-normal text-slate-400">${Utils.escapeHTML(t.category)}</p></div></div></td>
+                <td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td>
+                <td class="px-6 py-4">${uHtml}</td>
+                <td class="px-6 py-4 text-right text-xs">${Utils.formatDate(t.lastAction)}</td>
+            </tr>`;
+            })
+            .join("");
+
+          Utils.safeCreateIcons();
+        },
+        renderHistory: function () {
+          const tbody = this.domCache.historyTbody;
+          if (!tbody) return;
+
+          const q = (
+            document.getElementById("history-search")?.value || ""
+          ).toLowerCase();
+          const filtered = AppData.history.filter(
+            (log) =>
+              (log.toolName || "").toLowerCase().includes(q) ||
+              String(log.toolCode || "")
+                .toLowerCase()
+                .includes(q) ||
+              (log.user || "").toLowerCase().includes(q),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhum registro histórico encontrado.</td></tr>`;
+            return;
+          }
+
+          // Batch Render
+          tbody.innerHTML = filtered
+            .map(
+              (log) => `
+            <tr class="hover:bg-slate-50">
+                <td class="px-6 py-4 text-sm font-medium text-slate-600">${Utils.formatDate(log.date)}</td>
+                <td class="px-6 py-4">${Utils.getBadgeHTML(log.type)}</td>
+                <td class="px-6 py-4 font-bold">${Utils.escapeHTML(log.toolName)} <span class="font-mono text-xs text-slate-400">(${Utils.escapeHTML(log.toolCode)})</span></td>
+                <td class="px-6 py-4 font-semibold text-slate-700">${Utils.escapeHTML(log.user)}</td>
+            </tr>
+          `,
+            )
+            .join("");
+
+          Utils.safeCreateIcons();
+        },
+        showImagePreview: function (url, title) {
+          const lb = document.getElementById("image-lightbox");
+          const img = document.getElementById("lightbox-img");
+          const cap = document.getElementById("lightbox-caption");
+          if (img) img.src = url;
+          if (cap) cap.textContent = title || "Visualização de Material";
+          if (lb) {
+            lb.classList.remove("hidden");
+            lb.classList.add("flex");
+          }
+        },
+        closeImagePreview: function () {
+          const lb = document.getElementById("image-lightbox");
+          if (lb) {
+            lb.classList.add("hidden");
+            lb.classList.remove("flex");
+          }
+        },
+        showToast: function (msg, type = "info") {
+          const cont = document.getElementById("toast-container");
+          if (!cont) return;
+          const t = document.createElement("div");
+          const conf =
+            type === "success"
+              ? { bg: "bg-emerald-600 border-emerald-500", ic: "check-circle" }
+              : type === "warning"
+                ? { bg: "bg-amber-600 border-amber-500", ic: "alert-triangle" }
+                : type === "error"
+                  ? { bg: "bg-rose-600 border-rose-500", ic: "x-circle" }
+                  : { bg: "bg-sky-600 border-sky-500", ic: "info" };
+
+          t.className = `toast-item flex items-center p-4 rounded-xl shadow-2xl text-white border ${conf.bg}`;
+          t.innerHTML = `<i data-lucide="${conf.ic}" class="w-5 h-5 mr-3 shrink-0"></i><span class="font-semibold text-sm pr-6">${Utils.escapeHTML(msg)}</span><button onclick="this.parentElement.remove()" class="ml-auto focus:outline-none"><i data-lucide="x" class="w-4 h-4"></i></button>`;
+          cont.appendChild(t);
+          Utils.safeCreateIcons();
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => t.classList.add("show")),
+          );
+          setTimeout(() => {
+            t.classList.remove("show");
+            setTimeout(() => {
+              if (t.parentElement) t.remove();
+            }, 400);
+          }, 4000);
+        },
+      };
+
+      // ==========================================
+      // CONTROLAÇÃO DE CRUD
+      // ==========================================
+
+      const AppCRUDTools = {
+        render: function () {
+          const tbody = AppUI.domCache.crudTbody;
+          if (!tbody) return;
+
+          const q = (
+            document.getElementById("tools-search")?.value || ""
+          ).toLowerCase();
+          const filtered = AppData.tools.filter(
+            (t) =>
+              (t.name || "").toLowerCase().includes(q) ||
+              String(t.code || "")
+                .toLowerCase()
+                .includes(q) ||
+              (t.category || "").toLowerCase().includes(q),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhuma ferramenta listada.</td></tr>`;
+            return;
+          }
+
+          // Batch Render
+          tbody.innerHTML = filtered
+            .map((t) => {
+              const btn = `<button onclick="App.CRUDTools.openModal('${t.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button><button onclick="App.CRUDTools.deleteTool('${t.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`;
+              const safeName = Utils.escapeHTML(t.name);
+              const imgHtml = t.imageUrl
+                ? `<img src="${Utils.escapeHTML(t.imageUrl)}" data-name="${safeName}" onclick="App.UI.showImagePreview(this.src, this.getAttribute('data-name'))" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:brightness-90 transition-all">`
+                : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
+
+              return `<tr>
+                <td class="px-6 py-4 font-mono">${Utils.escapeHTML(t.code)}</td>
+                <td class="px-6 py-4"><div class="flex items-center">${imgHtml}<div><p class="font-bold text-slate-800">${safeName}</p><p class="text-xs font-normal text-slate-400 block">${Utils.escapeHTML(t.category)}</p></div></div></td>
+                <td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td>
+                <td class="px-6 py-4 text-right">${btn}</td>
+            </tr>`;
+            })
+            .join("");
+
+          Utils.safeCreateIcons();
+        },
+        openModal: function (firebaseId = null) {
+          const m = document.getElementById("crud-modal");
+          if (m) m.classList.remove("hidden");
+          const pre = document.getElementById("crud-image-preview"),
+            icon = document.getElementById("image-placeholder-icon");
+
+          document.getElementById("crud-image").value = "";
+          if (pre) {
+            pre.classList.add("hidden");
+            pre.src = "";
+          }
+          if (icon) icon.classList.remove("hidden");
+
+          if (firebaseId) {
+            const t = AppData.tools.find((x) => x.firebaseId === firebaseId);
+            document.getElementById("modal-title").textContent =
+              "Editar Ferramenta";
+            document.getElementById("crud-id").value = t.firebaseId;
+            document.getElementById("crud-code").value = t.code;
+            document.getElementById("crud-code").disabled = true;
+            document.getElementById("crud-name").value = t.name;
+            document.getElementById("crud-category").value = t.category;
+
+            document
+              .getElementById("crud-status-container")
+              .classList.remove("hidden");
+            document.getElementById("crud-status").value =
+              t.status === "borrowed" ? "available" : t.status;
+
+            if (t.imageUrl && pre && icon) {
+              pre.src = t.imageUrl;
+              pre.classList.remove("hidden");
+              icon.classList.add("hidden");
+            }
+          } else {
+            document.getElementById("modal-title").textContent =
+              "Nova Ferramenta";
+            document.getElementById("crud-id").value = "";
+            document.getElementById("crud-code").value = "";
+            document.getElementById("crud-code").disabled = false;
+            document.getElementById("crud-name").value = "";
+            document
+              .getElementById("crud-status-container")
+              .classList.add("hidden");
+          }
+        },
+        closeModal: () =>
+          document.getElementById("crud-modal")?.classList.add("hidden"),
+        saveTool: async function () {
+          const firebaseId = document.getElementById("crud-id").value;
+          const code = document.getElementById("crud-code").value.trim();
+          const name = document.getElementById("crud-name").value.trim();
+          const cat = document.getElementById("crud-category").value;
+          const fileInput = document.getElementById("crud-image");
+
+          if (!code || !name)
+            return App.UI.showToast(
+              "Os campos 'Patrimônio' e 'Nome' são obrigatórios.",
+              "warning",
+            );
+
+          const isDuplicate = AppData.tools.some(
+            (t) =>
+              t.firebaseId !== firebaseId &&
+              String(t.code).toLowerCase() === String(code).toLowerCase(),
+          );
+
+          if (isDuplicate) {
+            return App.UI.showToast("Já existe uma ferramenta cadastrada com este Patrimônio.", "warning");
+          }
+
+          const btn = document.getElementById("btn-save-tool");
+          const originalHTML = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML =
+            '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Salvando...';
+          Utils.safeCreateIcons();
+
+          try {
+            let imageUrl = null;
+            const tool = firebaseId
+              ? AppData.tools.find((t) => t.firebaseId === firebaseId)
+              : null;
+            if (tool && tool.imageUrl) imageUrl = tool.imageUrl;
+
+            if (fileInput && fileInput.files.length > 0) {
+              imageUrl = await Utils.compressImageToBase64(fileInput.files[0]);
+            }
+
+            if (firebaseId) {
+              const updates = { name, category: cat };
+              if (tool && tool.status !== "borrowed")
+                updates.status = document.getElementById("crud-status").value;
+              if (imageUrl) updates.imageUrl = imageUrl;
+
+              await Utils.withTimeout(
+                updateDoc(
+                  doc(db, DB_BASE_PATH, COLLECTIONS.TOOLS, firebaseId),
+                  updates,
+                ),
+              );
+              App.UI.showToast("Ferramenta atualizada com sucesso.", "success");
+            } else {
+              if (AppData.tools.find((t) => String(t.code) === String(code))) {
+                throw new Error("Patrimônio Existente");
+              }
+              const newTool = {
+                code,
+                name,
+                category: cat,
+                status: "available",
+                currentUser: null,
+                lastAction: null,
+              };
+              if (imageUrl) newTool.imageUrl = imageUrl;
+
+              await Utils.withTimeout(
+                setDoc(doc(db, DB_BASE_PATH, COLLECTIONS.TOOLS, code), newTool),
+              );
+              App.UI.showToast("Ferramenta registrada com sucesso.", "success");
+            }
+            this.closeModal();
+          } catch (err) {
+            Logger.error(
+              err.message === "Patrimônio Existente"
+                ? "Código já registrado no sistema."
+                : "Falha na transação de dados.",
+              err,
+            );
+            Logger.error("Falha na transação de dados.", err);
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalHTML;
+            Utils.safeCreateIcons();
+          }
+        },
+        deleteTool: async function (firebaseId) {
+          if (
+            confirm("Deseja confirmar a exclusão definitiva desta ferramenta?")
+          ) {
+            try {
+              const toolToDelete = AppData.tools.find(
+                (t) => t.firebaseId === firebaseId,
+              );
+              await deleteDoc(
+                doc(db, DB_BASE_PATH, COLLECTIONS.TOOLS, firebaseId),
+              );
+              App.UI.showToast("Ferramenta excluída com sucesso.", "success");
+            } catch (e) {
+              Logger.error("Erro ao excluir a ferramenta.", e);
+            }
+          }
+        },
+      };
+
+      const AppCRUDUsers = {
+        render: function () {
+          const tbody = AppUI.domCache.usersTbody;
+          if (!tbody) return;
+
+          const q = (
+            document.getElementById("users-search")?.value || ""
+          ).toLowerCase();
+          const filtered = AppData.users.filter(
+            (u) =>
+              (u.name || "").toLowerCase().includes(q) ||
+              String(u.badge || "")
+                .toLowerCase()
+                .includes(q) ||
+              (u.role || u.department || "").toLowerCase().includes(q),
+          );
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Colaborador não encontrado.</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = filtered
+            .map(
+              (u) => `
+            <tr>
+              <td class="px-6 py-4 font-mono text-brand-600 font-bold">${Utils.escapeHTML(u.badge || "---")}</td>
+              <td class="px-6 py-4 font-bold">${Utils.escapeHTML(u.name)}</td>
+              <td class="px-6 py-4 text-slate-500">${Utils.escapeHTML(u.role || u.department || "---")}</td>
+              <td class="px-6 py-4 text-right">
+                <button onclick="App.CRUDUsers.openModal('${u.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button>
+                <button onclick="App.CRUDUsers.deleteUser('${u.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+              </td>
+            </tr>
+          `,
+            )
+            .join("");
+
+          Utils.safeCreateIcons();
+        },
+        openModal: function (id = null) {
+          const m = document.getElementById("crud-user-modal");
+          if (m) m.classList.remove("hidden");
+          if (id) {
+            const u = AppData.users.find((x) => x.firebaseId === id);
+            document.getElementById("user-modal-title").textContent =
+              "Editar Colaborador";
+            document.getElementById("crud-user-id").value = u.firebaseId;
+            document.getElementById("crud-user-badge").value = u.badge || "";
+            document.getElementById("crud-user-name").value = u.name;
+            document.getElementById("crud-user-role").value =
+              u.role || u.department || "";
+          } else {
+            document.getElementById("user-modal-title").textContent =
+              "Novo Colaborador";
+            [
+              "crud-user-id",
+              "crud-user-badge",
+              "crud-user-name",
+              "crud-user-role",
+            ].forEach((id) => (document.getElementById(id).value = ""));
+          }
+        },
+        closeModal: () =>
+          document.getElementById("crud-user-modal")?.classList.add("hidden"),
+        saveUser: async function () {
+          const id = document.getElementById("crud-user-id").value;
+          const badge = document.getElementById("crud-user-badge").value.trim();
+          const name = document.getElementById("crud-user-name").value.trim();
+          const role = document.getElementById("crud-user-role").value.trim();
+
+          if (!name)
+            return App.UI.showToast("O campo 'Nome' é obrigatório.", "warning");
+
+          const isDuplicate = AppData.users.some(
+            (u) =>
+              u.firebaseId !== id &&
+              (u.name.toLowerCase() === name.toLowerCase() ||
+                (badge && u.badge === badge)),
+          );
+
+          if (isDuplicate) {
+            return App.UI.showToast("Colaborador (Nome ou Ponto/Crachá) já cadastrado.", "warning");
+          }
+
+          try {
+            if (id) {
+              await updateDoc(doc(db, DB_BASE_PATH, COLLECTIONS.USERS, id), {
+                badge,
+                name,
+                role,
+              });
+              App.UI.showToast(
+                "Colaborador atualizado com sucesso.",
+                "success",
+              );
+            } else {
+              await addDoc(collection(db, DB_BASE_PATH, COLLECTIONS.USERS), {
+                badge,
+                name,
+                role,
+              });
+              App.UI.showToast(
+                "Colaborador adicionado com sucesso.",
+                "success",
+              );
+            }
+            this.closeModal();
+          } catch (e) {
+            Logger.error("Erro ao salvar colaborador.", e);
+          }
+        },
+        deleteUser: async function (id) {
+          if (confirm("Deseja confirmar a exclusão deste colaborador?")) {
+            try {
+              await deleteDoc(doc(db, DB_BASE_PATH, COLLECTIONS.USERS, id));
+              App.UI.showToast("Colaborador removido com sucesso.", "success");
+            } catch (e) {
+              Logger.error("Acesso bloqueado ou erro ao remover.", e);
+            }
+          }
+        },
+        importFile: async function (event) {
+          if (!event || !event.target || !event.target.files) return;
+          if (!window.XLSX) {
+            App.UI.showToast("Carregando leitor de Excel...", "info");
+            try {
+              await Utils.loadScript(
+                "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js",
+              );
+            } catch (err) {
+              App.UI.showToast("Erro ao carregar o leitor de Excel.", "error");
+              event.target.value = "";
+              return;
+            }
+          }
+          const file = event.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = async (e) => {
+            try {
+              const workbook = XLSX.read(new Uint8Array(e.target.result), {
+                type: "array",
+              });
+              const rows = XLSX.utils.sheet_to_json(
+                workbook.Sheets[workbook.SheetNames[0]],
+                { header: 1 },
+              );
+              if (rows.length < 2)
+                return App.UI.showToast(
+                  "Arquivo vazio ou com formato incorreto.",
+                  "error",
+                );
+
+              App.UI.showToast("Importando colaboradores... Aguarde.", "info");
+              let count = 0;
+              let duplicates = 0;
+              const existingNames = new Set(AppData.users.map(u => u.name.toLowerCase()));
+              const existingBadges = new Set(AppData.users.map(u => u.badge).filter(b => b));
+
+              for (let i = 1; i < rows.length; i++) {
+                const cols = rows[i];
+                if (!cols || cols.length === 0) continue;
+                const badge = cols[0] != null ? String(cols[0]).trim() : "",
+                  name = cols[1] != null ? String(cols[1]).trim() : "",
+                  role = cols[2] != null ? String(cols[2]).trim() : "";
+                if (name) {
+                  const lowerName = name.toLowerCase();
+                  if (existingNames.has(lowerName) || (badge && existingBadges.has(badge))) {
+                    duplicates++;
+                    continue;
+                  }
+
+                  existingNames.add(lowerName);
+                  if (badge) existingBadges.add(badge);
+
+                  try {
+                    await addDoc(
+                      collection(db, DB_BASE_PATH, COLLECTIONS.USERS),
+                      {
+                        badge,
+                        name,
+                        role,
+                      },
+                    );
+                    count++;
+                  } catch (err) {
+                    Logger.warn(`Erro ao importar colaborador: ${name}`, err);
+                  }
+                }
+              }
+              let msg = `${count} colaboradores importados com sucesso.`;
+              if (duplicates > 0) msg += ` (${duplicates} ignorados por duplicidade).`;
+              App.UI.showToast(
+                msg,
+                "success",
+              );
+            } catch (err) {
+              App.UI.showToast("Falha ao ler o arquivo Excel.", "error");
+            } finally {
+              event.target.value = "";
+            }
+          };
+          reader.readAsArrayBuffer(file);
+        },
+      };
+
+      // ==========================================
+      // INTEGRATOR E SCANNER
+      // ==========================================
+
+      const AppSession = {
+        timeout: null,
+        lastReset: 0,
+        init: function () {
+          this.resetTimer();
+          // Throttling aplicado em eventos de alta volumetria para salvar CPU
+          ["mousemove", "keydown", "scroll", "click"].forEach((evt) => {
+            document.addEventListener(evt, () => this.throttleReset(), {
+              passive: true,
+            });
+          });
+        },
+        throttleReset: function () {
+          const now = Date.now();
+          if (now - this.lastReset > 2000) {
+            this.lastReset = now;
+            this.resetTimer();
+          }
+        },
+        resetTimer: function () {
+          clearTimeout(this.timeout);
+          this.timeout = setTimeout(() => {
+            if (auth.currentUser) {
+              App.Auth.logout();
+              alert("Sessão expirada por inatividade. Faça login novamente.");
+            }
+          }, CONFIG.SESSION_LIMIT_MS);
+        },
+      };
+
+      const AppScanner = {
+        currentTool: null,
+        buffer: "",
+        timeout: null,
+        html5QrCode: null,
+        currentMode: "usb",
+        init: function () {
+          document.addEventListener("keydown", (e) => {
+            if (App.UI.activeTab !== "scanner" || this.currentMode !== "usb")
+              return;
+            if (
+              ["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName) &&
+              e.target.id !== "hidden-scanner"
+            )
+              return;
+
+            if (e.key === "Enter") {
+              if (this.buffer.length > 2) this.processCode(this.buffer);
+              this.buffer = "";
+            } else if (e.key.length === 1) {
+              this.buffer += e.key;
+              clearTimeout(this.timeout);
+              this.timeout = setTimeout(() => {
+                this.buffer = "";
+              }, 60);
+            }
+          });
+
+          document
+            .getElementById("tab-scanner")
+            ?.addEventListener("click", (e) => {
+              if (!["INPUT", "BUTTON", "SELECT"].includes(e.target.tagName))
+                this.focus();
+            });
+
+          const mFn = function (e) {
+            if (e.key === "Enter" && this.value.trim() !== "") {
+              App.Scanner.processCode(this.value.trim());
+              this.value = "";
+            }
+          };
+          document
+            .getElementById("manual-scan-input")
+            ?.addEventListener("keydown", mFn);
+          document
+            .getElementById("hidden-scanner")
+            ?.addEventListener("keydown", mFn);
+        },
+        setMode: function (mode) {
+          this.currentMode = mode;
+          const active =
+            "px-4 py-2 bg-brand-50 text-brand-700 font-bold rounded-lg border border-brand-200 flex items-center transition-colors";
+          const inactive =
+            "px-4 py-2 bg-slate-50 text-slate-600 font-bold rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center transition-colors";
+
+          const bUsb = document.getElementById("btn-mode-usb");
+          const bCam = document.getElementById("btn-mode-cam");
+          if (bUsb) bUsb.className = mode === "usb" ? active : inactive;
+          if (bCam) bCam.className = mode === "cam" ? active : inactive;
+
+          document
+            .getElementById("mode-usb-container")
+            ?.classList.toggle("hidden", mode !== "usb");
+          document
+            .getElementById("mode-cam-container")
+            ?.classList.toggle("hidden", mode !== "cam");
+
+          mode === "cam" ? this.startCamera() : this.stopCamera();
+        },
+        startCamera: async function () {
+          if (!window.Html5Qrcode) {
+            App.UI.showToast("Câmera indisponível.", "error");
+            this.setMode("usb");
+            return;
+          }
+          if (!this.html5QrCode) this.html5QrCode = new Html5Qrcode("reader");
+          await this.stopCamera();
+
+          // Configuração padrão e reutilizável para a câmera
+          const cameraConfig = {
+            fps: 10,
+            qrbox: 250
+          };
+
+          const onScanSuccess = (code) => {
+            this.processCode(code);
+            this.stopCamera();
+          };
+
+          const onScanFailure = (errorMessage) => {
+            // Ignora erros de leitura (quando não há código no frame) para não travar
+          };
+
+          try {
+            // 1. Tenta iniciar a câmera traseira (padrão para scanners)
+            await this.html5QrCode.start(
+              { facingMode: "environment" },
+              cameraConfig,
+              onScanSuccess,
+              onScanFailure,
+            );
+          } catch (err) {
+            Logger.warn(
+              "Câmera traseira falhou. Tentando câmera frontal.",
+              err,
+            );
+            // 2. Se falhar, tenta a câmera frontal como alternativa
+            try {
+              await this.html5QrCode.start(
+                { facingMode: "user" },
+                cameraConfig,
+                onScanSuccess,
+                onScanFailure,
+              );
+            } catch (finalErr) {
+              let errorMsg =
+                "Erro na câmera. Verifique as permissões do navegador.";
+              if (
+                location.protocol !== "https:" &&
+                location.hostname !== "localhost"
+              ) {
+                errorMsg = "A câmera requer conexão segura (HTTPS).";
+              }
+              Logger.error(errorMsg, finalErr);
+              this.setMode("usb");
+            }
+          }
+        },
+        stopCamera: async function () {
+          if (!this.html5QrCode) return;
+          try {
+            const state =
+              typeof this.html5QrCode.getState === "function"
+                ? this.html5QrCode.getState()
+                : 0;
+            if (state === 2 || this.html5QrCode.isScanning) {
+              await this.html5QrCode.stop();
+              this.html5QrCode.clear();
+            }
+          } catch (e) {
+            Logger.warn("Falha no desligamento da câmera.", e);
+          }
+        },
+        focus: function () {
+          const hs = document.getElementById("hidden-scanner");
+          if (!this.currentTool && this.currentMode === "usb" && hs) hs.focus();
+        },
+        processCode: function (code) {
+          const tool = AppData.tools.find(
+            (t) => String(t.code) === String(code),
+          );
+          if (!tool) {
+            AudioSys.playBeep("error");
+            App.UI.showToast(
+              `Ferramenta ${Utils.escapeHTML(code)} não encontrada.`,
+              "error",
+            );
+            return this.reset();
+          }
+
+          AudioSys.playBeep("success");
+          this.currentTool = tool;
+
+          document
+            .getElementById("scanner-waiting")
+            ?.classList.add("hidden-tab");
+          document
+            .getElementById("scanner-result")
+            ?.classList.remove("hidden-tab");
+
+          const sli = document.getElementById("scanner-line-indicator");
+          if (sli)
+            sli.className =
+              "absolute top-0 left-0 w-full h-2 transition-all duration-500 " +
+              (tool.status === "available"
+                ? "bg-gradient-to-r from-emerald-400 to-emerald-600"
+                : "bg-gradient-to-r from-rose-400 to-rose-600");
+
+          const ric = document.getElementById("res-image-container");
+          if (ric)
+            ric.innerHTML = tool.imageUrl
+              ? `<img src="${Utils.escapeHTML(tool.imageUrl)}" class="w-16 h-16 rounded-xl object-cover border border-slate-200">`
+              : `<div class="w-16 h-16 rounded-xl bg-slate-200 flex items-center justify-center border border-slate-300"><i data-lucide="image" class="w-8 h-8 text-slate-400"></i></div>`;
+
+          const setText = (id, txt) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = txt;
+          };
+          const rcat = document.getElementById("res-category");
+          if (rcat && rcat.querySelector("span"))
+            rcat.querySelector("span").textContent = tool.category;
+          setText("res-name", tool.name);
+          setText("res-code", tool.code);
+          const rbdg = document.getElementById("res-badge-container");
+          if (rbdg) rbdg.innerHTML = Utils.getBadgeHTML(tool.status);
+
+          [
+            "scanner-status-box",
+            "scanner-checkout",
+            "scanner-processing",
+            "scanner-return",
+          ].forEach((id) =>
+            document.getElementById(id)?.classList.add("hidden-tab"),
+          );
+
+          if (tool.status === "borrowed") {
+            const rui = document.getElementById("return-user-info");
+            if (rui)
+              rui.innerHTML = `Com: <strong>${Utils.escapeHTML(tool.currentUser || "Desconhecido")}</strong>`;
+            document
+              .getElementById("scanner-return")
+              ?.classList.remove("hidden-tab");
+            setTimeout(
+              () => document.getElementById("btn-return")?.focus(),
+              100,
+            );
+          } else if (tool.status === "available") {
+            const bStat = document.getElementById("scanner-status-box");
+            if (bStat) {
+              bStat.innerHTML = `<div class="flex items-start text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-100"><i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-0.5 text-emerald-500"></i><div><p class="font-extrabold text-lg">Pronta para uso</p></div></div>`;
+              bStat.classList.remove("hidden-tab");
+            }
+            document
+              .getElementById("scanner-checkout")
+              ?.classList.remove("hidden-tab");
+            const badgeInput = document.getElementById("checkout-user-badge");
+            if (badgeInput) {
+              badgeInput.value = "";
+              setTimeout(() => badgeInput.focus(), 100);
+            }
+          } else {
+            AudioSys.playBeep("error");
+            App.UI.showToast("Ferramenta em manutenção.", "warning");
+            setTimeout(() => this.reset(), 2000);
+          }
+          Utils.safeCreateIcons();
+        },
+        processReturn: function () {
+          if (!this.currentTool) return;
+          document
+            .getElementById("scanner-return")
+            ?.classList.add("hidden-tab");
+          document
+            .getElementById("scanner-processing")
+            ?.classList.remove("hidden-tab");
+
+          setTimeout(() => {
+            AppData.updateTool(
+              this.currentTool.code,
+              {
+                status: "available",
+                currentUser: null,
+                lastAction: new Date().toISOString(),
+              },
+              "in",
+              this.currentTool.currentUser,
+            );
+            AudioSys.playBeep("return");
+            App.UI.showToast("Devolução concluída com sucesso.", "success");
+
+            document
+              .getElementById("scanner-processing")
+              ?.classList.add("hidden-tab");
+            const rbc = document.getElementById("res-badge-container");
+            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("available");
+            const ssb = document.getElementById("scanner-status-box");
+            if (ssb) {
+              ssb.innerHTML = `<div class="text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-200"><p class="font-extrabold text-lg">Devolução registrada</p></div>`;
+              ssb.classList.remove("hidden-tab");
+            }
+            setTimeout(() => this.reset(), 2000);
+          }, 800);
+        },
+        processCheckout: function () {
+          const badgeInput = document.getElementById("checkout-user-badge");
+          const badgeValue = badgeInput ? badgeInput.value.trim() : "";
+          if (!badgeValue || !this.currentTool) return;
+
+          const userObj = AppData.users.find(
+            (u) =>
+              String(u.badge) === badgeValue ||
+              (u.name || "").toLowerCase() === badgeValue.toLowerCase(),
+          );
+          if (!userObj) {
+            AudioSys.playBeep("error");
+            return App.UI.showToast("Colaborador não encontrado.", "error");
+          }
+
+          const userName = userObj.name;
+          ["scanner-checkout", "scanner-status-box"].forEach((id) =>
+            document.getElementById(id)?.classList.add("hidden-tab"),
+          );
+          document
+            .getElementById("scanner-processing")
+            ?.classList.remove("hidden-tab");
+
+          setTimeout(() => {
+            AppData.updateTool(
+              this.currentTool.code,
+              {
+                status: "borrowed",
+                currentUser: userName,
+                lastAction: new Date().toISOString(),
+              },
+              "out",
+              userName,
+            );
+            AudioSys.playBeep("success");
+            App.UI.showToast(`Retirada autorizada para ${userName}`, "success");
+            if (App.PDF && typeof App.PDF.generateReceipt === "function")
+              App.PDF.generateReceipt(this.currentTool, userName);
+
+            document
+              .getElementById("scanner-processing")
+              ?.classList.add("hidden-tab");
+            const rbc = document.getElementById("res-badge-container");
+            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("borrowed");
+            const ssb = document.getElementById("scanner-status-box");
+            if (ssb) {
+              ssb.innerHTML = `<div class="text-amber-900 bg-amber-50 p-5 rounded-xl border border-amber-200"><p class="font-extrabold text-xl">Responsabilidade transferida</p></div>`;
+              ssb.classList.remove("hidden-tab");
+            }
+            setTimeout(() => this.reset(), 3000);
+          }, 1000);
+        },
+        reset: function () {
+          this.currentTool = null;
+          document
+            .getElementById("scanner-result")
+            ?.classList.add("hidden-tab");
+          document
+            .getElementById("scanner-waiting")
+            ?.classList.remove("hidden-tab");
+          const msi = document.getElementById("manual-scan-input");
+          if (msi) msi.value = "";
+          const sli = document.getElementById("scanner-line-indicator");
+          if (sli)
+            sli.className =
+              "absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-500 via-indigo-500 to-brand-500 transition-all duration-500";
+          if (this.currentMode === "cam") this.startCamera();
+          this.focus();
+        },
+      };
+
+      const AppAuth = {
+        init: function () {
+          const form = document.getElementById("login-form");
+          const btnLogin = document.getElementById("btn-login");
+
+          document
+            .getElementById("toggle-password")
+            ?.addEventListener("click", () => {
+              const lp = document.getElementById("login-password");
+              const isP = lp.getAttribute("type") === "password";
+              lp.setAttribute("type", isP ? "text" : "password");
+              document.getElementById("toggle-password").innerHTML =
+                `<i data-lucide="${isP ? "eye-off" : "eye"}" class="w-5 h-5"></i>`;
+              Utils.safeCreateIcons();
+            });
+
+          document
+            .getElementById("btn-forgot-password")
+            ?.addEventListener("click", async (e) => {
+              e.preventDefault();
+              const email = document.getElementById("login-email").value;
+              if (!email) {
+                return App.UI.showToast(
+                  "Por favor, digite seu e-mail para recuperar a senha.",
+                  "warning",
+                );
+              }
+              try {
+                await sendPasswordResetEmail(auth, email);
+                App.UI.showToast(
+                  "E-mail de recuperação enviado. Verifique sua caixa de entrada e spam.",
+                  "success",
+                );
+              } catch (error) {
+                let errorMessage = "Erro ao enviar o e-mail de recuperação.";
+                if (error.code === "auth/user-not-found") {
+                  errorMessage = "Este e-mail não está cadastrado no sistema.";
+                } else if (error.code === "auth/invalid-email") {
+                  errorMessage = "O formato do e-mail é inválido.";
+                }
+                Logger.error(errorMessage, error);
+              }
+            });
+
+          if (form) {
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+              const [email, pass] = [
+                document.getElementById("login-email").value,
+                document.getElementById("login-password").value,
+              ];
+              if (btnLogin) btnLogin.disabled = true;
+              document.getElementById("login-text").innerHTML =
+                '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin inline"></i> Autenticando...';
+              Utils.safeCreateIcons();
+              try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                // O sucesso do login é tratado pelo onAuthStateChanged, que irá esconder esta tela.
+              } catch (error) {
+                let errorMessage =
+                  "Falha na autenticação. Verifique suas credenciais.";
+                switch (error.code) {
+                  case "auth/user-not-found":
+                  case "auth/wrong-password":
+                  case "auth/invalid-credential":
+                    errorMessage =
+                      "Credenciais inválidas. Verifique e-mail e senha.";
+                    break;
+                  case "auth/invalid-email":
+                    errorMessage = "O formato do e-mail é inválido.";
+                    break;
+                  case "auth/too-many-requests":
+                    errorMessage =
+                      "Acesso bloqueado por muitas tentativas. Tente mais tarde.";
+                    break;
+                }
+                Logger.error(errorMessage, error);
+                // Reativa o botão apenas em caso de falha, permitindo nova tentativa.
+                if (btnLogin) btnLogin.disabled = false;
+                document.getElementById("login-text").textContent = "Entrar";
+              }
+            });
+          }
+
+          onAuthStateChanged(auth, async (user) => {
+            if (user) {
+              const userEmail = (user.email || "").trim().toLowerCase();
+
+              // Definindo o único administrador fixo da aplicação
+              const isAdmin = userEmail === "jefferson.araujo@camara.leg.br";
+
+              const se = document.getElementById("display-user-email");
+              if (se) se.textContent = isAdmin ? "Administrador" : "Operador";
+              const sr = document.getElementById("display-user-role");
+              if (sr)
+                sr.textContent = isAdmin
+                  ? "Admin | Administrador"
+                  : "Operador | Padrão";
+
+              const avatarContainer = document.getElementById("user-avatar-container");
+              if (avatarContainer) {
+                avatarContainer.innerHTML = isAdmin
+                  ? '<i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>'
+                  : '<i data-lucide="user" class="w-5 h-5 text-sky-400"></i>';
+                Utils.safeCreateIcons();
+              }
+
+              const menuAdm = document.getElementById("menu-admin-group");
+              if (isAdmin) {
+                if (menuAdm) menuAdm.style.display = "block";
+              } else {
+                if (menuAdm) menuAdm.style.display = "none";
+                if (
+                  ["management", "collaborators", "history"].includes(
+                    App.UI.activeTab,
+                  )
+                )
+                  App.UI.switchTab("dashboard");
+              }
+
+              document.getElementById("login-screen")?.classList.add("hidden");
+              document.getElementById("main-app")?.classList.remove("hidden");
+
+              App.Data.init();
+              AppSession.init();
+              const lp = document.getElementById("login-password");
+              if (lp) lp.value = "";
+            } else {
+              document
+                .getElementById("login-screen")
+                ?.classList.remove("hidden");
+              document.getElementById("main-app")?.classList.add("hidden");
+              clearTimeout(AppSession.timeout);
+              App.Data.destroyListeners(); // Proteção absoluta contra Ghost Listeners
+
+              // Reseta o estado do botão de login para quando a tela voltar a aparecer
+              const btnLogin = document.getElementById("btn-login");
+              if (btnLogin) btnLogin.disabled = false;
+              const loginText = document.getElementById("login-text");
+              if (loginText) loginText.textContent = "Entrar";
+            }
+          });
+        },
+        logout: () => signOut(auth),
+        openPasswordModal: function () {
+          const m = document.getElementById("password-modal");
+          if (m) {
+            m.classList.remove("hidden");
+            m.classList.add("flex");
+          }
+          const np = document.getElementById("new-password"),
+            cp = document.getElementById("confirm-password");
+          if (np) np.value = "";
+          if (cp) cp.value = "";
+        },
+        closePasswordModal: function () {
+          const m = document.getElementById("password-modal");
+          if (m) {
+            m.classList.add("hidden");
+            m.classList.remove("flex");
+          }
+        },
+        updateUserPassword: async function () {
+          const newPass = document.getElementById("new-password").value;
+          const confirmPass = document.getElementById("confirm-password").value;
+          if (newPass.length < 6)
+            return App.UI.showToast("Mínimo 6 caracteres.", "error");
+          if (newPass !== confirmPass)
+            return App.UI.showToast("As senhas não coincidem.", "error");
+
+          const btn = document.getElementById("btn-save-password");
+          const originalText = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML =
+            '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i> Atualizando...';
+          Utils.safeCreateIcons();
+
+          try {
+            await updatePassword(auth.currentUser, newPass);
+            App.UI.showToast("Senha atualizada com sucesso.", "success");
+            this.closePasswordModal();
+          } catch (error) {
+            App.UI.showToast("Erro ao atualizar a senha.", "error");
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+            Utils.safeCreateIcons();
+          }
         },
       };
 
@@ -1706,20 +3242,43 @@
                 },
               ],
             };
-            const manifestLink = document.getElementById("manifest-link");
-            if (manifestLink) {
-              manifestLink.href = URL.createObjectURL(
-                new Blob([JSON.stringify(manifest)], {
-                  type: "application/json",
-                }),
-              );
+            let manifestLink = document.getElementById("manifest-link");
+            if (!manifestLink) {
+              manifestLink = document.createElement("link");
+              manifestLink.id = "manifest-link";
+              manifestLink.rel = "manifest";
+              document.head.appendChild(manifestLink);
             }
-          } catch (e) {}
+            manifestLink.href = URL.createObjectURL(
+              new Blob([JSON.stringify(manifest)], {
+                type: "application/json",
+              }),
+            );
+          } catch (e) {
+            Logger.warn("Erro ao inicializar PWA manifest.", e);
+          }
         },
       };
 
       const AppPDF = {
-        generateReceipt: function (tool, userName) {
+        generateReceipt: async function (tool, userName) {
+          if (!window.jspdf) {
+            App.UI.showToast("Carregando gerador de PDF...", "info");
+            try {
+              await Utils.loadScript(
+                "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
+              );
+            } catch (e) {
+              return App.UI.showToast(
+                "Erro ao carregar gerador de PDF.",
+                "error",
+              );
+            }
+          }
+          if (!window.jspdf || !window.jspdf.jsPDF) {
+            App.UI.showToast("Gerador indisponível.", "error");
+            return;
+          }
           const { jsPDF } = window.jspdf;
           const doc = new jsPDF();
           const d = new Date();
@@ -1742,6 +3301,7 @@
           doc.text("COENG", 20, 20);
           doc.setFont("helvetica", "normal");
           doc.setFontSize(9);
+          // Corrigido: GESTÃO
           doc.text("SISTEMA DE GESTÃO DE FERRAMENTAS", 20, 27);
           doc.setFont("helvetica", "bold");
           doc.setFontSize(12);
@@ -1750,7 +3310,6 @@
           doc.setFontSize(9);
           doc.setTextColor(220, 220, 220);
           doc.text(`Protocolo: ${receiptId}`, 190, 27, { align: "right" });
-
           doc.setTextColor(40, 40, 40);
           doc.setFontSize(10);
           doc.setFont("helvetica", "normal");
@@ -1768,6 +3327,7 @@
           doc.setTextColor(30, 58, 138);
           doc.setFont("helvetica", "bold");
           doc.setFontSize(10);
+          // Corrigido: PATRIMÔNIO
           doc.text("DADOS DO PATRIMÔNIO", 25, startY + 7);
           doc.setTextColor(0, 0, 0);
           doc.setFontSize(9);
@@ -1821,6 +3381,7 @@
           startY += 50;
           doc.setFont("helvetica", "bold");
           doc.setFontSize(10);
+          // Corrigido: DECLARAÇÃO
           doc.text("DECLARAÇÃO DE CONFORMIDADE", 20, startY);
           doc.setFont("helvetica", "normal");
           doc.setFontSize(9);
@@ -1876,1232 +3437,6 @@
         },
       };
 
-      const AppSession = {
-        timeout: null,
-        timeLimit: 30 * 60 * 1000,
-        init: function () {
-          this.resetTimer();
-          ["mousemove", "keydown", "scroll", "click"].forEach((evt) => {
-            document.addEventListener(evt, () => this.resetTimer());
-          });
-        },
-        resetTimer: function () {
-          clearTimeout(this.timeout);
-          this.timeout = setTimeout(() => {
-            if (auth.currentUser) {
-              App.Auth.logout();
-              alert("Sessão expirada por inatividade. Faça login novamente.");
-            }
-          }, this.timeLimit);
-        },
-      };
-
-      const AppAuth = {
-        init: function () {
-          const form = document.getElementById("login-form");
-          const btnForgot = document.getElementById("btn-forgot-password");
-          const btnLogin = document.getElementById("btn-login");
-          const loginText = document.getElementById("login-text");
-          const togglePassword = document.getElementById("toggle-password");
-          const loginPassword = document.getElementById("login-password");
-
-          if (togglePassword && loginPassword) {
-            togglePassword.addEventListener("click", () => {
-              const isPassword =
-                loginPassword.getAttribute("type") === "password";
-              loginPassword.setAttribute(
-                "type",
-                isPassword ? "text" : "password",
-              );
-              togglePassword.innerHTML = `<i data-lucide="${isPassword ? "eye-off" : "eye"}" class="w-5 h-5"></i>`;
-              lucide.createIcons();
-            });
-          }
-
-          if (btnForgot) {
-            btnForgot.addEventListener("click", async (e) => {
-              e.preventDefault();
-              const email = document.getElementById("login-email").value;
-              if (!email)
-                return alert(
-                  "Por favor, digite o seu e-mail no campo acima antes de pedir a recuperação.",
-                );
-              try {
-                await sendPasswordResetEmail(auth, email);
-                alert(
-                  "E-mail de recuperação enviado! Verifique a sua caixa de entrada.",
-                );
-              } catch (error) {
-                alert(
-                  "Erro ao enviar e-mail. Verifique se o endereço está correto ou cadastrado.",
-                );
-              }
-            });
-          }
-
-          if (form) {
-            form.addEventListener("submit", async (e) => {
-              e.preventDefault();
-              const email = document.getElementById("login-email").value;
-              const pass = document.getElementById("login-password").value;
-              if (btnLogin) btnLogin.disabled = true;
-              if (loginText)
-                loginText.innerHTML =
-                  '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin inline"></i> Autenticando...';
-              lucide.createIcons();
-              try {
-                await signInWithEmailAndPassword(auth, email, pass);
-              } catch (error) {
-                alert(
-                  "Erro de Autenticação: Verifique as suas credenciais ou contate o administrador.",
-                );
-                if (btnLogin) btnLogin.disabled = false;
-                if (loginText) loginText.textContent = "Entrar";
-              }
-            });
-          }
-
-          onAuthStateChanged(auth, async (user) => {
-            if (user) {
-              const userEmail = user.email.toLowerCase();
-              let adminEmails = ["jefferson.araujo@camara.leg.br"];
-              try {
-                const snap = await getDocs(
-                  collection(db, DB_BASE_PATH, "admins"),
-                );
-                snap.docs.forEach((d) => {
-                  if (d.data().email)
-                    adminEmails.push(d.data().email.toLowerCase());
-                });
-              } catch (e) {
-                console.warn(
-                  "Modo offline ou sem permissão para buscar admins extras.",
-                );
-              }
-
-              const isAdmin = adminEmails.includes(userEmail);
-              let displayName = isAdmin
-                ? "Jefferson de Araújo Silva"
-                : "Operador do Sistema";
-              let roleDisplay = isAdmin
-                ? "Admin | Acesso Total"
-                : "Operador | Acesso Limitado";
-
-              const dUserEmail = document.getElementById("display-user-email");
-              if (dUserEmail) dUserEmail.textContent = displayName;
-
-              const dUserRole = document.getElementById("display-user-role");
-              if (dUserRole) dUserRole.textContent = roleDisplay;
-
-              const adminMenu = document.getElementById("menu-admin-group");
-              if (isAdmin) {
-                if (adminMenu) adminMenu.style.display = "block";
-              } else {
-                if (adminMenu) adminMenu.style.display = "none";
-                if (
-                  ["management", "collaborators", "history"].includes(
-                    App.UI.activeTab,
-                  )
-                )
-                  App.UI.switchTab("dashboard");
-              }
-
-              const loginScreen = document.getElementById("login-screen");
-              const mainApp = document.getElementById("main-app");
-              if (loginScreen) loginScreen.classList.add("hidden");
-              if (mainApp) mainApp.classList.remove("hidden");
-
-              App.Data.init();
-              AppSession.init();
-              if (btnLogin) btnLogin.disabled = false;
-              if (loginText) loginText.textContent = "Entrar";
-              const loginPass = document.getElementById("login-password");
-              if (loginPass) loginPass.value = "";
-            } else {
-              const loginScreen = document.getElementById("login-screen");
-              const mainApp = document.getElementById("main-app");
-              if (loginScreen) loginScreen.classList.remove("hidden");
-              if (mainApp) mainApp.classList.add("hidden");
-              clearTimeout(AppSession.timeout);
-            }
-          });
-        },
-        logout: () => signOut(auth),
-        openPasswordModal: function () {
-          const m = document.getElementById("password-modal");
-          if (m) {
-            m.classList.remove("hidden");
-            m.classList.add("flex");
-          }
-          const np = document.getElementById("new-password"),
-            cp = document.getElementById("confirm-password");
-          if (np) np.value = "";
-          if (cp) cp.value = "";
-        },
-        closePasswordModal: function () {
-          const m = document.getElementById("password-modal");
-          if (m) {
-            m.classList.add("hidden");
-            m.classList.remove("flex");
-          }
-        },
-        updateUserPassword: async function () {
-          const newPass = document.getElementById("new-password").value;
-          const confirmPass = document.getElementById("confirm-password").value;
-          if (newPass.length < 6)
-            return App.UI.showToast(
-              "A senha deve ter pelo menos 6 caracteres.",
-              "error",
-            );
-          if (newPass !== confirmPass)
-            return App.UI.showToast("As senhas não coincidem.", "error");
-
-          const btn = document.getElementById("btn-save-password");
-          const originalText = btn.innerHTML;
-          btn.disabled = true;
-          btn.innerHTML =
-            '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i> Atualizando...';
-          lucide.createIcons();
-
-          try {
-            await updatePassword(auth.currentUser, newPass);
-            App.UI.showToast("Senha atualizada com sucesso!", "success");
-            this.closePasswordModal();
-          } catch (error) {
-            if (error.code === "auth/requires-recent-login") {
-              App.UI.showToast(
-                "Por segurança, faça login novamente para alterar sua senha.",
-                "error",
-              );
-              setTimeout(() => this.logout(), 3000);
-            } else {
-              App.UI.showToast(
-                "Ocorreu um erro ao atualizar a senha.",
-                "error",
-              );
-            }
-          } finally {
-            btn.disabled = false;
-            btn.innerHTML = originalText;
-            lucide.createIcons();
-          }
-        },
-      };
-
-      const AppData = {
-        tools: [],
-        history: [],
-        users: [],
-        chartInstance: null,
-        listeners: [],
-        historyLimit: 50,
-        historyUnsub: null,
-        init: function () {
-          this.listeners.forEach((unsub) => unsub());
-          this.listeners = [];
-          this.listeners.push(
-            onSnapshot(
-              collection(db, DB_BASE_PATH, "tools"),
-              (snapshot) => {
-                this.tools = snapshot.docs.map((doc) => ({
-                  firebaseId: doc.id,
-                  ...doc.data(),
-                }));
-                App.UI.renderAll();
-              },
-              (err) => App.UI.showToast("Erro ao ler Ferramentas.", "error"),
-            ),
-          );
-
-          this.loadHistoryQuery();
-          this.listeners.push(
-            onSnapshot(collection(db, DB_BASE_PATH, "users"), (snapshot) => {
-              this.users = snapshot.docs
-                .map((doc) => ({ firebaseId: doc.id, ...doc.data() }))
-                .sort((a, b) => a.name.localeCompare(b.name));
-              if (App.UI.activeTab === "collaborators") App.CRUDUsers.render();
-            }),
-          );
-        },
-        loadHistoryQuery: function () {
-          if (this.historyUnsub) {
-            this.historyUnsub();
-            this.historyUnsub = null;
-          }
-          const historyQuery = query(
-            collection(db, DB_BASE_PATH, "history"),
-            orderBy("date", "desc"),
-            limit(this.historyLimit),
-          );
-          this.historyUnsub = onSnapshot(
-            historyQuery,
-            (snapshot) => {
-              this.history = snapshot.docs.map((doc) => ({
-                firebaseId: doc.id,
-                ...doc.data(),
-              }));
-              if (App.UI.activeTab === "history") App.UI.renderHistory();
-              const btnContainer = document.getElementById(
-                "history-load-more-container",
-              );
-              if (btnContainer) {
-                if (snapshot.docs.length >= this.historyLimit)
-                  btnContainer.classList.remove("hidden");
-                else btnContainer.classList.add("hidden");
-              }
-            },
-            (err) => console.error("Erro History:", err),
-          );
-          this.listeners.push(this.historyUnsub);
-        },
-        loadMoreHistory: function () {
-          this.historyLimit += 50;
-          const btn = document.getElementById("btn-load-more");
-          if (btn)
-            btn.innerHTML =
-              '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Carregando...';
-          lucide.createIcons();
-          this.loadHistoryQuery();
-        },
-        updateTool: async function (code, updates, actionType, user) {
-          const tool = this.tools.find((t) => t.code === code);
-          if (tool) {
-            try {
-              await updateDoc(
-                doc(db, DB_BASE_PATH, "tools", tool.firebaseId),
-                updates,
-              );
-              if (actionType) await this.logAction(tool, actionType, user);
-              return true;
-            } catch (err) {
-              App.UI.showToast("Erro de comunicação.", "error");
-              return false;
-            }
-          }
-        },
-        logAction: async function (tool, type, user) {
-          try {
-            await addDoc(collection(db, DB_BASE_PATH, "history"), {
-              date: new Date().toISOString(),
-              toolCode: tool.code,
-              toolName: tool.name,
-              type: type,
-              user: user || "Sistema",
-            });
-          } catch (e) {}
-        },
-        cleanOldLogs: async function () {
-          if (!confirm("Deseja apagar os registros com mais de 30 dias?"))
-            return;
-          const thirtyDaysAgo = new Date(
-            Date.now() - 30 * 24 * 60 * 60 * 1000,
-          ).toISOString();
-          try {
-            const snap = await getDocs(
-              query(collection(db, DB_BASE_PATH, "history")),
-            );
-            let deleted = 0;
-            snap.forEach((d) => {
-              if (d.data().date < thirtyDaysAgo) {
-                deleteDoc(doc(db, DB_BASE_PATH, "history", d.id));
-                deleted++;
-              }
-            });
-            App.UI.showToast(
-              `${deleted} registros antigos apagados.`,
-              "success",
-            );
-          } catch (e) {
-            App.UI.showToast("Erro ao limpar registros.", "error");
-          }
-        },
-        exportCSV: function () {
-          const headers = [
-            "Patrimônio",
-            "Descrição",
-            "Categoria",
-            "Situação",
-            "Responsável",
-            "Última Ação",
-          ];
-          const rows = this.tools.map((t) =>
-            [
-              t.code,
-              `"${t.name}"`,
-              t.category,
-              t.status,
-              t.currentUser || "",
-              t.lastAction || "",
-            ].join(","),
-          );
-          const link = document.createElement("a");
-          link.setAttribute(
-            "href",
-            encodeURI(
-              "data:text/csv;charset=utf-8,\uFEFF" +
-                headers.join(",") +
-                "\n" +
-                rows.join("\n"),
-            ),
-          );
-          link.setAttribute(
-            "download",
-            `inventario_${new Date().toISOString().slice(0, 10)}.csv`,
-          );
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          App.UI.showToast("Exportação concluída (UTF-8).", "success");
-        },
-      };
-
-      const AppUI = {
-        activeTab: "dashboard",
-        init: function () {
-          window.addEventListener("online", () =>
-            this.showToast(
-              "Conexão restabelecida. Sincronizando...",
-              "success",
-            ),
-          );
-          window.addEventListener("offline", () =>
-            this.showToast(
-              "Sem internet. Modo offline ativado. As alterações serão salvas localmente.",
-              "error",
-            ),
-          );
-
-          const cd = document.getElementById("current-date");
-          if (cd)
-            cd.textContent = new Date().toLocaleDateString("pt-BR", {
-              day: "2-digit",
-              month: "long",
-              year: "numeric",
-            });
-
-          const debouncedRender = Utils.debounce(
-            () => this.renderDashboard(),
-            300,
-          );
-
-          const dashSearch = document.getElementById("dash-search");
-          if (dashSearch) dashSearch.addEventListener("input", debouncedRender);
-
-          const dashFilter = document.getElementById("dash-filter");
-          if (dashFilter)
-            dashFilter.addEventListener("change", () => this.renderDashboard());
-
-          const debouncedRenderTools = Utils.debounce(
-            () => App.CRUDTools.render(),
-            300,
-          );
-          const toolsSearch = document.getElementById("tools-search");
-          if (toolsSearch)
-            toolsSearch.addEventListener("input", debouncedRenderTools);
-
-          const debouncedRenderUsers = Utils.debounce(
-            () => App.CRUDUsers.render(),
-            300,
-          );
-          const usersSearch = document.getElementById("users-search");
-          if (usersSearch)
-            usersSearch.addEventListener("input", debouncedRenderUsers);
-
-          const debouncedRenderHistory = Utils.debounce(
-            () => this.renderHistory(),
-            300,
-          );
-          const historySearch = document.getElementById("history-search");
-          if (historySearch)
-            historySearch.addEventListener("input", debouncedRenderHistory);
-
-          const checkBadge = document.getElementById("checkout-user-badge");
-          if (checkBadge) {
-            checkBadge.addEventListener("keydown", function (e) {
-              if (e.key === "Enter" && this.value.trim() !== "")
-                App.Scanner.processCheckout();
-            });
-          }
-
-          const crudImg = document.getElementById("crud-image");
-          if (crudImg) {
-            crudImg.addEventListener("change", (e) => {
-              if (e.target.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (evt) => {
-                  const pre = document.getElementById("crud-image-preview"),
-                    icon = document.getElementById("image-placeholder-icon");
-                  if (pre) {
-                    pre.src = evt.target.result;
-                    pre.classList.remove("hidden");
-                  }
-                  if (icon) icon.classList.add("hidden");
-                };
-                reader.readAsDataURL(e.target.files[0]);
-              }
-            });
-          }
-        },
-        showImagePreview: function (url, title) {
-          const lb = document.getElementById("image-lightbox"),
-            img = document.getElementById("lightbox-img"),
-            cap = document.getElementById("lightbox-caption");
-          if (img) img.src = url;
-          if (cap) cap.textContent = title || "Visualização do Material";
-          if (lb) {
-            lb.classList.remove("hidden");
-            lb.classList.add("flex");
-          }
-          lucide.createIcons();
-        },
-        closeImagePreview: function () {
-          const lb = document.getElementById("image-lightbox");
-          if (lb) {
-            lb.classList.add("hidden");
-            lb.classList.remove("flex");
-          }
-        },
-        switchTab: function (tab) {
-          this.activeTab = tab;
-          document
-            .querySelectorAll(".nav-btn")
-            .forEach(
-              (btn) =>
-                (btn.className =
-                  "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group text-slate-400 hover:bg-slate-800 hover:text-white"),
-            );
-          const activeNav = document.getElementById(`nav-${tab}`);
-          if (activeNav)
-            activeNav.className =
-              "nav-btn w-full flex items-center justify-center lg:justify-start px-3 py-2.5 text-sm rounded-lg transition-all duration-200 group bg-brand-600 text-white shadow-md shadow-brand-600/20";
-          [
-            "dashboard",
-            "scanner",
-            "management",
-            "collaborators",
-            "history",
-          ].forEach((t) => {
-            const el = document.getElementById(`tab-${t}`);
-            if (el) el.classList.add("hidden-tab");
-          });
-          const activeTabEl = document.getElementById(`tab-${tab}`);
-          if (activeTabEl) activeTabEl.classList.remove("hidden-tab");
-
-          if (tab !== "scanner") App.Scanner.stopCamera();
-          if (tab === "scanner") App.Scanner.focus();
-          this.renderAll();
-        },
-        renderAll: function () {
-          this.renderDashboard();
-          if (this.activeTab === "management") App.CRUDTools.render();
-          if (this.activeTab === "collaborators") App.CRUDUsers.render();
-          if (this.activeTab === "history") this.renderHistory();
-        },
-        renderDashboard: function () {
-          const tools = AppData.tools;
-          const cA = tools.filter((t) => t.status === "available").length,
-            cB = tools.filter((t) => t.status === "borrowed").length,
-            cM = tools.filter((t) => t.status === "maintenance").length;
-          const statT = document.getElementById("stat-total"),
-            statA = document.getElementById("stat-available"),
-            statB = document.getElementById("stat-borrowed"),
-            statM = document.getElementById("stat-maintenance");
-          if (statT) statT.textContent = tools.length;
-          if (statA) statA.textContent = cA;
-          if (statB) statB.textContent = cB;
-          if (statM) statM.textContent = cM;
-
-          const chartCanvas = document.getElementById("statusChart");
-          if (chartCanvas) {
-            const ctx = chartCanvas.getContext("2d");
-            if (AppData.chartInstance) {
-              AppData.chartInstance.data.datasets[0].data = [cA, cB, cM];
-              AppData.chartInstance.update();
-            } else {
-              AppData.chartInstance = new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                  labels: ["Disponível", "Emprestada", "Manutenção"],
-                  datasets: [
-                    {
-                      data: [cA, cB, cM],
-                      backgroundColor: ["#10b981", "#f59e0b", "#f43f5e"],
-                      borderWidth: 0,
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  cutout: "75%",
-                  plugins: { legend: { position: "bottom" } },
-                },
-              });
-            }
-          }
-
-          const searchEl = document.getElementById("dash-search"),
-            filterEl = document.getElementById("dash-filter");
-          const q = searchEl ? searchEl.value.toLowerCase() : "";
-          const f = filterEl ? filterEl.value : "all";
-
-          const filtered = tools.filter(
-            (t) =>
-              (t.name.toLowerCase().includes(q) ||
-                t.code.includes(q) ||
-                (t.currentUser || "").toLowerCase().includes(q)) &&
-              (f === "all" || t.status === f),
-          );
-
-          const tbody = document.getElementById("dash-tbody");
-          if (!tbody) return;
-          tbody.innerHTML = "";
-          if (!filtered.length) {
-            tbody.innerHTML = `<tr><td colSpan="5" class="px-6 py-10 text-center text-slate-400">Sem resultados.</td></tr>`;
-            return;
-          }
-
-          filtered.forEach((t) => {
-            const uHtml = t.currentUser
-              ? `<div class="font-semibold text-slate-700">${Utils.escapeHTML(t.currentUser)}</div>`
-              : `<span class="text-slate-300">---</span>`;
-            const safeName = Utils.escapeHTML(t.name).replace(/'/g, "\\'");
-            const imgHtml = t.imageUrl
-              ? `<img src="${t.imageUrl}" onclick="App.UI.showImagePreview('${t.imageUrl}', '${safeName}')" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:scale-110 transition-transform shadow-sm">`
-              : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
-            tbody.innerHTML += `<tr class="hover:bg-brand-50/50"><td class="px-6 py-4 font-mono font-semibold">${Utils.escapeHTML(t.code)}</td><td class="px-6 py-4"><div class="flex items-center">${imgHtml}<div><p class="font-bold text-slate-800">${Utils.escapeHTML(t.name)}</p><p class="text-xs font-normal text-slate-400">${Utils.escapeHTML(t.category)}</p></div></div></td><td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td><td class="px-6 py-4">${uHtml}</td><td class="px-6 py-4 text-right text-xs">${Utils.formatDate(t.lastAction)}</td></tr>`;
-          });
-          lucide.createIcons();
-        },
-        renderHistory: function () {
-          const tbody = document.getElementById("history-tbody");
-          if (!tbody) return;
-          tbody.innerHTML = "";
-
-          const searchEl = document.getElementById("history-search");
-          const q = searchEl ? searchEl.value.toLowerCase() : "";
-          const filtered = AppData.history.filter(
-            (log) =>
-              log.toolName.toLowerCase().includes(q) ||
-              log.toolCode.toLowerCase().includes(q) ||
-              log.user.toLowerCase().includes(q),
-          );
-
-          if (!filtered.length) {
-            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhum registro de histórico encontrado.</td></tr>`;
-            return;
-          }
-
-          filtered.forEach((log) => {
-            tbody.innerHTML += `<tr class="hover:bg-slate-50"><td class="px-6 py-4 text-sm font-medium text-slate-600">${Utils.formatDate(log.date)}</td><td class="px-6 py-4">${Utils.getBadgeHTML(log.type)}</td><td class="px-6 py-4 font-bold">${Utils.escapeHTML(log.toolName)} <span class="font-mono text-xs text-slate-400">(${Utils.escapeHTML(log.toolCode)})</span></td><td class="px-6 py-4 font-semibold text-slate-700">${Utils.escapeHTML(log.user)}</td></tr>`;
-          });
-          lucide.createIcons();
-        },
-        showToast: function (msg, type = "info") {
-          const cont = document.getElementById("toast-container");
-          if (!cont) return;
-          const t = document.createElement("div");
-          const conf =
-            type === "success"
-              ? { bg: "bg-emerald-600 border-emerald-500", ic: "check-circle" }
-              : { bg: "bg-rose-600 border-rose-500", ic: "alert-triangle" };
-          t.className = `toast-item flex items-center p-4 rounded-xl shadow-2xl text-white border ${conf.bg}`;
-          t.innerHTML = `<i data-lucide="${conf.ic}" class="w-5 h-5 mr-3 shrink-0"></i><span class="font-semibold text-sm pr-6">${msg}</span><button onclick="this.parentElement.remove()" class="ml-auto focus:outline-none"><i data-lucide="x" class="w-4 h-4"></i></button>`;
-          cont.appendChild(t);
-          lucide.createIcons();
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => t.classList.add("show")),
-          );
-          setTimeout(() => {
-            t.classList.remove("show");
-            setTimeout(() => {
-              if (t.parentElement) t.remove();
-            }, 400);
-          }, 4000);
-        },
-      };
-
-      const AppCRUDTools = {
-        render: function () {
-          const tbody = document.getElementById("crud-tbody");
-          if (!tbody) return;
-          tbody.innerHTML = "";
-
-          const searchEl = document.getElementById("tools-search");
-          const q = searchEl ? searchEl.value.toLowerCase() : "";
-          const filtered = AppData.tools.filter(
-            (t) =>
-              t.name.toLowerCase().includes(q) ||
-              t.code.toLowerCase().includes(q) ||
-              t.category.toLowerCase().includes(q),
-          );
-
-          if (!filtered.length) {
-            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhuma ferramenta encontrada.</td></tr>`;
-            return;
-          }
-
-          filtered.forEach((t) => {
-            const btn = `<button onclick="App.CRUDTools.openModal('${t.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button><button onclick="App.CRUDTools.deleteTool('${t.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`;
-            const safeName = Utils.escapeHTML(t.name).replace(/'/g, "\\'");
-            const img = t.imageUrl
-              ? `<img src="${t.imageUrl}" onclick="App.UI.showImagePreview('${t.imageUrl}', '${safeName}')" class="w-10 h-10 rounded-lg object-cover border border-slate-200 mr-3 shrink-0 cursor-zoom-in hover:brightness-90 transition-all">`
-              : `<div class="w-10 h-10 rounded-lg border border-slate-200 bg-slate-100 flex items-center justify-center mr-3 shrink-0"><i data-lucide="image" class="w-5 h-5 text-slate-400"></i></div>`;
-            tbody.innerHTML += `<tr><td class="px-6 py-4 font-mono">${Utils.escapeHTML(t.code)}</td><td class="px-6 py-4"><div class="flex items-center">${img}<div><p class="font-bold text-slate-800">${Utils.escapeHTML(t.name)}</p><p class="text-xs font-normal text-slate-400 block">${Utils.escapeHTML(t.category)}</p></div></div></td><td class="px-6 py-4">${Utils.getBadgeHTML(t.status)}</td><td class="px-6 py-4 text-right">${btn}</td></tr>`;
-          });
-          lucide.createIcons();
-        },
-        openModal: function (firebaseId = null) {
-          const m = document.getElementById("crud-modal");
-          if (m) m.classList.remove("hidden");
-          const cImg = document.getElementById("crud-image"),
-            pre = document.getElementById("crud-image-preview"),
-            icon = document.getElementById("image-placeholder-icon");
-          if (cImg) cImg.value = "";
-          if (pre) {
-            pre.classList.add("hidden");
-            pre.src = "";
-          }
-          if (icon) icon.classList.remove("hidden");
-
-          if (firebaseId) {
-            const t = AppData.tools.find((x) => x.firebaseId === firebaseId);
-            document.getElementById("modal-title").textContent =
-              "Editar Ferramenta";
-            document.getElementById("crud-id").value = t.firebaseId;
-            document.getElementById("crud-code").value = t.code;
-            document.getElementById("crud-code").disabled = true;
-            document.getElementById("crud-name").value = t.name;
-            document.getElementById("crud-category").value = t.category;
-            document
-              .getElementById("crud-status-container")
-              .classList.remove("hidden");
-            document.getElementById("crud-status").value =
-              t.status === "borrowed" ? "available" : t.status;
-            if (t.imageUrl && pre && icon) {
-              pre.src = t.imageUrl;
-              pre.classList.remove("hidden");
-              icon.classList.add("hidden");
-            }
-          } else {
-            document.getElementById("modal-title").textContent =
-              "Nova Ferramenta";
-            document.getElementById("crud-id").value = "";
-            document.getElementById("crud-code").value = "";
-            document.getElementById("crud-code").disabled = false;
-            document.getElementById("crud-name").value = "";
-            document
-              .getElementById("crud-status-container")
-              .classList.add("hidden");
-          }
-        },
-        closeModal: () => {
-          const m = document.getElementById("crud-modal");
-          if (m) m.classList.add("hidden");
-        },
-        saveTool: async function () {
-          const firebaseId = document.getElementById("crud-id").value,
-            code = document.getElementById("crud-code").value.trim(),
-            name = document.getElementById("crud-name").value.trim(),
-            cat = document.getElementById("crud-category").value,
-            fileInput = document.getElementById("crud-image");
-          if (!code || !name)
-            return App.UI.showToast("Preencha Código e Nome.", "error");
-
-          const btn = document.getElementById("btn-save-tool"),
-            original = btn.innerHTML;
-          btn.disabled = true;
-          btn.innerHTML =
-            '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Salvando...';
-          lucide.createIcons();
-
-          try {
-            let imageUrl = null;
-            const tool = firebaseId
-              ? AppData.tools.find((t) => t.firebaseId === firebaseId)
-              : null;
-            if (tool && tool.imageUrl) imageUrl = tool.imageUrl;
-            if (fileInput && fileInput.files.length > 0)
-              imageUrl = await Utils.compressImageToBase64(
-                fileInput.files[0],
-                400,
-                0.6,
-              );
-
-            if (firebaseId) {
-              const updates = { name, category: cat };
-              if (tool && tool.status !== "borrowed")
-                updates.status = document.getElementById("crud-status").value;
-              if (imageUrl) updates.imageUrl = imageUrl;
-              await Utils.withTimeout(
-                updateDoc(doc(db, DB_BASE_PATH, "tools", firebaseId), updates),
-                8000,
-                "Timeout DB",
-              );
-              App.UI.showToast("Atualizada!", "success");
-            } else {
-              if (AppData.tools.find((t) => t.code === code)) {
-                btn.disabled = false;
-                btn.innerHTML = original;
-                return App.UI.showToast("Código já existe!", "error");
-              }
-              const newTool = {
-                code,
-                name,
-                category: cat,
-                status: "available",
-                currentUser: null,
-                lastAction: null,
-              };
-              if (imageUrl) newTool.imageUrl = imageUrl;
-              await Utils.withTimeout(
-                setDoc(doc(db, DB_BASE_PATH, "tools", code), newTool),
-                8000,
-                "Timeout DB",
-              );
-              App.UI.showToast("Adicionada com sucesso!", "success");
-            }
-            this.closeModal();
-          } catch (err) {
-            App.UI.showToast("Erro ao gravar.", "error");
-          } finally {
-            btn.disabled = false;
-            btn.innerHTML = original;
-            lucide.createIcons();
-          }
-        },
-        deleteTool: async function (firebaseId) {
-          if (confirm("Tem certeza que deseja excluir?"))
-            try {
-              await deleteDoc(doc(db, DB_BASE_PATH, "tools", firebaseId));
-              App.UI.showToast("Ferramenta excluída.", "success");
-            } catch (e) {}
-        },
-      };
-
-      const AppCRUDUsers = {
-        render: function () {
-          const tbody = document.getElementById("users-tbody");
-          if (!tbody) return;
-          tbody.innerHTML = "";
-
-          const searchEl = document.getElementById("users-search");
-          const q = searchEl ? searchEl.value.toLowerCase() : "";
-          const filtered = AppData.users.filter(
-            (u) =>
-              u.name.toLowerCase().includes(q) ||
-              (u.badge && u.badge.toLowerCase().includes(q)) ||
-              (u.role && u.role.toLowerCase().includes(q)),
-          );
-
-          if (!filtered.length) {
-            tbody.innerHTML = `<tr><td colSpan="4" class="px-6 py-10 text-center text-slate-400">Nenhum colaborador encontrado.</td></tr>`;
-            return;
-          }
-
-          filtered.forEach((u) => {
-            const btn = `<button onclick="App.CRUDUsers.openModal('${u.firebaseId}')" class="p-2 text-brand-600 hover:bg-brand-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button><button onclick="App.CRUDUsers.deleteUser('${u.firebaseId}')" class="p-2 text-rose-600 hover:bg-rose-50 rounded-lg ml-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`;
-            tbody.innerHTML += `<tr><td class="px-6 py-4 font-mono text-brand-600 font-bold">${Utils.escapeHTML(u.badge || "---")}</td><td class="px-6 py-4 font-bold">${Utils.escapeHTML(u.name)}</td><td class="px-6 py-4 text-slate-500">${Utils.escapeHTML(u.role || u.department || "---")}</td><td class="px-6 py-4 text-right">${btn}</td></tr>`;
-          });
-          lucide.createIcons();
-        },
-        openModal: function (id = null) {
-          const m = document.getElementById("crud-user-modal");
-          if (m) m.classList.remove("hidden");
-          if (id) {
-            const u = AppData.users.find((x) => x.firebaseId === id);
-            document.getElementById("user-modal-title").textContent =
-              "Editar Colaborador";
-            document.getElementById("crud-user-id").value = u.firebaseId;
-            document.getElementById("crud-user-badge").value = u.badge || "";
-            document.getElementById("crud-user-name").value = u.name;
-            document.getElementById("crud-user-role").value =
-              u.role || u.department || "";
-          } else {
-            document.getElementById("user-modal-title").textContent =
-              "Novo Colaborador";
-            document.getElementById("crud-user-id").value = "";
-            document.getElementById("crud-user-badge").value = "";
-            document.getElementById("crud-user-name").value = "";
-            document.getElementById("crud-user-role").value = "";
-          }
-        },
-        closeModal: () => {
-          const m = document.getElementById("crud-user-modal");
-          if (m) m.classList.add("hidden");
-        },
-        saveUser: async function () {
-          const id = document.getElementById("crud-user-id").value,
-            badge = document.getElementById("crud-user-badge").value.trim(),
-            name = document.getElementById("crud-user-name").value.trim(),
-            role = document.getElementById("crud-user-role").value.trim();
-          if (!name) return App.UI.showToast("Preencha o Nome.", "error");
-
-          try {
-            if (id) {
-              await updateDoc(doc(db, DB_BASE_PATH, "users", id), {
-                badge,
-                name,
-                role,
-              });
-              App.UI.showToast("Colaborador atualizado!", "success");
-            } else {
-              await addDoc(collection(db, DB_BASE_PATH, "users"), {
-                badge,
-                name,
-                role,
-              });
-              App.UI.showToast("Colaborador adicionado!", "success");
-            }
-            this.closeModal();
-          } catch (e) {
-            App.UI.showToast("Erro ao salvar.", "error");
-          }
-        },
-        deleteUser: async function (id) {
-          if (confirm("Remover este colaborador?"))
-            try {
-              await deleteDoc(doc(db, DB_BASE_PATH, "users", id));
-              App.UI.showToast("Removido.", "success");
-            } catch (e) {}
-        },
-        importFile: function (event) {
-          const file = event.target.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = async (e) => {
-            try {
-              const workbook = XLSX.read(new Uint8Array(e.target.result), {
-                type: "array",
-              });
-              const rows = XLSX.utils.sheet_to_json(
-                workbook.Sheets[workbook.SheetNames[0]],
-                { header: 1 },
-              );
-              if (rows.length < 2)
-                return App.UI.showToast(
-                  "Arquivo vazio ou com formato incorreto.",
-                  "error",
-                );
-
-              App.UI.showToast("Importando colaboradores... Aguarde.", "info");
-              let count = 0;
-              for (let i = 1; i < rows.length; i++) {
-                const cols = rows[i];
-                if (!cols || cols.length === 0) continue;
-                const badge = cols[0] != null ? String(cols[0]).trim() : "",
-                  name = cols[1] != null ? String(cols[1]).trim() : "",
-                  role = cols[2] != null ? String(cols[2]).trim() : "";
-                if (name) {
-                  try {
-                    await addDoc(collection(db, DB_BASE_PATH, "users"), {
-                      badge,
-                      name,
-                      role,
-                    });
-                    count++;
-                  } catch (err) {}
-                }
-              }
-              App.UI.showToast(
-                `${count} colaboradores importados com sucesso!`,
-                "success",
-              );
-            } catch (err) {
-              App.UI.showToast(
-                "Falha ao ler o arquivo Excel. Verifique se não está corrompido.",
-                "error",
-              );
-            } finally {
-              event.target.value = "";
-            }
-          };
-          reader.readAsArrayBuffer(file);
-        },
-      };
-
-      const AppScanner = {
-        currentTool: null,
-        buffer: "",
-        timeout: null,
-        html5QrCode: null,
-        currentMode: "usb",
-        init: function () {
-          document.addEventListener("keydown", (e) => {
-            if (App.UI.activeTab !== "scanner" || this.currentMode !== "usb")
-              return;
-            if (
-              ["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName) &&
-              e.target.id !== "hidden-scanner" &&
-              e.target.id !== "manual-scan-input"
-            )
-              return;
-            if (e.key === "Enter") {
-              if (this.buffer.length > 2) this.processCode(this.buffer);
-              this.buffer = "";
-            } else if (e.key.length === 1) {
-              this.buffer += e.key;
-              clearTimeout(this.timeout);
-              this.timeout = setTimeout(() => {
-                this.buffer = "";
-              }, 60);
-            }
-          });
-          const ts = document.getElementById("tab-scanner");
-          if (ts)
-            ts.addEventListener("click", (e) => {
-              if (!["INPUT", "BUTTON", "SELECT"].includes(e.target.tagName))
-                this.focus();
-            });
-
-          const mFn = function (e) {
-            if (e.key === "Enter" && this.value.trim() !== "") {
-              App.Scanner.processCode(this.value.trim());
-              this.value = "";
-            }
-          };
-          const mIn = document.getElementById("manual-scan-input"),
-            hIn = document.getElementById("hidden-scanner");
-          if (mIn) mIn.addEventListener("keydown", mFn);
-          if (hIn) hIn.addEventListener("keydown", mFn);
-        },
-        setMode: function (mode) {
-          this.currentMode = mode;
-          const active =
-              "px-4 py-2 bg-brand-50 text-brand-700 font-bold rounded-lg border border-brand-200 flex items-center transition-colors",
-            inactive =
-              "px-4 py-2 bg-slate-50 text-slate-600 font-bold rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center transition-colors";
-          const bUsb = document.getElementById("btn-mode-usb"),
-            bCam = document.getElementById("btn-mode-cam");
-          if (bUsb) bUsb.className = mode === "usb" ? active : inactive;
-          if (bCam) bCam.className = mode === "cam" ? active : inactive;
-
-          const cUsb = document.getElementById("mode-usb-container"),
-            cCam = document.getElementById("mode-cam-container");
-          if (cUsb) cUsb.classList.toggle("hidden", mode !== "usb");
-          if (cCam) cCam.classList.toggle("hidden", mode !== "cam");
-
-          if (mode === "cam") this.startCamera();
-          else this.stopCamera();
-        },
-        startCamera: function () {
-          if (!this.html5QrCode) this.html5QrCode = new Html5Qrcode("reader");
-
-          const config = {
-            fps: 15,
-            qrbox: { width: 280, height: 100 },
-          };
-
-          this.html5QrCode
-            .start(
-              {
-                facingMode: "environment",
-                advanced: [{ focusMode: "continuous" }],
-              },
-              config,
-              (code) => {
-                this.processCode(code);
-                this.stopCamera();
-              },
-            )
-            .catch((err) => {
-              this.html5QrCode
-                .start({ facingMode: "environment" }, config, (code) => {
-                  this.processCode(code);
-                  this.stopCamera();
-                })
-                .catch(() => {
-                  App.UI.showToast("Erro ao acessar a câmera.", "error");
-                  this.setMode("usb");
-                });
-            });
-        },
-        stopCamera: function () {
-          if (this.html5QrCode && this.html5QrCode.isScanning)
-            this.html5QrCode.stop().catch(() => {});
-        },
-        focus: function () {
-          const hs = document.getElementById("hidden-scanner");
-          if (!this.currentTool && this.currentMode === "usb" && hs) hs.focus();
-        },
-        processCode: function (code) {
-          const tool = AppData.tools.find((t) => t.code === code);
-          if (!tool) {
-            AudioSys.playBeep("error");
-            App.UI.showToast(
-              `Código ${Utils.escapeHTML(code)} não encontrado.`,
-              "error",
-            );
-            this.reset();
-            return;
-          }
-
-          AudioSys.playBeep("success");
-          this.currentTool = tool;
-          const sw = document.getElementById("scanner-waiting"),
-            sr = document.getElementById("scanner-result");
-          if (sw) sw.classList.add("hidden-tab");
-          if (sr) sr.classList.remove("hidden-tab");
-
-          const sli = document.getElementById("scanner-line-indicator");
-          if (sli)
-            sli.className =
-              "absolute top-0 left-0 w-full h-2 transition-all duration-500 " +
-              (tool.status === "available"
-                ? "bg-gradient-to-r from-emerald-400 to-emerald-600"
-                : "bg-gradient-to-r from-rose-400 to-rose-600");
-
-          const ric = document.getElementById("res-image-container"),
-            rcat = document.getElementById("res-category"),
-            rnam = document.getElementById("res-name"),
-            rcod = document.getElementById("res-code"),
-            rbdg = document.getElementById("res-badge-container");
-          if (ric)
-            ric.innerHTML = tool.imageUrl
-              ? `<img src="${tool.imageUrl}" class="w-16 h-16 rounded-xl object-cover border border-slate-200">`
-              : `<div class="w-16 h-16 rounded-xl bg-slate-200 flex items-center justify-center border border-slate-300"><i data-lucide="image" class="w-8 h-8 text-slate-400"></i></div>`;
-          if (rcat) rcat.querySelector("span").textContent = tool.category;
-          if (rnam) rnam.textContent = tool.name;
-          if (rcod) rcod.textContent = tool.code;
-          if (rbdg) rbdg.innerHTML = Utils.getBadgeHTML(tool.status);
-
-          const bProc = document.getElementById("scanner-processing"),
-            bStat = document.getElementById("scanner-status-box"),
-            bCheck = document.getElementById("scanner-checkout"),
-            bRet = document.getElementById("scanner-return");
-          [bStat, bCheck, bProc, bRet].forEach((el) => {
-            if (el) el.classList.add("hidden-tab");
-          });
-
-          if (tool.status === "borrowed") {
-            const rui = document.getElementById("return-user-info");
-            if (rui)
-              rui.innerHTML = `Atualmente com: <strong>${Utils.escapeHTML(tool.currentUser || "Desconhecido")}</strong>`;
-            if (bRet) bRet.classList.remove("hidden-tab");
-            setTimeout(() => {
-              const btnReturn = document.getElementById("btn-return");
-              if (btnReturn) btnReturn.focus();
-            }, 100);
-          } else if (tool.status === "available") {
-            if (bStat) {
-              bStat.innerHTML = `<div class="flex items-start text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-100"><i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-0.5 text-emerald-500"></i><div><p class="font-extrabold text-lg">Pronta para Uso</p></div></div>`;
-              bStat.classList.remove("hidden-tab");
-            }
-            if (bCheck) bCheck.classList.remove("hidden-tab");
-            const badgeInput = document.getElementById("checkout-user-badge");
-            if (badgeInput) {
-              badgeInput.value = "";
-              setTimeout(() => badgeInput.focus(), 100);
-            }
-          } else {
-            AudioSys.playBeep("error");
-            App.UI.showToast("Ferramenta em Manutenção.", "error");
-            setTimeout(() => this.reset(), 2000);
-          }
-          lucide.createIcons();
-        },
-        processReturn: function () {
-          const tool = this.currentTool;
-          if (!tool) return;
-          const sr = document.getElementById("scanner-return"),
-            sp = document.getElementById("scanner-processing");
-          if (sr) sr.classList.add("hidden-tab");
-          if (sp) sp.classList.remove("hidden-tab");
-
-          setTimeout(() => {
-            AppData.updateTool(
-              tool.code,
-              {
-                status: "available",
-                currentUser: null,
-                lastAction: new Date().toISOString(),
-              },
-              "in",
-              tool.currentUser,
-            );
-            AudioSys.playBeep("return");
-            App.UI.showToast(`Devolução Concluída`, "success");
-
-            if (sp) sp.classList.add("hidden-tab");
-            const rbc = document.getElementById("res-badge-container");
-            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("available");
-            const ssb = document.getElementById("scanner-status-box");
-            if (ssb) {
-              ssb.innerHTML = `<div class="text-emerald-800 bg-emerald-50 p-5 rounded-xl border border-emerald-200"><p class="font-extrabold text-lg">Devolução Registrada</p></div>`;
-              ssb.classList.remove("hidden-tab");
-            }
-            setTimeout(() => this.reset(), 2000);
-          }, 800);
-        },
-        processCheckout: function () {
-          const badgeInput = document.getElementById("checkout-user-badge");
-          const badgeValue = badgeInput ? badgeInput.value.trim() : "";
-          if (!badgeValue || !this.currentTool) return;
-
-          const userObj = AppData.users.find(
-            (u) =>
-              u.badge === badgeValue ||
-              u.name.toLowerCase() === badgeValue.toLowerCase(),
-          );
-          if (!userObj) {
-            AudioSys.playBeep("error");
-            App.UI.showToast(
-              "Colaborador não encontrado. Verifique o número do crachá.",
-              "error",
-            );
-            return;
-          }
-
-          const userName = userObj.name;
-          const sc = document.getElementById("scanner-checkout"),
-            ssb = document.getElementById("scanner-status-box"),
-            sp = document.getElementById("scanner-processing");
-          if (sc) sc.classList.add("hidden-tab");
-          if (ssb) ssb.classList.add("hidden-tab");
-          if (sp) sp.classList.remove("hidden-tab");
-
-          setTimeout(() => {
-            AppData.updateTool(
-              this.currentTool.code,
-              {
-                status: "borrowed",
-                currentUser: userName,
-                lastAction: new Date().toISOString(),
-              },
-              "out",
-              userName,
-            );
-            AudioSys.playBeep("success");
-            App.UI.showToast(`Saída autorizada para ${userName}`, "success");
-            App.PDF.generateReceipt(this.currentTool, userName);
-
-            if (sp) sp.classList.add("hidden-tab");
-            const rbc = document.getElementById("res-badge-container");
-            if (rbc) rbc.innerHTML = Utils.getBadgeHTML("borrowed");
-            if (ssb) {
-              ssb.innerHTML = `<div class="text-amber-900 bg-amber-50 p-5 rounded-xl border border-amber-200"><p class="font-extrabold text-xl">Responsabilidade Transferida</p></div>`;
-              ssb.classList.remove("hidden-tab");
-            }
-            setTimeout(() => this.reset(), 3000);
-          }, 1000);
-        },
-        reset: function () {
-          this.currentTool = null;
-          const sr = document.getElementById("scanner-result"),
-            sw = document.getElementById("scanner-waiting");
-          if (sr) sr.classList.add("hidden-tab");
-          if (sw) sw.classList.remove("hidden-tab");
-          const msi = document.getElementById("manual-scan-input");
-          if (msi) msi.value = "";
-          const sli = document.getElementById("scanner-line-indicator");
-          if (sli)
-            sli.className =
-              "absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-500 via-indigo-500 to-brand-500 transition-all duration-500";
-          if (this.currentMode === "cam") this.startCamera();
-          this.focus();
-        },
-      };
-
       const App = {
         Auth: AppAuth,
         Session: AppSession,
@@ -3119,9 +3454,13 @@
           this.Scanner.init();
         },
       };
+
+      // Exposição segura de módulos ao Windows
       window.App = App;
       window.Utils = Utils;
+      window.Logger = Logger;
       window.AudioSys = AudioSys;
+
       document.addEventListener("DOMContentLoaded", () => App.init());
     </script>
   </body>
